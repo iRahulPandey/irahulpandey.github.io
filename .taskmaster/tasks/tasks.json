@@ -480,7 +480,7 @@
           1,
           2
         ],
-        "status": "in-progress",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -499,7 +499,7 @@
               "8.1"
             ],
             "details": "Navigate to the repository Settings > Pages. Change the Source setting to 'GitHub Actions'. Ensure that the repository has the proper permissions set for GitHub Actions to deploy to Pages.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Verify in the repository settings that GitHub Pages is configured to use GitHub Actions as the source. Check that the permissions are correctly set."
           },
           {
@@ -510,7 +510,7 @@
               "8.2"
             ],
             "details": "If using a custom domain: 1) Create a static/CNAME file containing only the domain name, 2) Configure DNS settings with the domain provider as per GitHub documentation, 3) Enable HTTPS in the GitHub Pages settings section.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "If applicable, verify the CNAME file exists with the correct domain. Check DNS configuration with dig or nslookup. Confirm HTTPS is enabled in GitHub Pages settings."
           },
           {
@@ -534,7 +534,7 @@
               "8.4"
             ],
             "details": "Manually trigger the workflow using the GitHub Actions UI or by pushing a small change to the main branch. Monitor the workflow execution to ensure it completes successfully. Verify that the site is properly deployed to GitHub Pages.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Check the Actions tab in GitHub to verify the workflow runs without errors. Visit the deployed site URL to confirm the content is displayed correctly. Verify the build status badge updates appropriately."
           }
         ]
@@ -1035,7 +1035,7 @@
     ],
     "metadata": {
       "created": "2025-09-13T17:19:25.589Z",
-      "updated": "2025-09-13T18:06:34.511Z",
+      "updated": "2025-09-13T18:07:17.315Z",
       "description": "Tasks for master context"
     }
   }

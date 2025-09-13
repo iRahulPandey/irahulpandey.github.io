@@ -1,531 +1,95 @@
-<!DOCTYPE html>
-<html lang="en-us">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <script type="application/javascript" src='http://localhost:1313/js/theme-mode.js'></script>
-    <link rel="stylesheet" href='http://localhost:1313/css/frameworks.min.css' />
-    <link rel="stylesheet" href='http://localhost:1313/css/github.min.css' />
-    <link rel="stylesheet" href='http://localhost:1313/css/github-style.css' />
-    <link rel="stylesheet" href='http://localhost:1313/css/light.css' />
-    <link rel="stylesheet" href='http://localhost:1313/css/dark.css' />
-    <link rel="stylesheet" href='http://localhost:1313/css/syntax.css' />
-    <title>Building My Personal Website with Hugo and GitHub Pages - Rahul Pandey&#39;s Blog</title>
-    
-    <link rel="icon" type="image/x-icon" href='/images/github-mark.png'>
-    
-    <meta name="theme-color" content="#1e2327">
-
-    <link rel="stylesheet" href="http://localhost:1313/css/custom.css">
-    
-
-    
-    <meta name="description"
-  content="Building a personal website is one of the best ways to showcase your professional journey and share your knowledge with the world. In this post, I&rsquo;ll walk you through how I built this website using modern tools and best practices.
-" />
-<meta name="keywords"
-  content='cloud AI, MLOps, machine learning, solutions architecture, data analytics, Python, adidas' />
-<meta name="robots" content="noodp" />
-<link rel="canonical" href="http://localhost:1313/post/building-my-personal-website/" />
-
-
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Building My Personal Website with Hugo and GitHub Pages - Rahul Pandey&#39;s Blog" />
-<meta name="twitter:description"
-  content="Building a personal website is one of the best ways to showcase your professional journey and share your knowledge with the world. In this post, I&rsquo;ll walk you through how I built this website using modern tools and best practices.
-" />
-<meta name="twitter:site" content="http://localhost:1313/" />
-<meta name="twitter:creator" content="" />
-<meta name="twitter:image"
-  content="http://localhost:1313/">
-
-
-<meta property="og:type" content="article" />
-<meta property="og:title" content="Building My Personal Website with Hugo and GitHub Pages - Rahul Pandey&#39;s Blog">
-<meta property="og:description"
-  content="Building a personal website is one of the best ways to showcase your professional journey and share your knowledge with the world. In this post, I&rsquo;ll walk you through how I built this website using modern tools and best practices.
-" />
-<meta property="og:url" content="http://localhost:1313/post/building-my-personal-website/" />
-<meta property="og:site_name" content="Building My Personal Website with Hugo and GitHub Pages" />
-<meta property="og:image"
-  content="http://localhost:1313/">
-<meta property="og:image:width" content="2048">
-<meta property="og:image:height" content="1024">
-
-<meta property="article:published_time" content="2025-01-13 16:00:00 &#43;0000 UTC" />
-
-
-
-
-
-
-
-
-
-
-
-</head>
-
-
-<body>
-  <div style="position: relative">
-  <header class="Header js-details-container Details px-3 px-md-4 px-lg-5 flex-wrap flex-md-nowrap open Details--on">
-    <div class="Header-item mobile-none" style="margin-top: -4px; margin-bottom: -4px;">
-      <a class="Header-link" href="http://localhost:1313/">
-        <img class="octicon" height="32" width="32" src="/images/github-mark-white.png">
-      </a>
-    </div>
-    <div class="Header-item d-md-none">
-      <button class="Header-link btn-link js-details-target" type="button"
-        onclick="document.querySelector('#header-search').style.display = document.querySelector('#header-search').style.display == 'none'? 'block': 'none'">
-        <svg height="24" class="octicon octicon-three-bars" viewBox="0 0 16 16" version="1.1" width="24">
-          <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z">
-          </path>
-        </svg>
-      </button>
-    </div>
-    <div style="display: none;" id="header-search"
-      class="Header-item Header-item--full flex-column flex-md-row width-full flex-order-2 flex-md-order-none mr-0 mr-md-3 mt-3 mt-md-0 Details-content--hidden-not-important d-md-flex">
-      <div
-        class="Header-search header-search flex-auto js-site-search position-relative flex-self-stretch flex-md-self-auto mb-3 mb-md-0 mr-0 mr-md-3 scoped-search site-scoped-search js-jump-to">
-        <div class="position-relative">
-          
-          <form target="_blank" id="search-form" action="" accept-charset="UTF-8" method="get"
-            autocomplete="off">
-            <label
-              class="Header-search-label form-control input-sm header-search-wrapper p-0 js-chromeless-input-container header-search-wrapper-jump-to position-relative d-flex flex-justify-between flex-items-center">
-              <input type="text"
-                class="Header-search-input form-control input-sm header-search-input jump-to-field js-jump-to-field js-site-search-focus js-site-search-field is-clearable"
-                name="q" value="" placeholder="Search" autocomplete="off">
-            </label>
-          </form>
-          
-        </div>
-      </div>
-    </div>
-
-    <div class="Header-item Header-item--full flex-justify-center d-md-none position-relative">
-      <a class="Header-link " href="http://localhost:1313/">
-        <img class="octicon octicon-mark-github v-align-middle" height="32" width="32" src="/images/github-mark-white.png">
-      </a>
-    </div>
-    <div class="Header-item" style="margin-right: 0;">
-      <a href="javascript:void(0)" class="Header-link no-select" onclick="switchTheme()">
-        <svg style="fill: var(--color-profile-color-modes-toggle-moon);" class="no-select" viewBox="0 0 16 16"
-          version="1.1" width="16" height="16">
-          <path fill-rule="evenodd" clip-rule="evenodd"
-            d="M4.52208 7.71754C7.5782 7.71754 10.0557 5.24006 10.0557 2.18394C10.0557 1.93498 10.0392 1.68986 10.0074 1.44961C9.95801 1.07727 10.3495 0.771159 10.6474 0.99992C12.1153 2.12716 13.0615 3.89999 13.0615 5.89383C13.0615 9.29958 10.3006 12.0605 6.89485 12.0605C3.95334 12.0605 1.49286 10.001 0.876728 7.24527C0.794841 6.87902 1.23668 6.65289 1.55321 6.85451C2.41106 7.40095 3.4296 7.71754 4.52208 7.71754Z">
-          </path>
-        </svg>
-      </a>
-    </div>
-  </header>
-</div>
-
-  <div id="search-result" class="container-lg px-3 new-discussion-timeline" style="display: none;">
-</div>
-
-  
-<div class="application-main">
-  <div>
-  <main>
-    <div class="gisthead pagehead bg-gray-light pb-0 pt-3 mb-4">
-      <div class="px-0">
-        <div class="mb-3 d-flex px-3 px-md-3 px-lg-5">
-          <div class="flex-auto min-width-0 width-fit mr-3">
-            <div class="d-flex">
-              <div class="d-none d-md-block">
-                <a class="avatar mr-2 flex-shrink-0" href="http://localhost:1313/">
-                  <img class=" avatar-user"
-                    src="/images/avatar.png"
-                    width="32" height="32"></a>
-              </div>
-              <div class="d-flex flex-column">
-                <h1 class="break-word f3 text-normal mb-md-0 mb-1">
-                  <span class="author">
-                    <a href="http://localhost:1313/">Rahul Pandey</a>
-                  </span>
-                  <span class="path-divider">/</span>
-                  <strong class="css-truncate css-truncate-target mr-1" style="max-width: 410px">
-                    <a href="http://localhost:1313/post/building-my-personal-website/">Building My Personal Website with Hugo and GitHub Pages</a>
-                  </strong>
-                </h1>
-                <div class="note m-0">
-                  Created <relative-time datetime="Mon, 13 Jan 2025 16:00:00 &#43;0000"
-                    class="no-wrap">
-                    Mon, 13 Jan 2025 16:00:00 &#43;0000</relative-time>
-
-                  
-                  <span class="file-info-divider"></span>
-                  Modified <relative-time datetime="Sat, 13 Sep 2025 20:05:11 &#43;0200"
-                    class="no-wrap">
-                    Sat, 13 Sep 2025 20:05:11 &#43;0200</relative-time>
-                  
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container-lg px-3 new-discussion-timeline">
-      <div class="repository-content gist-content">
-        <div>
-          <div class="js-gist-file-update-container js-task-list-container file-box">
-            <div id="file-pytest" class="file my-2">
-              <div id="post-header" class="file-header d-flex flex-md-items-center flex-items-start sticky-header" style="z-index: 2">
-                <div class="file-info d-flex flex-md-items-center flex-items-start flex-order-1 flex-auto">
-                  <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
-                    
-                    <summary id="toc-toggle" onclick="clickToc()" class="btn btn-octicon m-0 mr-2 p-2">
-                      <svg aria-hidden="true" viewBox="0 0 16 16" height="16" width="16" class="octicon octicon-list-unordered">
-                        <path fill-rule="evenodd" d="M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM3 8a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"></path>
-                      </svg>
-                    </summary>
-                    <details-menu class="SelectMenu" id="toc-details" style="display: none;">
-                      <div class="SelectMenu-modal rounded-3 mt-1" style="max-height: 340px;">
-                        <div class="SelectMenu-list SelectMenu-list--borderless p-2" style="overscroll-behavior: contain;" id="toc-list">
-                        </div>
-                      </div>
-                    </details-menu>
-                      
-                      3 min read
-                    
-
-                  </div>
-                  <div class="file-actions flex-order-2 pt-0">
-                    
-                    
-                    <a class="muted-link mr-3" href="/tags/hugo">
-                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
-                        <path fill-rule="evenodd"
-                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
-                        </path>
-                      </svg>
-                      hugo
-                    </a>
-                    
-                    <a class="muted-link mr-3" href="/tags/github-pages">
-                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
-                        <path fill-rule="evenodd"
-                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
-                        </path>
-                      </svg>
-                      github-pages
-                    </a>
-                    
-                    <a class="muted-link mr-3" href="/tags/static-site">
-                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
-                        <path fill-rule="evenodd"
-                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
-                        </path>
-                      </svg>
-                      static-site
-                    </a>
-                    
-                    <a class="muted-link mr-3" href="/tags/web-development">
-                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
-                        <path fill-rule="evenodd"
-                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
-                        </path>
-                      </svg>
-                      web-development
-                    </a>
-                    
-                    <a class="muted-link mr-3" href="/tags/tutorial">
-                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
-                        <path fill-rule="evenodd"
-                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
-                        </path>
-                      </svg>
-                      tutorial
-                    </a>
-                    
-                    
-                  </div>
-                </div>
-              </div>
-
-
-              <div class="Box-body px-5 pb-5" style="z-index: 1">
-                <article class="markdown-body entry-content container-lg"><p>Building a personal website is one of the best ways to showcase your professional journey and share your knowledge with the world. In this post, I&rsquo;ll walk you through how I built this website using modern tools and best practices.</p>
-<h2 id="why-hugo-and-github-pages">Why Hugo and GitHub Pages?</h2>
-<p>When deciding on the technology stack for my personal website, I considered several factors:</p>
-<ul>
-<li><strong>Performance</strong>: Static sites load incredibly fast</li>
-<li><strong>Simplicity</strong>: Easy to maintain and update</li>
-<li><strong>Cost</strong>: Free hosting with GitHub Pages</li>
-<li><strong>SEO</strong>: Better search engine optimization</li>
-<li><strong>Security</strong>: No database or server-side vulnerabilities</li>
-</ul>
-<p><img src="/images/website-demo.svg" alt="Website Demo Image"></p>
-<h2 id="the-technology-stack">The Technology Stack</h2>
-<p>Here&rsquo;s what I used to build this website:</p>
-<h3 id="core-technologies">Core Technologies</h3>
-<ul>
-<li><strong>Hugo</strong>: Fast static site generator written in Go</li>
-<li><strong>GitHub Style Theme</strong>: Clean, professional theme inspired by GitHub</li>
-<li><strong>GitHub Pages</strong>: Free hosting for static websites</li>
-<li><strong>GitHub Actions</strong>: Automated CI/CD pipeline</li>
-<li><strong>Markdown</strong>: Content authoring format</li>
-</ul>
-<h3 id="development-tools">Development Tools</h3>
-<ul>
-<li><strong>Task Master AI</strong>: Project management and task automation</li>
-<li><strong>Git</strong>: Version control</li>
-<li><strong>VS Code</strong>: Code editor with Hugo extensions</li>
-</ul>
-<h2 id="step-by-step-build-process">Step-by-Step Build Process</h2>
-<h3 id="1-project-initialization">1. Project Initialization</h3>
-<p>I started by setting up the project structure using Task Master AI:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Initialize Hugo site</span>
-</span></span><span class="line"><span class="cl">hugo new site . --force
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Add GitHub Style theme as submodule</span>
-</span></span><span class="line"><span class="cl">git submodule add https://github.com/MeiK2333/github-style.git themes/github-style
-</span></span></code></pre></div><h3 id="2-configuration-setup">2. Configuration Setup</h3>
-<p>The heart of any Hugo site is its configuration. I created a comprehensive <code>config.yaml</code>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">baseURL</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;https://irahulpandey.github.io&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">languageCode</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;en-us&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Rahul Pandey&#39;s Blog&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">theme</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;github-style&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">params</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">author</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Rahul Pandey&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Senior Solutions Architect at adidas | Cloud AI &amp; MLOps Specialist&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">github</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;iRahulPandey&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">linkedin</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;https://www.linkedin.com/in/rahulpandey1901/&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">email</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;rpandey1901@gmail.com&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">keywords</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;cloud AI, MLOps, machine learning, solutions architecture, data analytics, Python, adidas&#34;</span><span class="w">
-</span></span></span></code></pre></div><h3 id="3-content-creation">3. Content Creation</h3>
-<p>Creating content in Hugo is straightforward with Markdown:</p>
-<h4 id="homepage-content">Homepage Content</h4>
-<p>I created a detailed <code>content/readme.md</code> file that serves as the main homepage content, showcasing my professional background and expertise.</p>
-<h4 id="blog-posts">Blog Posts</h4>
-<p>Each blog post follows a consistent structure:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">---
-</span></span><span class="line"><span class="cl">title: &#34;Post Title&#34;
-</span></span><span class="line"><span class="cl">date: 2025-01-13T10:00:00Z
-</span></span><span class="line"><span class="cl">draft: false
-</span></span><span class="line"><span class="cl">summary: &#34;Brief description&#34;
-</span></span><span class="line"><span class="cl">tags: [&#34;tag1&#34;, &#34;tag2&#34;]
-</span></span><span class="line"><span class="cl">---
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">Content introduction here.
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">&lt;!--more--&gt;
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="gu">## Main Content
-</span></span></span><span class="line"><span class="cl"><span class="gu"></span>
-</span></span><span class="line"><span class="cl">Detailed content with proper formatting...
-</span></span></code></pre></div><h3 id="4-theme-customization">4. Theme Customization</h3>
-<p>The GitHub Style theme provided most of what I needed, but I made some customizations:</p>
-<h4 id="custom-user-profile-template">Custom User Profile Template</h4>
-<p>I created a custom <code>layouts/partials/user-profile.html</code> to:</p>
-<ul>
-<li>Display the full LinkedIn URL correctly</li>
-<li>Remove unwanted social media links (Twitter/X, RSS)</li>
-<li>Maintain the professional appearance</li>
-</ul>
-<h4 id="image-handling">Image Handling</h4>
-<p>Images are stored in the <code>static/images/</code> directory and referenced in posts:</p>
-<p><img src="/images/hugo-logo-demo.svg" alt="Hugo Logo Demo"></p>
-<h3 id="5-advanced-features">5. Advanced Features</h3>
-<h4 id="darklight-mode-toggle">Dark/Light Mode Toggle</h4>
-<p>The theme includes built-in dark/light mode functionality with:</p>
-<ul>
-<li>Automatic system preference detection</li>
-<li>Persistent user preferences</li>
-<li>Smooth theme transitions</li>
-</ul>
-<h4 id="latex-support">LaTeX Support</h4>
-<p>For mathematical expressions, I configured LaTeX rendering:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">markup</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">math</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">enable</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">use</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;katex&#34;</span><span class="w">
-</span></span></span></code></pre></div><p>This allows for beautiful mathematical formulas like:</p>
-<p>$$\bar{X} \sim N(\mu, \frac{\sigma^2}{n})$$</p>
-<h4 id="code-syntax-highlighting">Code Syntax Highlighting</h4>
-<p>Hugo&rsquo;s built-in syntax highlighting works perfectly:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">build_website</span><span class="p">():</span>
-</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;Build a personal website with Hugo&#34;&#34;&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">site</span> <span class="o">=</span> <span class="n">HugoSite</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">    <span class="n">site</span><span class="o">.</span><span class="n">configure_theme</span><span class="p">(</span><span class="s2">&#34;github-style&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">site</span><span class="o">.</span><span class="n">add_content</span><span class="p">(</span><span class="s2">&#34;blog posts&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">site</span><span class="o">.</span><span class="n">deploy_to_github_pages</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s2">&#34;Success!&#34;</span>
-</span></span></code></pre></div><h2 id="website-architecture">Website Architecture</h2>
-<p>Here&rsquo;s a visual overview of how the website is structured and deployed:</p>
-<p><img src="/images/website-architecture.svg" alt="Website Architecture"></p>
-<h2 id="deployment-strategy">Deployment Strategy</h2>
-<h3 id="github-actions-cicd">GitHub Actions CI/CD</h3>
-<p>I set up automated deployment using GitHub Actions:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Deploy Hugo site to GitHub Pages</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">on</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">push</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="l">main]</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">jobs</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">build</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l">ubuntu-latest</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">actions/checkout@v3</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">submodules</span><span class="p">:</span><span class="w"> </span><span class="l">recursive</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">peaceiris/actions-hugo@v2</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">hugo-version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;latest&#39;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">extended</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">hugo --minify</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">actions/deploy-pages@v2</span><span class="w">
-</span></span></span></code></pre></div><h3 id="benefits-of-this-approach">Benefits of This Approach</h3>
-<ol>
-<li><strong>Automated Deployment</strong>: Every push to main branch triggers a rebuild</li>
-<li><strong>Version Control</strong>: All changes are tracked in Git</li>
-<li><strong>Rollback Capability</strong>: Easy to revert to previous versions</li>
-<li><strong>Collaboration</strong>: Others can contribute via pull requests</li>
-</ol>
-<h2 id="performance-optimizations">Performance Optimizations</h2>
-<h3 id="build-optimizations">Build Optimizations</h3>
-<ul>
-<li><strong>Minification</strong>: CSS and JavaScript are minified</li>
-<li><strong>Image Optimization</strong>: Images are optimized for web</li>
-<li><strong>Static Generation</strong>: No server-side processing needed</li>
-</ul>
-<h3 id="seo-enhancements">SEO Enhancements</h3>
-<ul>
-<li><strong>Meta Tags</strong>: Comprehensive meta tag configuration</li>
-<li><strong>Structured Data</strong>: Proper HTML structure for search engines</li>
-<li><strong>Sitemap</strong>: Automatic sitemap generation</li>
-<li><strong>RSS Feed</strong>: Built-in RSS feed for content syndication</li>
-</ul>
-<h2 id="lessons-learned">Lessons Learned</h2>
-<h3 id="what-worked-well">What Worked Well</h3>
-<ol>
-<li><strong>Task Master AI</strong>: Excellent for project management and task tracking</li>
-<li><strong>Hugo&rsquo;s Speed</strong>: Incredibly fast build times</li>
-<li><strong>GitHub Integration</strong>: Seamless deployment workflow</li>
-<li><strong>Theme Quality</strong>: GitHub Style theme is well-designed and maintained</li>
-</ol>
-<h3 id="challenges-and-solutions">Challenges and Solutions</h3>
-<ol>
-<li><strong>Theme Customization</strong>: Required understanding of Hugo&rsquo;s templating system</li>
-<li><strong>Image Management</strong>: Needed to organize images properly in static directory</li>
-<li><strong>Content Structure</strong>: Required planning for consistent content organization</li>
-</ol>
-<h2 id="future-enhancements">Future Enhancements</h2>
-<p>I&rsquo;m planning to add several features:</p>
-<ul>
-<li><strong>Search Functionality</strong>: Full-text search across all posts</li>
-<li><strong>Comment System</strong>: Enable discussions on blog posts</li>
-<li><strong>Analytics</strong>: Track visitor engagement and popular content</li>
-<li><strong>Newsletter</strong>: Email subscription for new posts</li>
-<li><strong>Portfolio Section</strong>: Showcase projects and achievements</li>
-</ul>
-<h2 id="resources-and-tools">Resources and Tools</h2>
-<h3 id="documentation">Documentation</h3>
-<ul>
-<li><a href="https://gohugo.io/documentation/">Hugo Documentation</a></li>
-<li><a href="https://docs.github.com/en/pages">GitHub Pages Documentation</a></li>
-<li><a href="https://github.com/MeiK2333/github-style">GitHub Style Theme</a></li>
-</ul>
-<h3 id="useful-commands">Useful Commands</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Start development server</span>
-</span></span><span class="line"><span class="cl">hugo server -D
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Build for production</span>
-</span></span><span class="line"><span class="cl">hugo --minify
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Create new post</span>
-</span></span><span class="line"><span class="cl">hugo new post/my-new-post.md
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Check site locally</span>
-</span></span><span class="line"><span class="cl">hugo server --buildDrafts
-</span></span></code></pre></div><h2 id="conclusion">Conclusion</h2>
-<p>Building this personal website has been an excellent learning experience. The combination of Hugo, GitHub Pages, and modern development practices creates a powerful, maintainable, and professional web presence.</p>
-<p>The key to success was:</p>
-<ul>
-<li><strong>Planning</strong>: Using Task Master AI for structured development</li>
-<li><strong>Iteration</strong>: Building incrementally and testing frequently</li>
-<li><strong>Automation</strong>: Leveraging GitHub Actions for seamless deployment</li>
-<li><strong>Content</strong>: Focusing on valuable, well-structured content</li>
-</ul>
-<p>Whether you&rsquo;re a developer, data scientist, or any professional, having a personal website is invaluable for showcasing your work and building your online presence.</p>
-<hr>
-<p><em>Have you built a personal website? I&rsquo;d love to hear about your experience and any tips you might have! Feel free to reach out on <a href="https://www.linkedin.com/in/rahulpandey1901/">LinkedIn</a> or <a href="mailto:rpandey1901@gmail.com">email me</a>.</em></p></article>
-                
-                
-                <div class="post-navigation d-flex flex-justify-between flex-items-center mt-4 pt-4 border-top">
-                  
-                  <div class="prev-post">
-                    <a class="btn btn-outline" href="http://localhost:1313/post/third-post/">
-                      <svg class="octicon octicon-arrow-left mr-2" viewBox="0 0 16 16" width="16" height="16">
-                        <path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"></path>
-                      </svg>
-                      Advanced Data Analytics: From Theory to Practice
-                    </a>
-                  </div>
-                  
-                  
-                  
-                  <div></div>
-                  
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
-</div>
-<script type="application/javascript" src='http://localhost:1313/js/toc.js'></script>
-<link rel="stylesheet" href='http://localhost:1313/css/toc.css' />
-
-  
-</div>
-
-  <div class="footer container-xl width-full p-responsive">
-  <div
-    class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between flex-sm-items-center pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
-    <a aria-label="Homepage" title="GitHub" class="footer-octicon d-none d-lg-block mr-lg-4" href="http://localhost:1313/">
-      <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24">
-        <path fill-rule="evenodd"
-          d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
-        </path>
-      </svg>
-    </a>
-    <ul class="list-style-none d-flex flex-wrap col-12 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
-      
-      <li class="mr-3 mr-lg-0">Theme by <a href='https://github.com/MeiK2333/github-style'>github-style</a></li>
-      
-      <li class="mr-3 mr-lg-0">GitHub and the Invertocat logo are trademarks of <a href="https://github.com/">GitHub, Inc.</a></li>
-    </ul>
-  </div>
-  <div class="d-flex flex-justify-center pb-6">
-    <span class="f6 text-gray-light"></span>
-  </div>
-
-
-</div>
-
-</body>
-
-<script type="application/javascript" src="http://localhost:1313/js/github-style.js"></script>
-
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
-<script type="application/javascript" src='http://localhost:1313/js/search.js'></script>
-
-
-
-</html>
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width"><script type=application/javascript src=https://irahulpandey.github.io/js/theme-mode.js></script><link rel=stylesheet href=https://irahulpandey.github.io/css/frameworks.min.css><link rel=stylesheet href=https://irahulpandey.github.io/css/github.min.css><link rel=stylesheet href=https://irahulpandey.github.io/css/github-style.css><link rel=stylesheet href=https://irahulpandey.github.io/css/light.css><link rel=stylesheet href=https://irahulpandey.github.io/css/dark.css><link rel=stylesheet href=https://irahulpandey.github.io/css/syntax.css><title>Building My Personal Website with Hugo and GitHub Pages - Rahul Pandey's Blog</title><link rel=icon type=image/x-icon href=/images/github-mark.png><meta name=theme-color content="#1e2327"><link rel=stylesheet href=https://irahulpandey.github.io/css/custom.css><meta name=description content="Building a personal website is one of the best ways to showcase your professional journey and share your knowledge with the world. In this post, I&rsquo;ll walk you through how I built this website using modern tools and best practices.
+"><meta name=keywords content='cloud AI,MLOps,machine learning,solutions architecture,data analytics,Python,adidas'><meta name=robots content="noodp"><link rel=canonical href=https://irahulpandey.github.io/post/building-my-personal-website/><meta name=twitter:card content="summary"><meta name=twitter:title content="Building My Personal Website with Hugo and GitHub Pages - Rahul Pandey's Blog"><meta name=twitter:description content="Building a personal website is one of the best ways to showcase your professional journey and share your knowledge with the world. In this post, I&rsquo;ll walk you through how I built this website using modern tools and best practices.
+"><meta name=twitter:site content="https://irahulpandey.github.io/"><meta name=twitter:creator content><meta name=twitter:image content="https://irahulpandey.github.io/"><meta property="og:type" content="article"><meta property="og:title" content="Building My Personal Website with Hugo and GitHub Pages - Rahul Pandey's Blog"><meta property="og:description" content="Building a personal website is one of the best ways to showcase your professional journey and share your knowledge with the world. In this post, I&rsquo;ll walk you through how I built this website using modern tools and best practices.
+"><meta property="og:url" content="https://irahulpandey.github.io/post/building-my-personal-website/"><meta property="og:site_name" content="Building My Personal Website with Hugo and GitHub Pages"><meta property="og:image" content="https://irahulpandey.github.io/"><meta property="og:image:width" content="2048"><meta property="og:image:height" content="1024"><meta property="article:published_time" content="2025-01-13 16:00:00 +0000 UTC"></head><body><div style=position:relative><header class="Header js-details-container Details px-3 px-md-4 px-lg-5 flex-wrap flex-md-nowrap open Details--on"><div class="Header-item mobile-none" style=margin-top:-4px;margin-bottom:-4px><a class=Header-link href=https://irahulpandey.github.io/><img class=octicon height=32 width=32 src=/images/github-mark-white.png></a></div><div class="Header-item d-md-none"><button class="Header-link btn-link js-details-target" type=button onclick='document.querySelector("#header-search").style.display=document.querySelector("#header-search").style.display=="none"?"block":"none"'>
+<svg height="24" class="octicon octicon-three-bars" viewBox="0 0 16 16" width="24"><path fill-rule="evenodd" d="M1 2.75A.75.75.0 011.75 2h12.5a.75.75.0 110 1.5H1.75A.75.75.0 011 2.75zm0 5A.75.75.0 011.75 7h12.5a.75.75.0 110 1.5H1.75A.75.75.0 011 7.75zM1.75 12a.75.75.0 100 1.5h12.5a.75.75.0 100-1.5H1.75z"/></svg></button></div><div style=display:none id=header-search class="Header-item Header-item--full flex-column flex-md-row width-full flex-order-2 flex-md-order-none mr-0 mr-md-3 mt-3 mt-md-0 Details-content--hidden-not-important d-md-flex"><div class="Header-search header-search flex-auto js-site-search position-relative flex-self-stretch flex-md-self-auto mb-3 mb-md-0 mr-0 mr-md-3 scoped-search site-scoped-search js-jump-to"><div class=position-relative><form target=_blank id=search-form accept-charset=UTF-8 method=get autocomplete=off><label class="Header-search-label form-control input-sm header-search-wrapper p-0 js-chromeless-input-container header-search-wrapper-jump-to position-relative d-flex flex-justify-between flex-items-center"><input type=text class="Header-search-input form-control input-sm header-search-input jump-to-field js-jump-to-field js-site-search-focus js-site-search-field is-clearable" name=q placeholder=Search autocomplete=off></label></form></div></div></div><div class="Header-item Header-item--full flex-justify-center d-md-none position-relative"><a class=Header-link href=https://irahulpandey.github.io/><img class="octicon octicon-mark-github v-align-middle" height=32 width=32 src=/images/github-mark-white.png></a></div><div class=Header-item style=margin-right:0><a href=javascript:void(0) class="Header-link no-select" onclick=switchTheme()><svg style="fill:var(--color-profile-color-modes-toggle-moon)" class="no-select" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.52208 7.71754c3.05612.0 5.53362-2.47748 5.53362-5.5336C10.0557 1.93498 10.0392 1.68986 10.0074 1.44961 9.95801 1.07727 10.3495.771159 10.6474.99992c1.4679 1.12724 2.4141 2.90007 2.4141 4.89391.0 3.40575-2.7609 6.16667-6.16665 6.16667-2.94151.0-5.40199-2.0595-6.018122-4.81523C.794841 6.87902 1.23668 6.65289 1.55321 6.85451 2.41106 7.40095 3.4296 7.71754 4.52208 7.71754z"/></svg></a></div></header></div><div id=search-result class="container-lg px-3 new-discussion-timeline" style=display:none></div><div class=application-main><div><main><div class="gisthead pagehead bg-gray-light pb-0 pt-3 mb-4"><div class=px-0><div class="mb-3 d-flex px-3 px-md-3 px-lg-5"><div class="flex-auto min-width-0 width-fit mr-3"><div class=d-flex><div class="d-none d-md-block"><a class="avatar mr-2 flex-shrink-0" href=https://irahulpandey.github.io/><img class=avatar-user src=/images/avatar.png width=32 height=32></a></div><div class="d-flex flex-column"><h1 class="break-word f3 text-normal mb-md-0 mb-1"><span class=author><a href=https://irahulpandey.github.io/>Rahul Pandey</a>
+</span><span class=path-divider>/</span>
+<strong class="css-truncate css-truncate-target mr-1" style=max-width:410px><a href=https://irahulpandey.github.io/post/building-my-personal-website/>Building My Personal Website with Hugo and GitHub Pages</a></strong></h1><div class="note m-0">Created <relative-time datetime="Mon, 13 Jan 2025 16:00:00 +0000" class=no-wrap>Mon, 13 Jan 2025 16:00:00 +0000</relative-time>
+<span class=file-info-divider></span>
+Modified <relative-time datetime="Sat, 13 Sep 2025 20:07:05 +0200" class=no-wrap>Sat, 13 Sep 2025 20:07:05 +0200</relative-time></div></div></div></div></div></div></div><div class="container-lg px-3 new-discussion-timeline"><div class="repository-content gist-content"><div><div class="js-gist-file-update-container js-task-list-container file-box"><div id=file-pytest class="file my-2"><div id=post-header class="file-header d-flex flex-md-items-center flex-items-start sticky-header" style=z-index:2><div class="file-info d-flex flex-md-items-center flex-items-start flex-order-1 flex-auto"><div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0"><summary id=toc-toggle onclick=clickToc() class="btn btn-octicon m-0 mr-2 p-2"><svg aria-hidden="true" viewBox="0 0 16 16" height="16" width="16" class="octicon octicon-list-unordered"><path fill-rule="evenodd" d="M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75.0 000 1.5h8.5a.75.75.0 000-1.5h-8.5zm0 5a.75.75.0 000 1.5h8.5a.75.75.0 000-1.5h-8.5zm0 5a.75.75.0 000 1.5h8.5a.75.75.0 000-1.5h-8.5zM3 8A1 1 0 111 8a1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"/></svg></summary><details-menu class=SelectMenu id=toc-details style="display: none;"><div class="SelectMenu-modal rounded-3 mt-1" style=max-height:340px><div class="SelectMenu-list SelectMenu-list--borderless p-2" style=overscroll-behavior:contain id=toc-list></div></div></details-menu>3 min read</div><div class="file-actions flex-order-2 pt-0"><a class="muted-link mr-3" href=/tags/hugo><svg class="octicon octicon-tag" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M2.5 7.775V2.75a.25.25.0 01.25-.25h5.025a.25.25.0 01.177.073l6.25 6.25a.25.25.0 010 .354l-5.025 5.025a.25.25.0 01-.354.0l-6.25-6.25A.25.25.0 012.5 7.775zm-1.5.0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464.0.91.184 1.238.513l6.25 6.25a1.75 1.75.0 010 2.474l-5.026 5.026a1.75 1.75.0 01-2.474.0l-6.25-6.25A1.75 1.75.0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z"/></svg>
+hugo
+</a><a class="muted-link mr-3" href=/tags/github-pages><svg class="octicon octicon-tag" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M2.5 7.775V2.75a.25.25.0 01.25-.25h5.025a.25.25.0 01.177.073l6.25 6.25a.25.25.0 010 .354l-5.025 5.025a.25.25.0 01-.354.0l-6.25-6.25A.25.25.0 012.5 7.775zm-1.5.0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464.0.91.184 1.238.513l6.25 6.25a1.75 1.75.0 010 2.474l-5.026 5.026a1.75 1.75.0 01-2.474.0l-6.25-6.25A1.75 1.75.0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z"/></svg>
+github-pages
+</a><a class="muted-link mr-3" href=/tags/static-site><svg class="octicon octicon-tag" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M2.5 7.775V2.75a.25.25.0 01.25-.25h5.025a.25.25.0 01.177.073l6.25 6.25a.25.25.0 010 .354l-5.025 5.025a.25.25.0 01-.354.0l-6.25-6.25A.25.25.0 012.5 7.775zm-1.5.0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464.0.91.184 1.238.513l6.25 6.25a1.75 1.75.0 010 2.474l-5.026 5.026a1.75 1.75.0 01-2.474.0l-6.25-6.25A1.75 1.75.0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z"/></svg>
+static-site
+</a><a class="muted-link mr-3" href=/tags/web-development><svg class="octicon octicon-tag" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M2.5 7.775V2.75a.25.25.0 01.25-.25h5.025a.25.25.0 01.177.073l6.25 6.25a.25.25.0 010 .354l-5.025 5.025a.25.25.0 01-.354.0l-6.25-6.25A.25.25.0 012.5 7.775zm-1.5.0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464.0.91.184 1.238.513l6.25 6.25a1.75 1.75.0 010 2.474l-5.026 5.026a1.75 1.75.0 01-2.474.0l-6.25-6.25A1.75 1.75.0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z"/></svg>
+web-development
+</a><a class="muted-link mr-3" href=/tags/tutorial><svg class="octicon octicon-tag" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M2.5 7.775V2.75a.25.25.0 01.25-.25h5.025a.25.25.0 01.177.073l6.25 6.25a.25.25.0 010 .354l-5.025 5.025a.25.25.0 01-.354.0l-6.25-6.25A.25.25.0 012.5 7.775zm-1.5.0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464.0.91.184 1.238.513l6.25 6.25a1.75 1.75.0 010 2.474l-5.026 5.026a1.75 1.75.0 01-2.474.0l-6.25-6.25A1.75 1.75.0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z"/></svg>
+tutorial</a></div></div></div><div class="Box-body px-5 pb-5" style=z-index:1><article class="markdown-body entry-content container-lg"><p>Building a personal website is one of the best ways to showcase your professional journey and share your knowledge with the world. In this post, I&rsquo;ll walk you through how I built this website using modern tools and best practices.</p><h2 id=why-hugo-and-github-pages>Why Hugo and GitHub Pages?</h2><p>When deciding on the technology stack for my personal website, I considered several factors:</p><ul><li><strong>Performance</strong>: Static sites load incredibly fast</li><li><strong>Simplicity</strong>: Easy to maintain and update</li><li><strong>Cost</strong>: Free hosting with GitHub Pages</li><li><strong>SEO</strong>: Better search engine optimization</li><li><strong>Security</strong>: No database or server-side vulnerabilities</li></ul><p><img src=/images/website-demo.svg alt="Website Demo Image"></p><h2 id=the-technology-stack>The Technology Stack</h2><p>Here&rsquo;s what I used to build this website:</p><h3 id=core-technologies>Core Technologies</h3><ul><li><strong>Hugo</strong>: Fast static site generator written in Go</li><li><strong>GitHub Style Theme</strong>: Clean, professional theme inspired by GitHub</li><li><strong>GitHub Pages</strong>: Free hosting for static websites</li><li><strong>GitHub Actions</strong>: Automated CI/CD pipeline</li><li><strong>Markdown</strong>: Content authoring format</li></ul><h3 id=development-tools>Development Tools</h3><ul><li><strong>Task Master AI</strong>: Project management and task automation</li><li><strong>Git</strong>: Version control</li><li><strong>VS Code</strong>: Code editor with Hugo extensions</li></ul><h2 id=step-by-step-build-process>Step-by-Step Build Process</h2><h3 id=1-project-initialization>1. Project Initialization</h3><p>I started by setting up the project structure using Task Master AI:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># Initialize Hugo site</span>
+</span></span><span class=line><span class=cl>hugo new site . --force
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Add GitHub Style theme as submodule</span>
+</span></span><span class=line><span class=cl>git submodule add https://github.com/MeiK2333/github-style.git themes/github-style
+</span></span></code></pre></div><h3 id=2-configuration-setup>2. Configuration Setup</h3><p>The heart of any Hugo site is its configuration. I created a comprehensive <code>config.yaml</code>:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=nt>baseURL</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;https://irahulpandey.github.io&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>languageCode</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;en-us&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>title</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;Rahul Pandey&#39;s Blog&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>theme</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;github-style&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>params</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>author</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;Rahul Pandey&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>description</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;Senior Solutions Architect at adidas | Cloud AI &amp; MLOps Specialist&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>github</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;iRahulPandey&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>linkedin</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;https://www.linkedin.com/in/rahulpandey1901/&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>email</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;rpandey1901@gmail.com&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>keywords</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;cloud AI, MLOps, machine learning, solutions architecture, data analytics, Python, adidas&#34;</span><span class=w>
+</span></span></span></code></pre></div><h3 id=3-content-creation>3. Content Creation</h3><p>Creating content in Hugo is straightforward with Markdown:</p><h4 id=homepage-content>Homepage Content</h4><p>I created a detailed <code>content/readme.md</code> file that serves as the main homepage content, showcasing my professional background and expertise.</p><h4 id=blog-posts>Blog Posts</h4><p>Each blog post follows a consistent structure:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-markdown data-lang=markdown><span class=line><span class=cl>---
+</span></span><span class=line><span class=cl>title: &#34;Post Title&#34;
+</span></span><span class=line><span class=cl>date: 2025-01-13T10:00:00Z
+</span></span><span class=line><span class=cl>draft: false
+</span></span><span class=line><span class=cl>summary: &#34;Brief description&#34;
+</span></span><span class=line><span class=cl>tags: [&#34;tag1&#34;, &#34;tag2&#34;]
+</span></span><span class=line><span class=cl>---
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Content introduction here.
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>&lt;!--more--&gt;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=gu>## Main Content
+</span></span></span><span class=line><span class=cl><span class=gu></span>
+</span></span><span class=line><span class=cl>Detailed content with proper formatting...
+</span></span></code></pre></div><h3 id=4-theme-customization>4. Theme Customization</h3><p>The GitHub Style theme provided most of what I needed, but I made some customizations:</p><h4 id=custom-user-profile-template>Custom User Profile Template</h4><p>I created a custom <code>layouts/partials/user-profile.html</code> to:</p><ul><li>Display the full LinkedIn URL correctly</li><li>Remove unwanted social media links (Twitter/X, RSS)</li><li>Maintain the professional appearance</li></ul><h4 id=image-handling>Image Handling</h4><p>Images are stored in the <code>static/images/</code> directory and referenced in posts:</p><p><img src=/images/hugo-logo-demo.svg alt="Hugo Logo Demo"></p><h3 id=5-advanced-features>5. Advanced Features</h3><h4 id=darklight-mode-toggle>Dark/Light Mode Toggle</h4><p>The theme includes built-in dark/light mode functionality with:</p><ul><li>Automatic system preference detection</li><li>Persistent user preferences</li><li>Smooth theme transitions</li></ul><h4 id=latex-support>LaTeX Support</h4><p>For mathematical expressions, I configured LaTeX rendering:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=nt>markup</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>math</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>enable</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>use</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;katex&#34;</span><span class=w>
+</span></span></span></code></pre></div><p>This allows for beautiful mathematical formulas like:</p><p>$$\bar{X} \sim N(\mu, \frac{\sigma^2}{n})$$</p><h4 id=code-syntax-highlighting>Code Syntax Highlighting</h4><p>Hugo&rsquo;s built-in syntax highlighting works perfectly:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>def</span> <span class=nf>build_website</span><span class=p>():</span>
+</span></span><span class=line><span class=cl>    <span class=s2>&#34;&#34;&#34;Build a personal website with Hugo&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=n>site</span> <span class=o>=</span> <span class=n>HugoSite</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=n>site</span><span class=o>.</span><span class=n>configure_theme</span><span class=p>(</span><span class=s2>&#34;github-style&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=n>site</span><span class=o>.</span><span class=n>add_content</span><span class=p>(</span><span class=s2>&#34;blog posts&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=n>site</span><span class=o>.</span><span class=n>deploy_to_github_pages</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=s2>&#34;Success!&#34;</span>
+</span></span></code></pre></div><h2 id=website-architecture>Website Architecture</h2><p>Here&rsquo;s a visual overview of how the website is structured and deployed:</p><p><img src=/images/website-architecture.svg alt="Website Architecture"></p><h2 id=deployment-strategy>Deployment Strategy</h2><h3 id=github-actions-cicd>GitHub Actions CI/CD</h3><p>I set up automated deployment using GitHub Actions:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Deploy Hugo site to GitHub Pages</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>on</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>push</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>branches</span><span class=p>:</span><span class=w> </span><span class=p>[</span><span class=l>main]</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>jobs</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>build</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>runs-on</span><span class=p>:</span><span class=w> </span><span class=l>ubuntu-latest</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>actions/checkout@v3</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>with</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>submodules</span><span class=p>:</span><span class=w> </span><span class=l>recursive</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>peaceiris/actions-hugo@v2</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>with</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>hugo-version</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;latest&#39;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>extended</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=l>hugo --minify</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>actions/deploy-pages@v2</span><span class=w>
+</span></span></span></code></pre></div><h3 id=benefits-of-this-approach>Benefits of This Approach</h3><ol><li><strong>Automated Deployment</strong>: Every push to main branch triggers a rebuild</li><li><strong>Version Control</strong>: All changes are tracked in Git</li><li><strong>Rollback Capability</strong>: Easy to revert to previous versions</li><li><strong>Collaboration</strong>: Others can contribute via pull requests</li></ol><h2 id=performance-optimizations>Performance Optimizations</h2><h3 id=build-optimizations>Build Optimizations</h3><ul><li><strong>Minification</strong>: CSS and JavaScript are minified</li><li><strong>Image Optimization</strong>: Images are optimized for web</li><li><strong>Static Generation</strong>: No server-side processing needed</li></ul><h3 id=seo-enhancements>SEO Enhancements</h3><ul><li><strong>Meta Tags</strong>: Comprehensive meta tag configuration</li><li><strong>Structured Data</strong>: Proper HTML structure for search engines</li><li><strong>Sitemap</strong>: Automatic sitemap generation</li><li><strong>RSS Feed</strong>: Built-in RSS feed for content syndication</li></ul><h2 id=lessons-learned>Lessons Learned</h2><h3 id=what-worked-well>What Worked Well</h3><ol><li><strong>Task Master AI</strong>: Excellent for project management and task tracking</li><li><strong>Hugo&rsquo;s Speed</strong>: Incredibly fast build times</li><li><strong>GitHub Integration</strong>: Seamless deployment workflow</li><li><strong>Theme Quality</strong>: GitHub Style theme is well-designed and maintained</li></ol><h3 id=challenges-and-solutions>Challenges and Solutions</h3><ol><li><strong>Theme Customization</strong>: Required understanding of Hugo&rsquo;s templating system</li><li><strong>Image Management</strong>: Needed to organize images properly in static directory</li><li><strong>Content Structure</strong>: Required planning for consistent content organization</li></ol><h2 id=future-enhancements>Future Enhancements</h2><p>I&rsquo;m planning to add several features:</p><ul><li><strong>Search Functionality</strong>: Full-text search across all posts</li><li><strong>Comment System</strong>: Enable discussions on blog posts</li><li><strong>Analytics</strong>: Track visitor engagement and popular content</li><li><strong>Newsletter</strong>: Email subscription for new posts</li><li><strong>Portfolio Section</strong>: Showcase projects and achievements</li></ul><h2 id=resources-and-tools>Resources and Tools</h2><h3 id=documentation>Documentation</h3><ul><li><a href=https://gohugo.io/documentation/>Hugo Documentation</a></li><li><a href=https://docs.github.com/en/pages>GitHub Pages Documentation</a></li><li><a href=https://github.com/MeiK2333/github-style>GitHub Style Theme</a></li></ul><h3 id=useful-commands>Useful Commands</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># Start development server</span>
+</span></span><span class=line><span class=cl>hugo server -D
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Build for production</span>
+</span></span><span class=line><span class=cl>hugo --minify
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Create new post</span>
+</span></span><span class=line><span class=cl>hugo new post/my-new-post.md
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Check site locally</span>
+</span></span><span class=line><span class=cl>hugo server --buildDrafts
+</span></span></code></pre></div><h2 id=conclusion>Conclusion</h2><p>Building this personal website has been an excellent learning experience. The combination of Hugo, GitHub Pages, and modern development practices creates a powerful, maintainable, and professional web presence.</p><p>The key to success was:</p><ul><li><strong>Planning</strong>: Using Task Master AI for structured development</li><li><strong>Iteration</strong>: Building incrementally and testing frequently</li><li><strong>Automation</strong>: Leveraging GitHub Actions for seamless deployment</li><li><strong>Content</strong>: Focusing on valuable, well-structured content</li></ul><p>Whether you&rsquo;re a developer, data scientist, or any professional, having a personal website is invaluable for showcasing your work and building your online presence.</p><hr><p><em>Have you built a personal website? I&rsquo;d love to hear about your experience and any tips you might have! Feel free to reach out on <a href=https://www.linkedin.com/in/rahulpandey1901/>LinkedIn</a> or <a href=mailto:rpandey1901@gmail.com>email me</a>.</em></p></article><div class="post-navigation d-flex flex-justify-between flex-items-center mt-4 pt-4 border-top"><div class=prev-post><a class="btn btn-outline" href=https://irahulpandey.github.io/post/third-post/><svg class="octicon octicon-arrow-left mr-2" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75.0 01-1.06.0L2.47 8.28a.75.75.0 010-1.06l4.25-4.25a.75.75.0 011.06 1.06L4.81 7h7.44a.75.75.0 010 1.5H4.81l2.97 2.97a.75.75.0 010 1.06z"/></svg>
+Advanced Data Analytics: From Theory to Practice</a></div><div></div></div></div></div></div></div></div></div></main></div><script type=application/javascript src=https://irahulpandey.github.io/js/toc.js></script><link rel=stylesheet href=https://irahulpandey.github.io/css/toc.css></div><div class="footer container-xl width-full p-responsive"><div class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between flex-sm-items-center pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light"><a aria-label=Homepage title=GitHub class="footer-octicon d-none d-lg-block mr-lg-4" href=https://irahulpandey.github.io/><svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" width="24"><path fill-rule="evenodd" d="M8 0C3.58.0.0 3.58.0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38.0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95.0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12.0.0.67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15.0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48.0 1.07-.01 1.93-.01 2.2.0.21.15.46.55.38A8.013 8.013.0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a><ul class="list-style-none d-flex flex-wrap col-12 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0"><li class="mr-3 mr-lg-0">Theme by <a href=https://github.com/MeiK2333/github-style>github-style</a></li><li class="mr-3 mr-lg-0">GitHub and the Invertocat logo are trademarks of <a href=https://github.com/>GitHub, Inc.</a></li></ul></div><div class="d-flex flex-justify-center pb-6"><span class="f6 text-gray-light"></span></div></div></body><script type=application/javascript src=https://irahulpandey.github.io/js/github-style.js></script><script src=https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js></script><script type=application/javascript src=https://irahulpandey.github.io/js/search.js></script></html>
