@@ -4,6 +4,8 @@
 
 A modern, responsive personal website built with Hugo and deployed to GitHub Pages.
 
+<!-- Test commit to trigger GitHub Actions CI/CD pipeline -->
+
 ## 🚀 Features
 
 - **Fast & Modern**: Built with Hugo static site generator
