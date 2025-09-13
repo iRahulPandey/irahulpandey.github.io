@@ -1,4 +1,37 @@
 <div>
+  <!-- Structured Data for Blog Posts -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "{{ .Title }}",
+    "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
+    "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
+    "author": {
+      "@type": "Person",
+      "name": "{{ .Site.Params.author }}",
+      "url": "{{ .Site.BaseURL }}"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "{{ .Site.Title }}",
+      "url": "{{ .Site.BaseURL }}"
+    },
+    "description": "{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify }}{{ end }}",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "{{ .Permalink }}"
+    },
+    "url": "{{ .Permalink }}",
+    "image": {
+      "@type": "ImageObject",
+      "url": "{{ .Site.BaseURL }}{{ with .Params.image }}{{ . }}{{ else }}images/og-image.svg{{ end }}"
+    }
+    {{ if .Params.tags }},
+    "keywords": "{{ delimit .Params.tags ", " }}"
+    {{ end }}
+  }
+  </script>
   <main>
     <div class="gisthead pagehead bg-gray-light pb-0 pt-3 mb-4">
       <div class="px-0">
@@ -8,7 +41,7 @@
               <div class="d-none d-md-block">
                 <a class="avatar mr-2 flex-shrink-0" href="{{ .Site.BaseURL }}">
                   <img class=" avatar-user"
-                    src="{{ with $.Site.Params.avatar }}{{ $.Site.Params.avatar }}{{ else }}{{ "images/avatar.png" | absURL }}{{ end }}"
+                    src="{{ with $.Site.Params.avatar }}{{ $.Site.Params.avatar }}{{ else }}{{ "images/avatar.webp" | absURL }}{{ end }}"
                     width="32" height="32"></a>
               </div>
               <div class="d-flex flex-column">
@@ -17,7 +50,7 @@
                     <a href="{{ .Site.BaseURL }}">{{ .Site.Params.author }}</a>
                   </span>
                   <span class="path-divider">/</span>
-                  <strong class="css-truncate css-truncate-target mr-1" style="max-width: 410px">
+                  <strong class="mr-1">
                     <a href="{{ .Permalink }}">{{ .Title }}</a>
                   </strong>
                 </h1>

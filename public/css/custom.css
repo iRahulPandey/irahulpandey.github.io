@@ -1,5 +1,27 @@
 /* Custom responsive design adjustments for Hugo GitHub Style theme */
 
+/* Performance optimizations */
+@font-face {
+  font-family: 'system-ui';
+  font-display: swap;
+}
+
+/* Image optimization */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Lazy loading for images */
+img[loading="lazy"] {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+img[loading="lazy"].loaded {
+  opacity: 1;
+}
+
 /* Base responsive adjustments */
 @media (max-width: 768px) {
   /* Post navigation adjustments for mobile */
@@ -127,3 +149,138 @@
     padding: 20px 15px;
   }
 }
+
+/* Header icon styling - make avatar circular */
+.Header .octicon[src*="avatar"] {
+  border-radius: 50% !important;
+  object-fit: cover;
+  background: transparent;
+  border: 2px solid var(--color-border-primary, #d0d7de);
+  transition: border-color 0.2s ease;
+}
+
+.Header .octicon[src*="avatar"]:hover {
+  border-color: var(--color-accent-fg, #0969da);
+}
+
+/* Ensure header icon has proper dimensions */
+.Header .Header-link .octicon[src*="avatar"] {
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px;
+  min-height: 32px;
+}
+
+/* Text logo styling */
+.header-text-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+  border: 2px solid var(--color-border-primary, #d0d7de);
+  transition: all 0.2s ease;
+}
+
+.header-text-logo:hover {
+  border-color: var(--color-accent-fg, #0969da);
+  transform: scale(1.05);
+}
+
+/* Alternative: Use GitHub icon instead of avatar */
+.Header .header-logo {
+  border-radius: 50% !important;
+  object-fit: cover;
+  background: transparent;
+  border: 2px solid var(--color-border-primary, #d0d7de);
+  transition: border-color 0.2s ease;
+}
+
+.Header .header-logo:hover {
+  border-color: var(--color-accent-fg, #0969da);
+}
+
+/* Sticky header - keep header visible when scrolling */
+header.Header,
+.Header,
+div[style*="position: relative"] > header.Header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border-primary, #d0d7de);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  background: var(--color-canvas-default, #ffffff);
+}
+
+/* Ensure the header container is also sticky */
+div[style*="position: relative"] {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+}
+
+/* Force sticky behavior even with JavaScript interactions */
+.Header.js-details-container {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+}
+
+/* Make sure the header stays visible on all pages */
+body .Header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+}
+
+/* Ensure content doesn't get hidden behind sticky header */
+body {
+  padding-top: 0;
+}
+
+/* Adjust scroll padding to account for sticky header */
+html {
+  scroll-padding-top: 80px;
+}
+
+/* Fix post title truncation - allow full title to display */
+.gisthead .css-truncate-target,
+.gisthead strong {
+  max-width: none !important;
+  white-space: normal !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+}
+
+/* Ensure post titles are fully visible */
+.gisthead h1 {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Better responsive behavior for post titles */
+@media (max-width: 768px) {
+  .gisthead h1 {
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+  
+  .gisthead .d-flex {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .gisthead .author {
+    margin-bottom: 0.25rem;
+  }
+}
+
+/* Organization icons styling - removed to prevent interference with GitHub icon */

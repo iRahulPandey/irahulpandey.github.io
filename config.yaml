@@ -17,12 +17,28 @@ params:
   lastmod: true
   favicon: "/images/github-mark.png"
   avatar: "/images/avatar.png"
-  headerIcon: "/images/github-mark-white.png"
+  # headerIcon: "/images/avatar.png"  # Commented out to use text logo
+  # headerLogo: "RP"  # Simple text logo as fallback - removed
   location: "Germany"
   userStatusEmoji: "🚀"
   enableGitalk: false
   enableSearch: true
   custom_css: ["css/custom.css"]
+  
+  # Organization links
+  links:
+    - title: "GitHub"
+      href: "https://github.com/iRahulPandey"
+      icon: "/images/github-mark.png"
+    - title: "LinkedIn"
+      href: "https://www.linkedin.com/in/rahulpandey1901/"
+      icon: "/images/linkedin.png"
+    - title: "Medium"
+      href: "https://medium.com/@irahulpandey"
+      icon: "/images/link.png"
+  
+  # Font optimization
+  fontDisplay: "swap"  # Use font-display: swap for better performance
 
 markup:
   highlight:
@@ -43,3 +59,33 @@ taxonomies:
 
 frontmatter:
   lastmod: ["lastmod", ":fileModTime", ":default"]
+
+# Sitemap configuration
+sitemap:
+  changefreq: weekly
+  priority: 0.5
+  filename: sitemap.xml
+
+# Performance optimizations
+minify:
+  disableCSS: false
+  disableHTML: false
+  disableJS: false
+  disableJSON: false
+  disableSVG: false
+  disableXML: false
+  minifyOutput: true
+
+# Font optimization
+
+# Output formats
+outputs:
+  home:
+    - HTML
+    - RSS
+  section:
+    - HTML
+    - RSS
+  taxonomy:
+    - HTML
+    - RSS
