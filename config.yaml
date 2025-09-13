@@ -60,6 +60,10 @@ minify:
   disableXML: false
   minifyOutput: true
 
+# Font optimization
+params:
+  fontDisplay: "swap"  # Use font-display: swap for better performance
+
 # Output formats
 outputs:
   home:

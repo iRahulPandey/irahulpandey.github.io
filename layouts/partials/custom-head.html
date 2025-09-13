@@ -1,0 +1,76 @@
+<!-- Web Vitals Monitoring -->
+<script async src="https://unpkg.com/web-vitals/dist/web-vitals.iife.js"></script>
+<script>
+  // Performance monitoring configuration
+  const performanceConfig = {
+    enableLogging: true,
+    enableAnalytics: false, // Set to true in production with analytics service
+    thresholds: {
+      CLS: 0.1,
+      FID: 100,
+      LCP: 2500,
+      FCP: 1800,
+      TTFB: 800
+    }
+  };
+
+  function sendToAnalytics(metric) {
+    const isGood = metric.value <= performanceConfig.thresholds[metric.name];
+    const status = isGood ? 'good' : 'needs-improvement';
+    
+    if (performanceConfig.enableLogging) {
+      console.log(`Web Vital: ${metric.name}`, {
+        value: metric.value,
+        delta: metric.delta,
+        status: status,
+        threshold: performanceConfig.thresholds[metric.name]
+      });
+    }
+    
+    // In a production environment, you would send this to your analytics service
+    if (performanceConfig.enableAnalytics) {
+      // Example: gtag('event', metric.name, { 
+      //   value: Math.round(metric.value),
+      //   custom_parameter_status: status
+      // });
+    }
+  }
+  
+  // Enhanced performance monitoring
+  function initPerformanceMonitoring() {
+    if (typeof webVitals !== 'undefined') {
+      // Core Web Vitals
+      webVitals.getCLS(sendToAnalytics);
+      webVitals.getFID(sendToAnalytics);
+      webVitals.getLCP(sendToAnalytics);
+      webVitals.getFCP(sendToAnalytics);
+      webVitals.getTTFB(sendToAnalytics);
+      
+      // Additional performance metrics
+      if ('performance' in window) {
+        // Navigation timing
+        window.addEventListener('load', function() {
+          const navigation = performance.getEntriesByType('navigation')[0];
+          if (navigation) {
+            console.log('Navigation Timing:', {
+              domContentLoaded: navigation.domContentLoadedEventEnd - navigation.domContentLoadedEventStart,
+              loadComplete: navigation.loadEventEnd - navigation.loadEventStart,
+              totalPageLoad: navigation.loadEventEnd - navigation.fetchStart
+            });
+          }
+        });
+      }
+    }
+  }
+  
+  // Initialize monitoring when page loads
+  addEventListener('load', initPerformanceMonitoring);
+</script>
+
+<!-- Preload critical resources -->
+<link rel="preload" href="{{ "css/custom.css" | absURL }}" as="style">
+<link rel="preload" href="{{ "images/avatar.webp" | absURL }}" as="image">
+
+<!-- DNS prefetch for external resources -->
+<link rel="dns-prefetch" href="//unpkg.com">
+<link rel="dns-prefetch" href="//github.com">
