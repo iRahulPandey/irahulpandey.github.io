@@ -1,0 +1,176 @@
+Project Overview
+
+Create a minimal personal website using Hugo with GitHub Style theme
+Clean, GitHub-inspired design with only essential sections
+Automated deployment pipeline using GitHub Actions CI/CD
+
+Core Requirements
+Technology Stack
+
+Static Site Generator: Hugo (Extended version)
+Theme: GitHub Style by MeiK2333
+Version Control: GitHub repository
+Content Format: Markdown (.md) files
+Deployment: GitHub Actions CI/CD
+Hosting: GitHub Pages
+
+Website Structure
+Overview Tab (Homepage)
+
+Personal introduction and bio
+Skills section with programming languages/technologies
+Social links (GitHub, Twitter, Email, LinkedIn)
+Professional summary or tagline
+Location and contact information
+Profile avatar/image
+
+Posts Tab
+
+Blog posts listing with title, date, and summary
+Individual post pages with full content
+Post categories and tags
+Reading time estimation
+Navigation between posts (previous/next)
+
+Design Requirements
+
+Light Mode: Clean white background with dark text (default GitHub styling)
+Dark Mode: Dark background with light text (GitHub dark theme inspired)
+Theme Toggle: Switch button to toggle between light/dark modes
+Responsive Design: Mobile-friendly layout
+Typography: Clean, readable fonts (system fonts or GitHub-style typography)
+Minimal Navigation: Simple header with Overview and Posts tabs only
+
+Content Management
+
+Write posts as markdown files in /content/post/ directory
+Front matter structure:
+
+yaml  ---
+  title: "Post Title"
+  date: 2025-01-01T10:00:00Z
+  draft: false
+  summary: "Brief description"
+  tags: ["tag1", "tag2"]
+  ---
+
+Use <!--more--> tag to separate post excerpt from full content
+Support for code syntax highlighting
+LaTeX support for mathematical expressions (optional)
+
+Technical Implementation
+Repository Structure
+├── content/
+│   ├── post/           # Blog posts
+│   └── _index.md       # Homepage content
+├── static/
+│   └── images/         # Images and avatars
+├── themes/
+│   └── github-style/   # Theme files (submodule)
+├── config.yaml         # Hugo configuration
+└── .github/
+    └── workflows/
+        └── deploy.yml  # GitHub Actions workflow
+GitHub Actions CI/CD Pipeline
+
+Trigger Events:
+
+Push to main branch
+Manual workflow dispatch
+
+
+Build Steps:
+
+Checkout repository with submodules
+Setup Hugo Extended (latest version)
+Build static site with production environment
+Deploy to GitHub Pages
+
+
+Environment Variables:
+
+HUGO_ENV=production
+GitHub token for Pages deployment
+
+
+
+Configuration Requirements
+
+Site configuration in config.yaml:
+
+yaml  baseURL: "https://irahulpandey.github.io"
+  languageCode: "en-us"
+  title: "Your Name's Blog"
+  theme: "github-style"
+  
+  params:
+    author: "Your Name"
+    description: "Your tagline"
+    github: "username"
+    email: "email@domain.com"
+    avatar: "/images/avatar.png"
+    location: "Your Location"
+Theme Features
+
+Gitalk comments integration (optional)
+RSS feed generation
+SEO-optimized meta tags
+Fast loading performance
+Code syntax highlighting
+Archive page for posts
+404 error page
+
+User Experience
+Navigation Flow
+
+Homepage (Overview): Profile information, skills, social links
+Posts Page: List of all blog posts with excerpts
+Individual Posts: Full post content with navigation
+Theme Toggle: Accessible dark/light mode switcher
+
+Performance Targets
+
+Page load time < 2 seconds
+Lighthouse score > 90
+Mobile-responsive design
+Optimized images and assets
+
+Content Strategy
+Overview Page Content
+
+Professional headline/tagline
+Brief bio (2-3 sentences)
+Technical skills list
+Key social/professional links
+Contact information
+
+Posts Content
+
+Technical blog posts
+Project showcases
+Learning notes
+Industry insights
+
+Deployment Strategy
+GitHub Pages Setup
+
+Repository settings configured for Pages deployment
+Custom domain support (optional)
+HTTPS enforcement enabled
+Deployment from gh-pages branch
+
+CI/CD Workflow
+
+Automated builds on content changes
+Preview deployments for pull requests (optional)
+Build status notifications
+Rollback capability
+
+Success Criteria
+
+Clean, professional appearance matching GitHub aesthetic
+Functional dark/light mode toggle
+Fast loading times (< 2s)
+Mobile-responsive layout
+Successful automated deployments
+Easy content creation workflow

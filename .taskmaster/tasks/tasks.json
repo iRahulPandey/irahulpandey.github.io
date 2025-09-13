@@ -1,0 +1,1042 @@
+{
+  "master": {
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Initialize Hugo Project Repository",
+        "description": "Set up the initial project repository structure with Hugo Extended and GitHub Style theme as a submodule.",
+        "details": "1. Create a new GitHub repository named 'irahulpandey.github.io'\n2. Clone the repository locally\n3. Install Hugo Extended (latest version, currently 0.120.4)\n4. Initialize a new Hugo site: `hugo new site . --force`\n5. Add GitHub Style theme as a git submodule: `git submodule add https://github.com/MeiK2333/github-style.git themes/github-style`\n6. Create the basic directory structure as specified in the PRD:\n   - content/\n     - post/\n     - _index.md\n   - static/\n     - images/\n   - themes/\n     - github-style/\n   - config.yaml\n   - .github/workflows/\n7. Initialize git with main branch: `git init -b main`\n8. Make initial commit and push to GitHub",
+        "testStrategy": "Verify repository structure matches PRD requirements. Confirm Hugo server can start locally with the theme. Check that the GitHub repository is properly initialized with the correct structure and submodule.",
+        "priority": "high",
+        "dependencies": [],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Create and Configure GitHub Repository",
+            "description": "Create a new GitHub repository and clone it locally to prepare for the Hugo project setup.",
+            "dependencies": [],
+            "details": "Create a new GitHub repository named 'irahulpandey.github.io'. Clone the repository to your local machine using git clone. Initialize git with main branch using 'git init -b main'.",
+            "status": "done",
+            "testStrategy": "Verify the repository exists on GitHub with the correct name. Confirm the local clone is properly connected to the remote repository by checking git remote -v."
+          },
+          {
+            "id": 2,
+            "title": "Install Hugo Extended and Initialize Site",
+            "description": "Install the latest version of Hugo Extended and initialize a new Hugo site in the repository.",
+            "dependencies": [],
+            "details": "Install Hugo Extended (latest version, currently 0.120.4) following the official documentation for your operating system. Initialize a new Hugo site in the repository directory using the command 'hugo new site . --force'.",
+            "status": "done",
+            "testStrategy": "Verify Hugo installation by running 'hugo version' and confirm it shows the Extended version. Check that the basic Hugo site structure has been created in the repository."
+          },
+          {
+            "id": 3,
+            "title": "Add GitHub Style Theme as Submodule",
+            "description": "Add the GitHub Style theme as a git submodule to the themes directory.",
+            "dependencies": [],
+            "details": "Add the GitHub Style theme as a git submodule using the command 'git submodule add https://github.com/MeiK2333/github-style.git themes/github-style'. Verify the submodule was added correctly by checking the .gitmodules file.",
+            "status": "done",
+            "testStrategy": "Confirm the theme files exist in themes/github-style directory. Verify the .gitmodules file contains the correct reference to the theme repository."
+          },
+          {
+            "id": 4,
+            "title": "Create Required Directory Structure",
+            "description": "Create the basic directory structure as specified in the PRD requirements.",
+            "dependencies": [],
+            "details": "Create the following directory structure: content/ with post/ subdirectory and _index.md file, static/ with images/ subdirectory, and .github/workflows/ directory. Ensure all required directories exist and are properly organized.",
+            "status": "done",
+            "testStrategy": "Verify all directories and files exist in the correct locations. Run 'hugo server' to confirm the site structure is recognized by Hugo without errors."
+          },
+          {
+            "id": 5,
+            "title": "Make Initial Commit and Push to GitHub",
+            "description": "Commit all changes to the repository and push to GitHub to complete the initialization.",
+            "dependencies": [],
+            "details": "Add all files to git staging with 'git add .'. Create an initial commit with a descriptive message like 'Initial Hugo site setup with GitHub Style theme'. Push the changes to the GitHub repository with 'git push -u origin main'.",
+            "status": "done",
+            "testStrategy": "Verify all files appear in the GitHub repository web interface. Confirm the commit history shows the initial commit with the correct message. Check that the submodule appears correctly in GitHub."
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Configure Hugo Settings",
+        "description": "Create and configure the config.yaml file with all required site settings and theme parameters.",
+        "details": "Create config.yaml in the project root with the following configuration:\n```yaml\nbaseURL: \"https://irahulpandey.github.io\"\nlanguageCode: \"en-us\"\ntitle: \"Your Name's Blog\"\ntheme: \"github-style\"\n\nparams:\n  author: \"Your Name\"\n  description: \"Your tagline\"\n  github: \"username\"\n  twitter: \"username\" # Optional\n  linkedin: \"username\" # Optional\n  email: \"email@domain.com\"\n  avatar: \"/images/avatar.png\"\n  location: \"Your Location\"\n  rss: true\n  utterancesRepo: \"username/irahulpandey.github.io\" # For comments (optional)\n  lastmod: true # Show last modified date\n  enableGitalk: false # Set to true if Gitalk comments desired\n  \n# Enable syntax highlighting\nmarkup:\n  highlight:\n    codeFences: true\n    guessSyntax: true\n    lineNos: false\n    style: \"github\"\n\n# Enable LaTeX support (optional as per PRD)\nmarkup:\n  goldmark:\n    renderer:\n      unsafe: true # Allows HTML in markdown\n  math:\n    enable: true\n    use: \"katex\" # or \"mathjax\"\n\n# Enable tags and categories\ntaxonomies:\n  tag: \"tags\"\n  category: \"categories\"\n```\n\nAdd a placeholder avatar image to static/images/avatar.png",
+        "testStrategy": "Run `hugo server` locally and verify the configuration is loaded correctly. Check that all theme parameters are properly set. Validate the config.yaml syntax using a YAML linter.",
+        "priority": "high",
+        "dependencies": [
+          1
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Create config.yaml file with basic site settings",
+            "description": "Create the config.yaml file in the project root with basic site configuration including baseURL, languageCode, title, and theme settings.",
+            "dependencies": [],
+            "details": "Create a new config.yaml file in the project root directory. Add the following basic configuration:\n```yaml\nbaseURL: \"https://irahulpandey.github.io\"\nlanguageCode: \"en-us\"\ntitle: \"Your Name's Blog\"\ntheme: \"github-style\"\n```",
+            "status": "done",
+            "testStrategy": "Validate the YAML syntax using a YAML linter. Run `hugo server` locally and check the console for any configuration errors."
+          },
+          {
+            "id": 2,
+            "title": "Configure author and personal information parameters",
+            "description": "Add the author and personal information parameters to the config.yaml file including name, description, social media links, and contact information.",
+            "dependencies": [
+              "2.1"
+            ],
+            "details": "Add the following params section to config.yaml:\n```yaml\nparams:\n  author: \"Your Name\"\n  description: \"Your tagline\"\n  github: \"username\"\n  twitter: \"username\" # Optional\n  linkedin: \"username\" # Optional\n  email: \"email@domain.com\"\n  avatar: \"/images/avatar.png\"\n  location: \"Your Location\"\n  rss: true\n  utterancesRepo: \"username/irahulpandey.github.io\" # For comments (optional)\n  lastmod: true # Show last modified date\n  enableGitalk: false # Set to true if Gitalk comments desired\n```",
+            "status": "done",
+            "testStrategy": "Verify that the personal information appears correctly on the site. Check that social media links point to the correct profiles."
+          },
+          {
+            "id": 3,
+            "title": "Configure markup and syntax highlighting settings",
+            "description": "Set up markup configuration for syntax highlighting and LaTeX support in the config.yaml file.",
+            "dependencies": [
+              "2.1"
+            ],
+            "details": "Add the following markup configuration to config.yaml:\n```yaml\nmarkup:\n  highlight:\n    codeFences: true\n    guessSyntax: true\n    lineNos: false\n    style: \"github\"\n  goldmark:\n    renderer:\n      unsafe: true # Allows HTML in markdown\n  math:\n    enable: true\n    use: \"katex\" # or \"mathjax\"\n```",
+            "status": "done",
+            "testStrategy": "Create a test post with code blocks in different languages and verify syntax highlighting works correctly. Test LaTeX rendering with sample mathematical expressions."
+          },
+          {
+            "id": 4,
+            "title": "Configure taxonomies for tags and categories",
+            "description": "Set up taxonomies configuration in config.yaml to enable tags and categories functionality for blog posts.",
+            "dependencies": [
+              "2.1"
+            ],
+            "details": "Add the following taxonomies configuration to config.yaml:\n```yaml\ntaxonomies:\n  tag: \"tags\"\n  category: \"categories\"\n```",
+            "status": "done",
+            "testStrategy": "Create test posts with different tags and categories. Verify that tag and category pages are generated correctly and that posts are properly categorized."
+          },
+          {
+            "id": 5,
+            "title": "Create placeholder avatar image",
+            "description": "Create the static/images directory and add a placeholder avatar image for the site.",
+            "dependencies": [
+              "2.2"
+            ],
+            "details": "1. Create a directory structure: static/images/\n2. Add a placeholder avatar image named avatar.png to the static/images/ directory\n3. Ensure the image is of appropriate size and format (recommended: square image, 200x200 pixels or larger)",
+            "status": "done",
+            "testStrategy": "Run the site locally and verify that the avatar image appears correctly in the site header and profile sections. Check that the image path in config.yaml correctly points to the avatar image."
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Create Homepage Content",
+        "description": "Develop the Overview tab (homepage) with personal introduction, bio, skills section, and social links.",
+        "details": "1. Create content/_index.md with the following structure:\n```markdown\n---\ntitle: \"Your Name\"\ndate: 2023-11-13\ndraft: false\n---\n\n## Professional Summary\nYour professional tagline here. Brief introduction about yourself and your expertise.\n\n## About Me\nWrite a 2-3 sentence bio here. Mention your professional background, interests, and goals.\n\n## Skills\n\n### Programming Languages\n- Language 1\n- Language 2\n- Language 3\n\n### Frameworks & Libraries\n- Framework 1\n- Framework 2\n- Library 1\n\n### Tools & Technologies\n- Tool 1\n- Tool 2\n- Technology 1\n\n## Contact\n\nFeel free to reach out to me at [email@domain.com](mailto:email@domain.com) or connect with me on [LinkedIn](https://linkedin.com/in/username).\n```\n\n2. Ensure the content follows Markdown best practices\n3. Replace placeholder text with actual personal information\n4. Optimize the content structure for the GitHub Style theme layout",
+        "testStrategy": "Run the site locally with `hugo server` and verify the homepage displays correctly. Check that all sections (bio, skills, social links) appear as expected. Test responsiveness on different screen sizes.",
+        "priority": "high",
+        "dependencies": [
+          2
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Create content/_index.md file structure",
+            "description": "Set up the basic Markdown file with frontmatter and section placeholders for the homepage",
+            "dependencies": [],
+            "details": "Create the content/_index.md file with the provided template structure including frontmatter (title, date, draft status), Professional Summary section, About Me section, Skills section (with subsections for Programming Languages, Frameworks & Libraries, and Tools & Technologies), and Contact section with placeholder text.",
+            "status": "done",
+            "testStrategy": "Verify the file is created in the correct location with proper Markdown syntax and structure. Check that Hugo can build the site without errors when this file is present."
+          },
+          {
+            "id": 2,
+            "title": "Personalize homepage content",
+            "description": "Replace all placeholder text with actual personal information",
+            "dependencies": [
+              "3.1"
+            ],
+            "details": "Replace generic placeholders with actual personal details including: name in the title, professional tagline and introduction, biographical information, actual programming languages, frameworks, libraries, tools and technologies with relevant skill levels, and real contact information including email and social media links.\n<info added on 2025-09-13T17:46:18.899Z>\nUpdated homepage content with accurate professional information based on LinkedIn profile and provided text. Now correctly reflects role as Senior Solutions Architect at adidas specializing in cloud AI and MLOps, including:\n\n- Updated professional title and company affiliation\n- Accurate technical skills focused on ML pipelines, cloud infrastructure, and MLOps\n- Proper description of responsibilities and expertise areas\n- Updated config.yaml with correct professional description and relevant keywords\n- Maintained the engaging format while ensuring accuracy of professional information\n\nThe homepage now accurately represents the user's current role and expertise in cloud AI and MLOps at adidas.\n</info added on 2025-09-13T17:46:18.899Z>",
+            "status": "done",
+            "testStrategy": "Review the content to ensure all placeholder text has been replaced with meaningful personal information. Verify links work correctly and information accurately represents the portfolio owner."
+          },
+          {
+            "id": 3,
+            "title": "Format content according to Markdown best practices",
+            "description": "Ensure the content follows Markdown best practices for readability and proper rendering",
+            "dependencies": [
+              "3.2"
+            ],
+            "details": "Review and optimize the Markdown formatting: use appropriate heading levels (H2, H3), ensure consistent list formatting, properly format links, add emphasis where appropriate, maintain consistent spacing between sections, and use Markdown features effectively for visual hierarchy.",
+            "status": "done",
+            "testStrategy": "Validate the Markdown syntax using a linter. Preview the rendered content to ensure proper formatting and hierarchy. Check that all Markdown elements render as expected in the Hugo theme."
+          },
+          {
+            "id": 4,
+            "title": "Optimize content structure for GitHub Style theme",
+            "description": "Adjust content layout to work optimally with the GitHub Style theme's design patterns",
+            "dependencies": [
+              "3.3"
+            ],
+            "details": "Review the GitHub Style theme documentation and examples to understand its layout patterns. Adjust content structure to match theme expectations, including proper heading hierarchy, appropriate section spacing, and content organization that aligns with the theme's display patterns. Consider adding theme-specific features or shortcodes if available.",
+            "status": "done",
+            "testStrategy": "Run the site locally with 'hugo server' and verify the homepage displays correctly with the GitHub Style theme. Check that all sections render as expected and the layout is visually appealing and consistent with the theme's design."
+          },
+          {
+            "id": 5,
+            "title": "Test homepage responsiveness and appearance",
+            "description": "Verify the homepage displays correctly across different devices and screen sizes",
+            "dependencies": [
+              "3.4"
+            ],
+            "details": "Test the homepage on multiple devices and screen sizes to ensure responsive design. Check that text is readable, sections flow properly, and the layout adjusts appropriately on mobile, tablet, and desktop views. Verify that all content is accessible and properly formatted at different viewport sizes.",
+            "status": "done",
+            "testStrategy": "Use browser developer tools to test various screen sizes. Check the site on actual mobile devices if possible. Verify that navigation, content hierarchy, and readability are maintained across all viewport sizes."
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Implement Dark/Light Mode Toggle",
+        "description": "Add functionality to switch between light and dark themes with a toggle button.",
+        "details": "The GitHub Style theme may not have built-in dark/light mode toggle. Implement this feature by:\n\n1. Create a new partial template in layouts/partials/theme-toggle.html:\n```html\n<div class=\"theme-toggle\">\n  <button id=\"theme-toggle\" aria-label=\"Toggle Dark Mode\">\n    <svg id=\"moon\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n      <path d=\"M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z\"></path>\n    </svg>\n    <svg id=\"sun\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n      <circle cx=\"12\" cy=\"12\" r=\"5\"></circle>\n      <line x1=\"12\" y1=\"1\" x2=\"12\" y2=\"3\"></line>\n      <line x1=\"12\" y1=\"21\" x2=\"12\" y2=\"23\"></line>\n      <line x1=\"4.22\" y1=\"4.22\" x2=\"5.64\" y2=\"5.64\"></line>\n      <line x1=\"18.36\" y1=\"18.36\" x2=\"19.78\" y2=\"19.78\"></line>\n      <line x1=\"1\" y1=\"12\" x2=\"3\" y2=\"12\"></line>\n      <line x1=\"21\" y1=\"12\" x2=\"23\" y2=\"12\"></line>\n      <line x1=\"4.22\" y1=\"19.78\" x2=\"5.64\" y2=\"18.36\"></line>\n      <line x1=\"18.36\" y1=\"5.64\" x2=\"19.78\" y2=\"4.22\"></line>\n    </svg>\n  </button>\n</div>\n```\n\n2. Create static/js/theme.js for the toggle functionality:\n```javascript\ndocument.addEventListener('DOMContentLoaded', () => {\n  const themeToggle = document.getElementById('theme-toggle');\n  const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');\n  \n  // Check for saved theme preference or use the system preference\n  const currentTheme = localStorage.getItem('theme') || \n                      (prefersDarkScheme.matches ? 'dark' : 'light');\n  \n  // Set initial theme\n  document.documentElement.setAttribute('data-theme', currentTheme);\n  \n  // Update button state\n  updateToggleButton(currentTheme);\n  \n  // Add click event\n  themeToggle.addEventListener('click', () => {\n    let switchToTheme = document.documentElement.getAttribute('data-theme') === 'light' \n                        ? 'dark' \n                        : 'light';\n    \n    document.documentElement.setAttribute('data-theme', switchToTheme);\n    localStorage.setItem('theme', switchToTheme);\n    \n    updateToggleButton(switchToTheme);\n  });\n  \n  function updateToggleButton(theme) {\n    if (theme === 'dark') {\n      document.getElementById('sun').style.display = 'block';\n      document.getElementById('moon').style.display = 'none';\n    } else {\n      document.getElementById('sun').style.display = 'none';\n      document.getElementById('moon').style.display = 'block';\n    }\n  }\n});\n```\n\n3. Create static/css/theme.css for theme-specific styles:\n```css\n:root {\n  --bg-color: #ffffff;\n  --text-color: #24292e;\n  --link-color: #0366d6;\n  --border-color: #e1e4e8;\n  --header-bg: #f6f8fa;\n}\n\n[data-theme=\"dark\"] {\n  --bg-color: #0d1117;\n  --text-color: #c9d1d9;\n  --link-color: #58a6ff;\n  --border-color: #30363d;\n  --header-bg: #161b22;\n}\n\nbody {\n  background-color: var(--bg-color);\n  color: var(--text-color);\n}\n\na {\n  color: var(--link-color);\n}\n\n.theme-toggle {\n  position: fixed;\n  right: 20px;\n  bottom: 20px;\n  z-index: 100;\n}\n\n.theme-toggle button {\n  background: var(--header-bg);\n  border: 1px solid var(--border-color);\n  border-radius: 50%;\n  padding: 10px;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: var(--text-color);\n}\n```\n\n4. Include these files in the theme by overriding the theme's header partial or adding to layouts/partials/custom-head.html (create if needed):\n```html\n<link rel=\"stylesheet\" href=\"/css/theme.css\">\n<script src=\"/js/theme.js\"></script>\n```\n\n5. Add the toggle button to the layout by including the partial in an appropriate location in the theme's layout files.",
+        "testStrategy": "Test the theme toggle functionality in different browsers. Verify that the theme preference is saved between sessions. Check that the toggle button appears correctly and switches themes as expected. Ensure all UI elements adapt properly to both themes.",
+        "priority": "medium",
+        "dependencies": [
+          2
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Create theme toggle HTML partial",
+            "description": "Create the theme-toggle.html partial template with the toggle button and SVG icons",
+            "dependencies": [],
+            "details": "Create a new file at layouts/partials/theme-toggle.html with the provided HTML code for the toggle button. The partial should include the button with moon and sun SVG icons that will be shown/hidden based on the current theme.",
+            "status": "done",
+            "testStrategy": "Verify the partial renders correctly without errors. Check that the SVG icons are properly displayed and the HTML structure matches the requirements."
+          },
+          {
+            "id": 2,
+            "title": "Implement theme toggle JavaScript functionality",
+            "description": "Create the JavaScript file that handles theme switching logic and user preferences",
+            "dependencies": [
+              "4.1"
+            ],
+            "details": "Create static/js/theme.js with the provided JavaScript code. Ensure it properly detects system preferences, saves user selection to localStorage, and updates the UI accordingly when the theme is toggled.",
+            "status": "done",
+            "testStrategy": "Test that clicking the toggle button switches between themes. Verify theme preference is saved between page refreshes. Check that system preference is respected on first visit."
+          },
+          {
+            "id": 3,
+            "title": "Create theme-specific CSS styles",
+            "description": "Implement CSS variables and styles for both light and dark themes",
+            "dependencies": [],
+            "details": "Create static/css/theme.css with the provided CSS code. Define CSS variables for both light and dark themes, including background colors, text colors, link colors, and border colors. Style the theme toggle button to be fixed at the bottom right of the screen.",
+            "status": "done",
+            "testStrategy": "Verify all styled elements properly change appearance when switching themes. Test that the toggle button is correctly positioned and styled in both themes."
+          },
+          {
+            "id": 4,
+            "title": "Include theme files in the site header",
+            "description": "Add the CSS and JavaScript files to the site's head section",
+            "dependencies": [
+              "4.2",
+              "4.3"
+            ],
+            "details": "Create or modify layouts/partials/custom-head.html to include links to the theme.css stylesheet and theme.js script. Ensure these files are loaded on all pages of the site.",
+            "status": "done",
+            "testStrategy": "Check that the CSS and JavaScript files are properly loaded on all pages. Verify no console errors related to missing files."
+          },
+          {
+            "id": 5,
+            "title": "Add toggle button to site layout",
+            "description": "Include the theme toggle partial in an appropriate location in the site layout",
+            "dependencies": [
+              "4.1",
+              "4.4"
+            ],
+            "details": "Modify an appropriate layout file (such as layouts/_default/baseof.html or layouts/partials/footer.html) to include the theme-toggle partial using the Hugo partial function: {{ partial \"theme-toggle.html\" . }}. Position it in a location that's visible on all pages.",
+            "status": "done",
+            "testStrategy": "Verify the toggle button appears on all pages of the site. Test that it's accessible and visible in both desktop and mobile views. Ensure it doesn't overlap with other important UI elements."
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "Create Sample Blog Posts",
+        "description": "Create initial blog posts with proper front matter and content structure.",
+        "details": "1. Create at least 3 sample blog posts in content/post/ directory with the following structure:\n\nFor post 1 (content/post/first-post.md):\n```markdown\n---\ntitle: \"Getting Started with Hugo\"\ndate: 2023-11-13T10:00:00Z\ndraft: false\nsummary: \"A quick introduction to creating websites with Hugo static site generator.\"\ntags: [\"hugo\", \"static-site\", \"tutorial\"]\n---\n\nThis is the introduction to my first blog post about Hugo.\n\n<!--more-->\n\n## What is Hugo?\n\nHugo is a fast and modern static site generator written in Go, designed to make website creation fun again.\n\n## Code Example\n\n```go\npackage main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Hugo!\")\n}\n```\n\n## Conclusion\n\nHugo makes it easy to create beautiful, fast websites.\n```\n\nCreate 2 more sample posts with different topics, tags, and dates. Include various Markdown elements like:\n- Lists\n- Images\n- Links\n- Blockquotes\n- Code blocks with syntax highlighting\n- Tables\n- If mentioned in PRD as optional, include a LaTeX example in one post\n\n2. Ensure each post has:\n   - Proper front matter with title, date, summary, and tags\n   - The <!--more--> tag to separate excerpt from full content\n   - Well-structured content with headings\n   - At least one code block with syntax highlighting",
+        "testStrategy": "Run the site locally and verify that posts appear correctly on the Posts tab. Check that the post listing shows title, date, and summary. Verify individual post pages display full content with proper formatting. Test that syntax highlighting works for code blocks. If implemented, verify LaTeX rendering.",
+        "priority": "high",
+        "dependencies": [
+          2
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Create first sample blog post about Hugo",
+            "description": "Create the first sample blog post about Hugo with proper front matter and content structure",
+            "dependencies": [],
+            "details": "Create content/post/first-post.md with the provided template about Hugo. Include title, date, summary, and tags in the front matter. Ensure the post has the <!--more--> tag to separate the excerpt from full content. Include headings, code blocks with Go syntax highlighting, and a proper conclusion.",
+            "status": "done",
+            "testStrategy": "Verify the post appears correctly on the Posts tab. Check that front matter is properly formatted and that the code block displays with syntax highlighting. Ensure the <!--more--> tag functions correctly for post excerpts."
+          },
+          {
+            "id": 2,
+            "title": "Create second sample blog post with various Markdown elements",
+            "description": "Create a second blog post that demonstrates different Markdown formatting elements",
+            "dependencies": [
+              "5.1"
+            ],
+            "details": "Create content/post/second-post.md with a different topic than the first post. Include front matter with title, date, summary, and unique tags. In the content, demonstrate various Markdown elements including: ordered and unordered lists, embedded images, hyperlinks, blockquotes, code blocks with syntax highlighting, and a simple table.",
+            "status": "done",
+            "testStrategy": "Check that all Markdown elements render correctly. Verify the post appears in the post listing with correct metadata. Test that all links work and images display properly."
+          },
+          {
+            "id": 3,
+            "title": "Create third sample blog post with advanced elements",
+            "description": "Create a third blog post that includes more advanced formatting including LaTeX if mentioned in PRD",
+            "dependencies": [
+              "5.1",
+              "5.2"
+            ],
+            "details": "Create content/post/third-post.md with a unique topic. Include proper front matter with title, date, summary, and tags. Incorporate advanced elements such as nested lists, footnotes, horizontal rules, and if mentioned as optional in the PRD, include a LaTeX mathematical formula example. Ensure the post has proper heading structure and the <!--more--> tag.",
+            "status": "done",
+            "testStrategy": "Verify that advanced formatting elements display correctly. If LaTeX is implemented, test that mathematical formulas render properly. Check that the post appears in the listing and displays correctly on its individual page."
+          },
+          {
+            "id": 4,
+            "title": "Review and validate all blog posts",
+            "description": "Review all three blog posts to ensure they meet requirements and fix any formatting issues",
+            "dependencies": [
+              "5.1",
+              "5.2",
+              "5.3"
+            ],
+            "details": "Review each blog post to ensure they all have: 1) Proper front matter with title, date, summary, and tags, 2) The <!--more--> tag in the correct position, 3) Well-structured content with appropriate headings, 4) At least one code block with syntax highlighting, 5) Various Markdown elements as specified. Fix any formatting issues or inconsistencies.",
+            "status": "done",
+            "testStrategy": "Run the site locally and navigate through all posts. Check for any rendering issues or formatting problems. Verify that all required elements appear correctly in each post."
+          },
+          {
+            "id": 5,
+            "title": "Test posts in local Hugo environment",
+            "description": "Test all blog posts in a local Hugo environment to ensure they display correctly",
+            "dependencies": [
+              "5.4"
+            ],
+            "details": "Run the Hugo site locally using 'hugo server' command. Navigate to each blog post and verify they display correctly. Check that the post listing shows the correct title, date, and summary for each post. Verify that syntax highlighting works for all code blocks. Test that all Markdown elements render as expected, including any LaTeX content if implemented.",
+            "status": "done",
+            "testStrategy": "Test the site in multiple browsers to ensure consistent rendering. Check both desktop and mobile views to verify responsiveness. Validate that all links within posts work correctly and that images display properly."
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "title": "Customize Post List and Single Post Templates",
+        "description": "Customize the templates for post listings and individual post pages to match requirements.",
+        "details": "1. Create or override the post list template (layouts/_default/list.html or layouts/post/list.html) to include:\n   - Post title\n   - Publication date\n   - Post summary/excerpt\n   - Tags list\n   - Reading time estimation\n\n2. Create or override the single post template (layouts/_default/single.html or layouts/post/single.html) to include:\n   - Post title and metadata (date, reading time, tags)\n   - Full content with proper styling\n   - Previous/Next post navigation\n   - Optional: Gitalk comments section if enabled in config\n\n3. Add reading time calculation functionality:\n```html\n{{ $readingTime := div (countwords .Content) 220 }}\n<span class=\"reading-time\">{{ cond (lt $readingTime 1) 1 $readingTime }} min read</span>\n```\n\n4. Add previous/next navigation to single post template:\n```html\n<div class=\"post-navigation\">\n  {{ with .PrevInSection }}\n    <a class=\"prev-post\" href=\"{{ .Permalink }}\">← {{ .Title }}</a>\n  {{ end }}\n  \n  {{ with .NextInSection }}\n    <a class=\"next-post\" href=\"{{ .Permalink }}\">{{ .Title }} →</a>\n  {{ end }}\n</div>\n```\n\n5. Ensure responsive design for both templates with appropriate CSS adjustments",
+        "testStrategy": "Test post list page to verify all required elements are displayed correctly. Check individual post pages for proper content rendering, metadata display, and navigation. Verify reading time calculation is accurate. Test responsiveness on different screen sizes.",
+        "priority": "medium",
+        "dependencies": [
+          2,
+          5
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Create post list template",
+            "description": "Create or override the post list template to display post titles, publication dates, summaries, tags, and reading time estimations.",
+            "dependencies": [],
+            "details": "Create or modify layouts/_default/list.html or layouts/post/list.html with the following elements:\n- Post title with link to full post\n- Publication date in a readable format\n- Post summary/excerpt using the .Summary variable\n- Tags list with links to tag pages\n- Reading time estimation using the countwords function\n- Apply appropriate CSS classes for styling",
+            "status": "done",
+            "testStrategy": "Verify all required elements appear on the post list page. Check that links to individual posts work correctly. Confirm tags are clickable and lead to tag pages. Validate reading time calculations against expected values."
+          },
+          {
+            "id": 2,
+            "title": "Create single post template",
+            "description": "Create or override the single post template to display post title, metadata, full content, and navigation between posts.",
+            "dependencies": [],
+            "details": "Create or modify layouts/_default/single.html or layouts/post/single.html with:\n- Post title and metadata section (date, reading time, tags)\n- Full content rendering with proper styling\n- Previous/Next post navigation using the provided code snippet\n- Optional Gitalk comments section if enabled in config\n- Apply appropriate HTML structure and CSS classes",
+            "status": "done",
+            "testStrategy": "Test individual post pages to verify title, metadata, and content display correctly. Check that previous/next navigation works between posts. If Gitalk is enabled, verify comments section appears and functions properly."
+          },
+          {
+            "id": 3,
+            "title": "Implement reading time calculation",
+            "description": "Add reading time calculation functionality to both templates using the countwords function.",
+            "dependencies": [
+              "6.1",
+              "6.2"
+            ],
+            "details": "Implement the reading time calculation using the provided code:\n```\n{{ $readingTime := div (countwords .Content) 220 }}\n<span class=\"reading-time\">{{ cond (lt $readingTime 1) 1 $readingTime }} min read</span>\n```\nAdd this to both list and single templates in appropriate locations. Ensure the calculation works for all post lengths and displays at least 1 minute for very short posts.",
+            "status": "done",
+            "testStrategy": "Test reading time display on posts of various lengths. Verify that very short posts show at least 1 minute. Check that the calculation is consistent between list and single post views."
+          },
+          {
+            "id": 4,
+            "title": "Add previous/next navigation",
+            "description": "Implement navigation between posts using the PrevInSection and NextInSection variables.",
+            "dependencies": [
+              "6.2"
+            ],
+            "details": "Add the previous/next navigation to the single post template using the provided code:\n```\n<div class=\"post-navigation\">\n  {{ with .PrevInSection }}\n    <a class=\"prev-post\" href=\"{{ .Permalink }}\">← {{ .Title }}</a>\n  {{ end }}\n  \n  {{ with .NextInSection }}\n    <a class=\"next-post\" href=\"{{ .Permalink }}\">{{ .Title }} →</a>\n  {{ end }}\n</div>\n```\nPlace this at the bottom of the post content. Style the navigation with appropriate CSS for clear visual separation.",
+            "status": "done",
+            "testStrategy": "Navigate through a series of posts to verify previous/next links work correctly. Check edge cases like first and last posts. Ensure the navigation is visually clear and responsive on different screen sizes."
+          },
+          {
+            "id": 5,
+            "title": "Ensure responsive design",
+            "description": "Apply responsive design principles to both templates to ensure proper display on all device sizes.",
+            "dependencies": [
+              "6.1",
+              "6.2",
+              "6.3",
+              "6.4"
+            ],
+            "details": "Add CSS adjustments to ensure responsive design:\n- Use relative units (em, rem, %) instead of fixed pixels where appropriate\n- Implement media queries for different screen sizes\n- Ensure text remains readable on small screens\n- Adjust spacing and margins for mobile devices\n- Test navigation elements for touch-friendly sizing\n- Ensure code blocks and images scale appropriately\n- Verify that tag lists wrap properly on narrow screens",
+            "status": "done",
+            "testStrategy": "Test both templates on multiple device sizes (desktop, tablet, mobile). Use browser developer tools to simulate different screen widths. Verify all content remains accessible and properly formatted at all breakpoints. Check that navigation elements are usable on touch devices."
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "title": "Implement Responsive Design Adjustments",
+        "description": "Ensure the website is fully responsive and mobile-friendly across all devices.",
+        "details": "1. Create static/css/custom.css for responsive design adjustments:\n```css\n/* Base responsive adjustments */\n@media (max-width: 768px) {\n  .container {\n    padding: 0 15px;\n  }\n  \n  /* Header adjustments */\n  header {\n    padding: 10px 0;\n  }\n  \n  /* Profile section adjustments */\n  .profile-section {\n    flex-direction: column;\n  }\n  \n  .profile-image {\n    margin-bottom: 20px;\n  }\n  \n  /* Post list adjustments */\n  .post-list .post-item {\n    padding: 15px 0;\n  }\n  \n  /* Single post adjustments */\n  .post-content img {\n    max-width: 100%;\n    height: auto;\n  }\n  \n  /* Navigation adjustments */\n  .post-navigation {\n    flex-direction: column;\n    gap: 10px;\n  }\n}\n\n/* Small mobile devices */\n@media (max-width: 480px) {\n  h1 {\n    font-size: 1.8rem;\n  }\n  \n  h2 {\n    font-size: 1.5rem;\n  }\n  \n  .post-title {\n    font-size: 1.5rem;\n  }\n}\n```\n\n2. Include the custom CSS in the theme by adding to layouts/partials/custom-head.html:\n```html\n<link rel=\"stylesheet\" href=\"/css/custom.css\">\n```\n\n3. Test and adjust the following elements for mobile responsiveness:\n   - Navigation menu\n   - Profile section on homepage\n   - Post listings\n   - Single post content (especially images, code blocks, and tables)\n   - Theme toggle button position\n   - Footer content\n\n4. Implement responsive images using the following pattern:\n```html\n<img src=\"/images/example.jpg\" alt=\"Description\" loading=\"lazy\" class=\"responsive-img\">\n```\n\nAnd in CSS:\n```css\n.responsive-img {\n  max-width: 100%;\n  height: auto;\n}\n```\n\n5. Ensure proper viewport meta tag is present in the head:\n```html\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n```",
+        "testStrategy": "Test the website on multiple devices and screen sizes (desktop, tablet, mobile). Use Chrome DevTools device emulation to verify responsiveness. Check for any layout issues, text overflow, or horizontal scrolling. Verify that images scale properly. Test navigation usability on small screens.",
+        "priority": "high",
+        "dependencies": [
+          3,
+          6
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Implement Mobile Navigation Menu",
+            "description": "Create a responsive navigation menu that collapses into a hamburger menu on mobile devices",
+            "dependencies": [],
+            "details": "1. Modify the navigation component to include a hamburger icon for mobile\n2. Add JavaScript functionality to toggle the menu visibility\n3. Style the mobile menu with appropriate transitions and positioning\n4. Ensure the menu is accessible with proper ARIA attributes\n5. Test the navigation across different viewport sizes",
+            "status": "done",
+            "testStrategy": "Test the navigation menu on multiple devices and screen sizes. Verify the hamburger icon appears at appropriate breakpoints. Check that menu opens/closes correctly with animations. Ensure keyboard navigation works in mobile view."
+          },
+          {
+            "id": 2,
+            "title": "Optimize Images for Responsive Display",
+            "description": "Implement responsive image handling to ensure optimal loading and display across devices",
+            "dependencies": [],
+            "details": "1. Apply the responsive-img class to all images in templates\n2. Implement lazy loading for images using the loading='lazy' attribute\n3. Consider implementing picture element for art-directed responsive images where needed\n4. Optimize image file sizes without quality loss\n5. Test image loading performance on slow connections",
+            "status": "done",
+            "testStrategy": "Test image loading on various devices and connection speeds. Verify images scale properly without distortion. Check that lazy loading works correctly. Measure performance improvements using Lighthouse."
+          },
+          {
+            "id": 3,
+            "title": "Fix Responsive Layout Issues in Content Areas",
+            "description": "Address specific layout issues in content areas including tables, code blocks, and embedded content",
+            "dependencies": [
+              "7.1",
+              "7.2"
+            ],
+            "details": "1. Add responsive styles for tables to prevent horizontal overflow\n2. Ensure code blocks wrap or scroll appropriately on small screens\n3. Fix any layout issues in the profile section on homepage\n4. Adjust post navigation links for better mobile display\n5. Ensure proper spacing and readability of text content on small screens",
+            "status": "done",
+            "testStrategy": "Test content display on various screen sizes. Check tables, code blocks, and other content elements for horizontal overflow. Verify text remains readable at all viewport widths. Test with real content from blog posts."
+          },
+          {
+            "id": 4,
+            "title": "Implement Touch-Friendly Interactive Elements",
+            "description": "Optimize buttons, links, and interactive elements for touch devices",
+            "dependencies": [
+              "7.1"
+            ],
+            "details": "1. Increase touch target sizes for buttons and links (minimum 44x44px)\n2. Add appropriate hover and active states for touch feedback\n3. Ensure sufficient spacing between clickable elements\n4. Optimize the theme toggle button for touch devices\n5. Test all interactive elements for touch accessibility",
+            "status": "done",
+            "testStrategy": "Test all interactive elements on touch devices. Verify buttons and links are easy to tap without accidental clicks on nearby elements. Check that touch feedback (active states) works correctly. Test with various finger sizes and touch precision."
+          },
+          {
+            "id": 5,
+            "title": "Test and Debug Cross-Device Compatibility",
+            "description": "Perform comprehensive testing across devices and browsers to identify and fix any remaining responsive design issues",
+            "dependencies": [
+              "7.1",
+              "7.2",
+              "7.3",
+              "7.4"
+            ],
+            "details": "1. Test on real iOS and Android devices of different sizes\n2. Use browser developer tools to test various viewport dimensions\n3. Check for any CSS conflicts or specificity issues in the responsive styles\n4. Verify font sizes and readability across all breakpoints\n5. Document any browser-specific issues and implement fixes",
+            "status": "done",
+            "testStrategy": "Create a test matrix covering different devices, browsers, and screen sizes. Document and fix any inconsistencies. Test in both portrait and landscape orientations. Verify performance metrics using Lighthouse mobile testing."
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "title": "Setup GitHub Actions CI/CD Pipeline",
+        "description": "Create and configure GitHub Actions workflow for automated building and deployment to GitHub Pages.",
+        "details": "1. Create .github/workflows/deploy.yml with the following configuration:\n```yaml\nname: Deploy Hugo site to GitHub Pages\n\non:\n  push:\n    branches:\n      - main\n  workflow_dispatch:\n\npermissions:\n  contents: read\n  pages: write\n  id-token: write\n\nconcurrency:\n  group: \"pages\"\n  cancel-in-progress: false\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v3\n        with:\n          submodules: recursive\n          fetch-depth: 0\n\n      - name: Setup Hugo\n        uses: peaceiris/actions-hugo@v2\n        with:\n          hugo-version: 'latest'\n          extended: true\n\n      - name: Build with Hugo\n        env:\n          HUGO_ENV: production\n        run: hugo --minify\n\n      - name: Upload artifact\n        uses: actions/upload-pages-artifact@v2\n        with:\n          path: ./public\n\n  deploy:\n    environment:\n      name: github-pages\n      url: ${{ steps.deployment.outputs.page_url }}\n    runs-on: ubuntu-latest\n    needs: build\n    steps:\n      - name: Deploy to GitHub Pages\n        id: deployment\n        uses: actions/deploy-pages@v2\n```\n\n2. Configure GitHub repository settings:\n   - Go to repository Settings > Pages\n   - Set Source to \"GitHub Actions\"\n   - Ensure proper permissions are set for GitHub Actions\n\n3. If using a custom domain (optional):\n   - Create a static/CNAME file with the domain name\n   - Configure DNS settings with your domain provider\n   - Enable HTTPS in the GitHub Pages settings\n\n4. Add a build status badge to the README.md:\n```markdown\n![Deploy Status](https://github.com/username/irahulpandey.github.io/actions/workflows/deploy.yml/badge.svg)\n```",
+        "testStrategy": "Trigger the workflow manually using the GitHub Actions UI. Verify that the build completes successfully. Check that the site is deployed correctly to GitHub Pages. Validate the deployed site URL is accessible and the content appears as expected. Test the build status badge in the README.",
+        "priority": "high",
+        "dependencies": [
+          1,
+          2
+        ],
+        "status": "in-progress",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Create GitHub workflow file",
+            "description": "Create the .github/workflows/deploy.yml file with the provided configuration for GitHub Actions",
+            "dependencies": [],
+            "details": "Create the .github/workflows directory if it doesn't exist. Add the deploy.yml file with the exact YAML configuration provided in the task description. This workflow will handle the automated building and deployment of the Hugo site to GitHub Pages.",
+            "status": "done",
+            "testStrategy": "Verify the file exists in the correct location with proper YAML syntax. Use a YAML linter to validate the configuration."
+          },
+          {
+            "id": 2,
+            "title": "Configure GitHub repository settings",
+            "description": "Set up the GitHub Pages settings in the repository to use GitHub Actions as the deployment source",
+            "dependencies": [
+              "8.1"
+            ],
+            "details": "Navigate to the repository Settings > Pages. Change the Source setting to 'GitHub Actions'. Ensure that the repository has the proper permissions set for GitHub Actions to deploy to Pages.",
+            "status": "pending",
+            "testStrategy": "Verify in the repository settings that GitHub Pages is configured to use GitHub Actions as the source. Check that the permissions are correctly set."
+          },
+          {
+            "id": 3,
+            "title": "Configure custom domain (optional)",
+            "description": "Set up custom domain configuration if required for the GitHub Pages site",
+            "dependencies": [
+              "8.2"
+            ],
+            "details": "If using a custom domain: 1) Create a static/CNAME file containing only the domain name, 2) Configure DNS settings with the domain provider as per GitHub documentation, 3) Enable HTTPS in the GitHub Pages settings section.",
+            "status": "pending",
+            "testStrategy": "If applicable, verify the CNAME file exists with the correct domain. Check DNS configuration with dig or nslookup. Confirm HTTPS is enabled in GitHub Pages settings."
+          },
+          {
+            "id": 4,
+            "title": "Add build status badge to README",
+            "description": "Update the README.md file to include a GitHub Actions workflow status badge",
+            "dependencies": [
+              "8.1"
+            ],
+            "details": "Edit the README.md file to add the build status badge using the markdown syntax provided in the task description. Ensure the username in the badge URL is correctly set to match the repository owner.",
+            "status": "done",
+            "testStrategy": "Verify the badge appears correctly in the README preview. Check that the badge URL is correct and points to the right workflow."
+          },
+          {
+            "id": 5,
+            "title": "Test the CI/CD pipeline",
+            "description": "Trigger and validate the GitHub Actions workflow to ensure proper deployment",
+            "dependencies": [
+              "8.1",
+              "8.2",
+              "8.4"
+            ],
+            "details": "Manually trigger the workflow using the GitHub Actions UI or by pushing a small change to the main branch. Monitor the workflow execution to ensure it completes successfully. Verify that the site is properly deployed to GitHub Pages.",
+            "status": "pending",
+            "testStrategy": "Check the Actions tab in GitHub to verify the workflow runs without errors. Visit the deployed site URL to confirm the content is displayed correctly. Verify the build status badge updates appropriately."
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "title": "Implement SEO Optimization",
+        "description": "Enhance the website with SEO meta tags, structured data, and performance optimizations.",
+        "details": "1. Create or modify layouts/partials/head.html to include SEO meta tags:\n```html\n<!-- Basic Meta Tags -->\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<meta name=\"description\" content=\"{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}\">\n\n<!-- Open Graph / Facebook -->\n<meta property=\"og:type\" content=\"{{ if .IsPage }}article{{ else }}website{{ end }}\">\n<meta property=\"og:url\" content=\"{{ .Permalink }}\">\n<meta property=\"og:title\" content=\"{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}\">\n<meta property=\"og:description\" content=\"{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}\">\n<meta property=\"og:image\" content=\"{{ .Site.BaseURL }}{{ with .Params.image }}{{ . }}{{ else }}images/default-og.png{{ end }}\">\n\n<!-- Twitter -->\n<meta name=\"twitter:card\" content=\"summary_large_image\">\n<meta name=\"twitter:url\" content=\"{{ .Permalink }}\">\n<meta name=\"twitter:title\" content=\"{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}\">\n<meta name=\"twitter:description\" content=\"{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}\">\n<meta name=\"twitter:image\" content=\"{{ .Site.BaseURL }}{{ with .Params.image }}{{ . }}{{ else }}images/default-og.png{{ end }}\">\n\n<!-- Canonical URL -->\n<link rel=\"canonical\" href=\"{{ .Permalink }}\">\n\n<!-- RSS Feed -->\n{{ range .AlternativeOutputFormats -}}\n  {{ printf `<link rel=\"%s\" type=\"%s\" href=\"%s\" title=\"%s\" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}\n{{ end -}}\n```\n\n2. Add structured data for blog posts in layouts/post/single.html:\n```html\n<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"BlogPosting\",\n  \"headline\": \"{{ .Title }}\",\n  \"datePublished\": \"{{ .Date.Format \"2006-01-02T15:04:05Z07:00\" }}\",\n  \"dateModified\": \"{{ .Lastmod.Format \"2006-01-02T15:04:05Z07:00\" }}\",\n  \"author\": {\n    \"@type\": \"Person\",\n    \"name\": \"{{ .Site.Params.author }}\"\n  },\n  \"description\": \"{{ with .Description }}{{ . }}{{ else }}{{ .Summary }}{{ end }}\",\n  \"mainEntityOfPage\": {\n    \"@type\": \"WebPage\",\n    \"@id\": \"{{ .Permalink }}\"\n  }\n}\n</script>\n```\n\n3. Create a robots.txt file in the static directory:\n```\nUser-agent: *\nAllow: /\n\nSitemap: https://irahulpandey.github.io/sitemap.xml\n```\n\n4. Enable Hugo's built-in sitemap generation in config.yaml:\n```yaml\nsitemap:\n  changefreq: weekly\n  priority: 0.5\n  filename: sitemap.xml\n```\n\n5. Optimize images:\n   - Use WebP format for images where possible\n   - Add width and height attributes to img tags\n   - Use lazy loading: `loading=\"lazy\"`\n\n6. Add performance optimizations to config.yaml:\n```yaml\nminify:\n  disableCSS: false\n  disableHTML: false\n  disableJS: false\n  disableJSON: false\n  disableSVG: false\n  disableXML: false\n  minifyOutput: true\n```",
+        "testStrategy": "Use Lighthouse in Chrome DevTools to test SEO score (aim for >90). Validate structured data using Google's Rich Results Test. Check that meta tags are correctly populated for different page types. Verify sitemap.xml is generated correctly. Test robots.txt accessibility.",
+        "priority": "medium",
+        "dependencies": [
+          2,
+          3,
+          5
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Implement SEO Meta Tags",
+            "description": "Create or modify the head.html partial to include comprehensive SEO meta tags for better search engine visibility",
+            "dependencies": [],
+            "details": "Implement the provided meta tags in layouts/partials/head.html including basic meta tags, Open Graph tags for Facebook, Twitter card tags, canonical URL, and RSS feed links. Ensure all dynamic content is properly populated from page variables.",
+            "status": "pending",
+            "testStrategy": "Verify meta tags are correctly rendered in the HTML source of different page types. Use Facebook's Sharing Debugger and Twitter Card Validator to test social media tags. Check that canonical URLs are correctly set."
+          },
+          {
+            "id": 2,
+            "title": "Add Structured Data for Blog Posts",
+            "description": "Implement JSON-LD structured data for blog posts to enhance search engine understanding of content",
+            "dependencies": [
+              "9.1"
+            ],
+            "details": "Add the provided structured data script to layouts/post/single.html. Ensure all dynamic fields (title, dates, author, description) are properly populated from page variables. Consider extending the schema to include additional relevant properties like image, categories, or tags if available.",
+            "status": "pending",
+            "testStrategy": "Use Google's Rich Results Test and Schema.org Validator to verify structured data implementation. Test with multiple blog posts to ensure dynamic data is correctly populated."
+          },
+          {
+            "id": 3,
+            "title": "Configure Robots.txt and Sitemap",
+            "description": "Create robots.txt file and configure sitemap generation for better search engine crawling",
+            "dependencies": [],
+            "details": "Create the robots.txt file in the static directory with the provided content. Update the site URL in the sitemap reference if needed. Configure sitemap generation in config.yaml using the provided settings. Verify the sitemap is accessible at the correct URL.",
+            "status": "pending",
+            "testStrategy": "Verify robots.txt is accessible at the root URL. Check that sitemap.xml is generated correctly and contains all expected pages. Validate the sitemap XML structure using online tools."
+          },
+          {
+            "id": 4,
+            "title": "Optimize Images for Performance",
+            "description": "Implement image optimization techniques to improve page load times and SEO performance",
+            "dependencies": [],
+            "details": "Convert existing images to WebP format where supported. Add width and height attributes to all img tags to prevent layout shifts. Implement lazy loading with loading=\"lazy\" attribute. Create a script to automate image optimization for future uploads if possible. Consider implementing responsive images with srcset for different viewport sizes.",
+            "status": "pending",
+            "testStrategy": "Use Lighthouse to measure image optimization impact on performance. Verify lazy loading works correctly by scrolling through pages. Check that images load properly across different browsers and devices."
+          },
+          {
+            "id": 5,
+            "title": "Enable Performance Optimizations",
+            "description": "Configure Hugo's built-in minification and implement additional performance enhancements",
+            "dependencies": [
+              "9.1",
+              "9.2",
+              "9.3",
+              "9.4"
+            ],
+            "details": "Add the provided minification settings to config.yaml. Consider additional performance optimizations like preloading critical assets, implementing resource hints (preconnect, dns-prefetch), and configuring appropriate cache headers. Test the impact of each optimization on page load times.",
+            "status": "pending",
+            "testStrategy": "Use Lighthouse and WebPageTest to measure performance improvements. Check minified resources to ensure they're properly rendered. Verify that performance optimizations don't break site functionality across different browsers."
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "title": "Implement RSS Feed",
+        "description": "Configure and customize the RSS feed for blog posts.",
+        "details": "1. Enable RSS in config.yaml (if not already enabled):\n```yaml\noutputs:\n  home:\n    - HTML\n    - RSS\n  section:\n    - HTML\n    - RSS\n  taxonomy:\n    - HTML\n    - RSS\n\n# RSS feed settings\nrss:\n  limit: 20 # Number of posts in feed\n```\n\n2. Create a custom RSS template by creating layouts/_default/rss.xml:\n```xml\n{{- $pctx := . -}}\n{{- if .IsHome -}}{{ $pctx = .Site }}{{- end -}}\n{{- $pages := slice -}}\n{{- if or $.IsHome $.IsSection -}}\n{{- $pages = $pctx.RegularPages -}}\n{{- else -}}\n{{- $pages = $pctx.Pages -}}\n{{- end -}}\n{{- $limit := .Site.Config.Services.RSS.Limit -}}\n{{- if ge $limit 1 -}}\n{{- $pages = $pages | first $limit -}}\n{{- end -}}\n{{- printf \"<?xml version=\\\"1.0\\\" encoding=\\\"utf-8\\\" standalone=\\\"yes\\\"?>\" | safeHTML }}\n<rss version=\"2.0\" xmlns:atom=\"http://www.w3.org/2005/Atom\">\n  <channel>\n    <title>{{ if eq .Title .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{ . }} on {{ end }}{{ .Site.Title }}{{ end }}</title>\n    <link>{{ .Permalink }}</link>\n    <description>Recent content {{ if ne .Title .Site.Title }}{{ with .Title }}in {{ . }} {{ end }}{{ end }}on {{ .Site.Title }}</description>\n    <generator>Hugo -- gohugo.io</generator>{{ with .Site.LanguageCode }}\n    <language>{{ . }}</language>{{ end }}{{ with .Site.Author.email }}\n    <managingEditor>{{ . }}{{ with $.Site.Author.name }} ({{ . }}){{ end }}</managingEditor>{{ end }}{{ with .Site.Author.email }}\n    <webMaster>{{ . }}{{ with $.Site.Author.name }} ({{ . }}){{ end }}</webMaster>{{ end }}{{ with .Site.Copyright }}\n    <copyright>{{ . }}</copyright>{{ end }}{{ if not .Date.IsZero }}\n    <lastBuildDate>{{ .Date.Format \"Mon, 02 Jan 2006 15:04:05 -0700\" | safeHTML }}</lastBuildDate>{{ end }}\n    {{ with .OutputFormats.Get \"RSS\" }}\n    <atom:link href=\"{{ .Permalink }}\" rel=\"self\" type=\"application/rss+xml\" />\n    {{ end }}\n    {{ range $pages }}\n    <item>\n      <title>{{ .Title }}</title>\n      <link>{{ .Permalink }}</link>\n      <pubDate>{{ .Date.Format \"Mon, 02 Jan 2006 15:04:05 -0700\" | safeHTML }}</pubDate>\n      {{ with .Site.Author.email }}<author>{{ . }}{{ with $.Site.Author.name }} ({{ . }}){{ end }}</author>{{ end }}\n      <guid>{{ .Permalink }}</guid>\n      <description>{{ with .Description }}{{ . }}{{ else }}{{ .Summary | html }}{{ end }}</description>\n    </item>\n    {{ end }}\n  </channel>\n</rss>\n```\n\n3. Add an RSS link in the website header or footer:\n```html\n<a href=\"{{ .Site.BaseURL }}index.xml\" title=\"RSS Feed\">\n  <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <path d=\"M4 11a9 9 0 0 1 9 9\"></path>\n    <path d=\"M4 4a16 16 0 0 1 16 16\"></path>\n    <circle cx=\"5\" cy=\"19\" r=\"1\"></circle>\n  </svg>\n  <span class=\"sr-only\">RSS Feed</span>\n</a>\n```\n\n4. Add RSS autodiscovery link in the head section (if not already present):\n```html\n<link rel=\"alternate\" type=\"application/rss+xml\" href=\"{{ .Site.BaseURL }}index.xml\" title=\"{{ .Site.Title }}\">\n```",
+        "testStrategy": "Verify the RSS feed is generated at /index.xml. Check that the feed contains the correct number of posts with proper content. Validate the XML structure using an RSS validator. Test the RSS link in the website to ensure it points to the correct feed URL.",
+        "priority": "medium",
+        "dependencies": [
+          2,
+          5
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Configure RSS Output Settings",
+            "description": "Enable RSS output in the Hugo configuration file for home, section, and taxonomy pages",
+            "dependencies": [],
+            "details": "Add or modify the outputs section in config.yaml to include RSS output types for home, section, and taxonomy pages. Set the RSS limit to 20 posts in the feed configuration.",
+            "status": "pending",
+            "testStrategy": "Verify that the config.yaml file contains the correct outputs configuration. Check that the RSS limit is set to 20 posts."
+          },
+          {
+            "id": 2,
+            "title": "Create Custom RSS Template",
+            "description": "Implement a custom RSS template to control the format and content of the RSS feed",
+            "dependencies": [
+              "10.1"
+            ],
+            "details": "Create the file layouts/_default/rss.xml with the provided XML template. Ensure the template includes proper channel information, item details, and formatting for dates and content.",
+            "status": "pending",
+            "testStrategy": "Validate the XML structure of the generated RSS feed using an online RSS validator. Check that post titles, links, dates, and descriptions are correctly displayed."
+          },
+          {
+            "id": 3,
+            "title": "Add RSS Link to Website",
+            "description": "Add a visible RSS feed link with icon in the website header or footer",
+            "dependencies": [
+              "10.1",
+              "10.2"
+            ],
+            "details": "Insert the provided HTML code with SVG icon for the RSS feed link in the website header or footer template. Ensure the link points to the correct RSS feed URL (index.xml at the site base URL).",
+            "status": "pending",
+            "testStrategy": "Check that the RSS icon appears correctly in the website header or footer. Verify that clicking the link opens the RSS feed."
+          },
+          {
+            "id": 4,
+            "title": "Implement RSS Autodiscovery",
+            "description": "Add RSS autodiscovery link in the HTML head section for browser and feed reader compatibility",
+            "dependencies": [
+              "10.1",
+              "10.2"
+            ],
+            "details": "Add the link rel=\"alternate\" tag to the head section of the website to enable RSS autodiscovery. Ensure the href attribute points to the correct RSS feed URL and the title attribute contains the site title.",
+            "status": "pending",
+            "testStrategy": "Inspect the page source to verify the autodiscovery link is present in the head section. Test with a feed reader to confirm it can automatically detect the RSS feed."
+          },
+          {
+            "id": 5,
+            "title": "Test and Validate RSS Implementation",
+            "description": "Thoroughly test the RSS feed functionality and validate its structure",
+            "dependencies": [
+              "10.1",
+              "10.2",
+              "10.3",
+              "10.4"
+            ],
+            "details": "Generate the site and verify the RSS feed is created at /index.xml. Check that the feed contains the correct number of posts (up to the configured limit). Validate the XML structure using an RSS validator. Test the RSS link in the website to ensure it points to the correct feed URL.",
+            "status": "pending",
+            "testStrategy": "Use an online RSS validator like validator.w3.org/feed/ to check feed validity. Subscribe to the feed in a feed reader to verify content displays correctly. Check that the feed contains the expected number of posts (up to 20)."
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "title": "Create 404 Error Page",
+        "description": "Design and implement a custom 404 error page.",
+        "details": "1. Create layouts/404.html with the following content:\n```html\n{{ define \"main\" }}\n<div class=\"not-found-container\">\n  <h1>404</h1>\n  <h2>Page Not Found</h2>\n  <p>The page you're looking for doesn't exist or has been moved.</p>\n  <p><a href=\"{{ .Site.BaseURL }}\">Go back to homepage</a></p>\n  \n  <!-- Optional: Add a fun GitHub-style Octocat illustration -->\n  <div class=\"octocat-404\">\n    <img src=\"/images/404-octocat.png\" alt=\"404 Octocat\" width=\"300\" height=\"300\">\n  </div>\n</div>\n{{ end }}\n```\n\n2. Add CSS for the 404 page in static/css/custom.css:\n```css\n.not-found-container {\n  text-align: center;\n  padding: 50px 20px;\n  max-width: 600px;\n  margin: 0 auto;\n}\n\n.not-found-container h1 {\n  font-size: 6rem;\n  margin: 0;\n  color: var(--text-color);\n  opacity: 0.5;\n}\n\n.not-found-container h2 {\n  margin-top: 0;\n  margin-bottom: 20px;\n}\n\n.not-found-container p {\n  margin-bottom: 30px;\n}\n\n.octocat-404 {\n  margin-top: 30px;\n}\n\n.octocat-404 img {\n  max-width: 100%;\n  height: auto;\n}\n```\n\n3. Download or create a GitHub-style 404 Octocat illustration and save it to static/images/404-octocat.png\n\n4. Test the 404 page by navigating to a non-existent URL on your local development server",
+        "testStrategy": "Test the 404 page by navigating to non-existent URLs. Verify the page displays correctly with proper styling. Check that the link back to the homepage works. Test the responsiveness of the 404 page on different screen sizes.",
+        "priority": "low",
+        "dependencies": [
+          2
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Create layouts/404.html template",
+            "description": "Implement the HTML structure for the custom 404 error page",
+            "dependencies": [],
+            "details": "Create the layouts/404.html file with the provided HTML template that includes a 404 heading, error message, and link back to the homepage. Ensure the template extends the main layout and includes the placeholder for the Octocat illustration.",
+            "status": "pending",
+            "testStrategy": "Verify the HTML structure is correctly implemented and that the template extends the main layout properly."
+          },
+          {
+            "id": 2,
+            "title": "Add CSS styling for 404 page",
+            "description": "Implement the CSS styles for the 404 error page in the custom.css file",
+            "dependencies": [
+              "11.1"
+            ],
+            "details": "Add the provided CSS code to static/css/custom.css file, ensuring proper styling for the 404 page elements including the container, headings, paragraphs, and image container. Verify the styles use the site's color variables for consistency.",
+            "status": "pending",
+            "testStrategy": "Check that all CSS classes are properly defined and that the styling renders correctly when the 404 page is displayed."
+          },
+          {
+            "id": 3,
+            "title": "Create or download Octocat illustration",
+            "description": "Obtain a GitHub-style 404 Octocat illustration for the error page",
+            "dependencies": [],
+            "details": "Either download an existing GitHub-style 404 Octocat illustration from GitHub's resources or create a custom one. Save the image to static/images/404-octocat.png. Ensure the image is appropriately sized and optimized for web use.",
+            "status": "pending",
+            "testStrategy": "Verify the image loads correctly, has appropriate dimensions, and displays properly on the 404 page."
+          },
+          {
+            "id": 4,
+            "title": "Test 404 page functionality",
+            "description": "Verify the 404 page works correctly when navigating to non-existent URLs",
+            "dependencies": [
+              "11.1",
+              "11.2",
+              "11.3"
+            ],
+            "details": "Start the local development server and test the 404 page by navigating to non-existent URLs. Verify that the custom 404 page is displayed with all elements (heading, message, link, and Octocat image) rendering correctly.",
+            "status": "pending",
+            "testStrategy": "Test on multiple browsers and screen sizes. Verify the 'Go back to homepage' link works correctly. Check that the page is responsive and adapts to different viewport sizes."
+          },
+          {
+            "id": 5,
+            "title": "Implement responsive design adjustments",
+            "description": "Ensure the 404 page displays correctly on all device sizes",
+            "dependencies": [
+              "11.2",
+              "11.4"
+            ],
+            "details": "Review and adjust the CSS as needed to ensure the 404 page is fully responsive. Test on various screen sizes and make adjustments to font sizes, padding, and image dimensions to maintain proper layout across devices.",
+            "status": "pending",
+            "testStrategy": "Test the page on multiple device sizes (mobile, tablet, desktop). Verify text remains readable and the layout adjusts appropriately. Check that the Octocat image scales correctly without overflowing its container."
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "title": "Implement Code Syntax Highlighting",
+        "description": "Configure and customize code syntax highlighting for blog posts.",
+        "details": "1. Ensure syntax highlighting is enabled in config.yaml:\n```yaml\nmarkup:\n  highlight:\n    codeFences: true\n    guessSyntax: true\n    lineNos: false\n    style: \"github\"\n    tabWidth: 4\n```\n\n2. Create a custom stylesheet for syntax highlighting if needed in static/css/syntax.css\n\n3. Include the custom stylesheet in layouts/partials/custom-head.html:\n```html\n<link rel=\"stylesheet\" href=\"/css/syntax.css\">\n```\n\n4. Test syntax highlighting with various code blocks in blog posts:\n\nHTML example:\n````markdown\n```html\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Example</title>\n</head>\n<body>\n  <h1>Hello World</h1>\n</body>\n</html>\n```\n````\n\nJavaScript example:\n````markdown\n```javascript\nfunction greeting(name) {\n  return `Hello, ${name}!`;\n}\n\nconsole.log(greeting('Hugo'));\n```\n````\n\nCSS example:\n````markdown\n```css\n.container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-height: 100vh;\n  background-color: #f5f5f5;\n}\n```\n````\n\n5. Ensure code blocks are responsive and don't overflow on mobile devices by adding to custom.css:\n```css\npre {\n  overflow-x: auto;\n  max-width: 100%;\n  padding: 16px;\n  border-radius: 6px;\n}\n\ncode {\n  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;\n  font-size: 0.9em;\n}\n```",
+        "testStrategy": "Create test posts with code blocks in different languages. Verify syntax highlighting works correctly for each language. Check that code blocks are properly formatted and styled. Test responsiveness of code blocks on mobile devices to ensure no horizontal overflow.",
+        "priority": "medium",
+        "dependencies": [
+          2,
+          5
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Configure syntax highlighting in config.yaml",
+            "description": "Set up the basic syntax highlighting configuration in the Hugo config file",
+            "dependencies": [],
+            "details": "Verify and update the config.yaml file to include the proper markup.highlight settings including codeFences, guessSyntax, lineNos, style, and tabWidth parameters. Ensure the 'github' style is set as the default theme for syntax highlighting.",
+            "status": "pending",
+            "testStrategy": "Validate the config.yaml file syntax. Build the site and check if the configuration is properly applied by examining the generated HTML output for code blocks."
+          },
+          {
+            "id": 2,
+            "title": "Create custom syntax highlighting stylesheet",
+            "description": "Develop a custom CSS file for syntax highlighting customization",
+            "dependencies": [
+              "12.1"
+            ],
+            "details": "Create the static/css/syntax.css file with custom styling for code blocks. Research and implement color schemes that match the overall site design. Include styles for different programming languages and syntax elements like keywords, strings, comments, and functions.",
+            "status": "pending",
+            "testStrategy": "Apply the stylesheet to test pages with code blocks in various languages. Verify that the styling is consistent and readable across different code types."
+          },
+          {
+            "id": 3,
+            "title": "Include custom stylesheet in site templates",
+            "description": "Add the custom syntax highlighting stylesheet to the site's head section",
+            "dependencies": [
+              "12.2"
+            ],
+            "details": "Modify the layouts/partials/custom-head.html file to include the link to the custom syntax.css stylesheet. Ensure the path is correct and the stylesheet is loaded before any code blocks are rendered.",
+            "status": "pending",
+            "testStrategy": "Inspect the page source to confirm the stylesheet is properly included. Check that there are no 404 errors for the CSS file in the browser's developer tools."
+          },
+          {
+            "id": 4,
+            "title": "Test syntax highlighting with various code examples",
+            "description": "Create test posts with different programming language examples to verify highlighting",
+            "dependencies": [
+              "12.3"
+            ],
+            "details": "Create a test blog post that includes code blocks in HTML, JavaScript, CSS, Python, Go, and other relevant languages. Ensure each code block uses the correct language identifier in the markdown triple backtick syntax. Verify that language-specific syntax elements are properly highlighted.",
+            "status": "pending",
+            "testStrategy": "Review each code block to ensure proper highlighting of language-specific elements. Compare the highlighting with expected output based on the chosen style. Test with both short and long code examples."
+          },
+          {
+            "id": 5,
+            "title": "Implement responsive code block styling",
+            "description": "Ensure code blocks display correctly on all device sizes",
+            "dependencies": [
+              "12.4"
+            ],
+            "details": "Add responsive styling to custom.css for code blocks, including overflow handling, proper padding, and font settings. Implement the specified CSS for pre and code elements. Test horizontal scrolling behavior on narrow screens and ensure code remains readable on mobile devices.",
+            "status": "pending",
+            "testStrategy": "Test the code blocks on various device sizes using browser developer tools. Verify that horizontal scrolling works properly on mobile devices without breaking the layout. Check that code remains readable at different screen widths."
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "title": "Implement LaTeX Support (Optional)",
+        "description": "Add support for LaTeX mathematical expressions in blog posts.",
+        "details": "1. Configure LaTeX support in config.yaml:\n```yaml\nmarkup:\n  goldmark:\n    renderer:\n      unsafe: true\n```\n\n2. Add KaTeX support by including the necessary scripts in layouts/partials/custom-head.html:\n```html\n<!-- KaTeX for LaTeX support -->\n<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css\" integrity=\"sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn\" crossorigin=\"anonymous\">\n<script defer src=\"https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js\" integrity=\"sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx\" crossorigin=\"anonymous\"></script>\n<script defer src=\"https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js\" integrity=\"sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05\" crossorigin=\"anonymous\"></script>\n<script>\n  document.addEventListener(\"DOMContentLoaded\", function() {\n    renderMathInElement(document.body, {\n      delimiters: [\n        {left: '$$', right: '$$', display: true},\n        {left: '$', right: '$', display: false}\n      ],\n      throwOnError : false\n    });\n  });\n</script>\n```\n\n3. Create a test post with LaTeX examples in content/post/latex-example.md:\n```markdown\n---\ntitle: \"LaTeX Support Example\"\ndate: 2023-11-13T12:00:00Z\ndraft: false\nsummary: \"Demonstrating LaTeX mathematical expressions support in blog posts.\"\ntags: [\"latex\", \"math\", \"tutorial\"]\n---\n\nThis post demonstrates the LaTeX support for mathematical expressions.\n\n<!--more-->\n\n## Inline Math\n\nEinstein's famous equation: $E = mc^2$ shows the equivalence of mass and energy.\n\n## Display Math\n\nThe quadratic formula is given by:\n\n$$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$\n\n## More Complex Example\n\nMaxwell's Equations in differential form:\n\n$$\\begin{aligned}\n\\nabla \\cdot \\vec{E} &= \\frac{\\rho}{\\epsilon_0} \\\\\n\\nabla \\cdot \\vec{B} &= 0 \\\\\n\\nabla \\times \\vec{E} &= -\\frac{\\partial\\vec{B}}{\\partial t} \\\\\n\\nabla \\times \\vec{B} &= \\mu_0 \\vec{J} + \\mu_0 \\epsilon_0 \\frac{\\partial\\vec{E}}{\\partial t}\n\\end{aligned}$$\n```\n\n4. Add custom styling for LaTeX equations in static/css/custom.css:\n```css\n.katex-display {\n  overflow-x: auto;\n  overflow-y: hidden;\n  padding: 1em 0;\n  margin: 1em 0;\n}\n```",
+        "testStrategy": "Create a test post with various LaTeX expressions. Verify that both inline and display math formulas render correctly. Check that complex equations display properly. Test LaTeX rendering on different browsers and devices.",
+        "priority": "low",
+        "dependencies": [
+          2,
+          5
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Configure LaTeX support in Hugo configuration",
+            "description": "Update the config.yaml file to enable unsafe HTML rendering for LaTeX support",
+            "dependencies": [],
+            "details": "Add the following configuration to config.yaml to allow unsafe HTML rendering which is required for LaTeX to work properly:\n```yaml\nmarkup:\n  goldmark:\n    renderer:\n      unsafe: true\n```",
+            "status": "pending",
+            "testStrategy": "Verify that the configuration is correctly added to config.yaml and that the site builds without errors after the change."
+          },
+          {
+            "id": 2,
+            "title": "Implement KaTeX integration in page templates",
+            "description": "Add the necessary KaTeX scripts and stylesheets to the site's head section",
+            "dependencies": [
+              "13.1"
+            ],
+            "details": "Create or modify the layouts/partials/custom-head.html file to include KaTeX CSS and JavaScript libraries with the auto-render extension. Include the initialization script that will render LaTeX expressions on page load with appropriate delimiters.",
+            "status": "pending",
+            "testStrategy": "Check that all KaTeX resources load correctly by inspecting the network tab in browser developer tools. Verify there are no console errors related to KaTeX loading."
+          },
+          {
+            "id": 3,
+            "title": "Create LaTeX example post for testing",
+            "description": "Develop a sample blog post that demonstrates various LaTeX mathematical expressions",
+            "dependencies": [
+              "13.2"
+            ],
+            "details": "Create content/post/latex-example.md with examples of inline math using single dollar signs ($...$) and display math using double dollar signs ($$...$$). Include simple equations like Einstein's E=mc² as well as more complex examples like Maxwell's equations to test rendering capabilities.",
+            "status": "pending",
+            "testStrategy": "Visually inspect the rendered post to ensure all LaTeX expressions display correctly. Test both inline and block equations. Verify that complex mathematical notation renders properly."
+          },
+          {
+            "id": 4,
+            "title": "Add custom CSS styling for LaTeX equations",
+            "description": "Create custom CSS to improve the appearance and responsiveness of LaTeX equations",
+            "dependencies": [
+              "13.2",
+              "13.3"
+            ],
+            "details": "Create or update static/css/custom.css to add styling for KaTeX elements. Implement responsive design considerations for equations, especially for overflow handling on mobile devices. Ensure proper spacing and alignment of mathematical expressions.",
+            "status": "pending",
+            "testStrategy": "Test the styling on different screen sizes to verify that equations remain readable and don't cause horizontal scrolling issues. Check that the styling is consistent with the overall site design."
+          },
+          {
+            "id": 5,
+            "title": "Document LaTeX usage for content creators",
+            "description": "Create documentation explaining how to use LaTeX in blog posts",
+            "dependencies": [
+              "13.3",
+              "13.4"
+            ],
+            "details": "Create a guide in the project README or as a separate documentation file explaining how content creators can use LaTeX in their posts. Include examples of common mathematical notations, the syntax for inline vs. display math, and any limitations or special considerations.",
+            "status": "pending",
+            "testStrategy": "Have a team member unfamiliar with LaTeX follow the documentation to create a post with mathematical expressions. Verify they can successfully implement LaTeX without additional assistance."
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "title": "Implement Archive Page for Posts",
+        "description": "Create an archive page that lists all posts organized by year and month.",
+        "details": "1. Create content/archive/_index.md:\n```markdown\n---\ntitle: \"Archive\"\ndate: 2023-11-13T10:00:00Z\ndraft: false\n---\n\nAll blog posts organized by date.\n```\n\n2. Create layouts/archive/list.html:\n```html\n{{ define \"main\" }}\n<div class=\"archive-container\">\n  <h1>{{ .Title }}</h1>\n  <p>{{ .Content }}</p>\n  \n  {{ $posts := where .Site.RegularPages \"Section\" \"post\" }}\n  {{ $groupedPosts := $posts.GroupByDate \"2006\" }}\n  \n  {{ range $groupedPosts }}\n  <div class=\"archive-year\">\n    <h2>{{ .Key }}</h2>\n    \n    {{ range .Pages.GroupByDate \"January\" }}\n    <div class=\"archive-month\">\n      <h3>{{ .Key }}</h3>\n      <ul class=\"archive-posts\">\n        {{ range .Pages }}\n        <li class=\"archive-post\">\n          <span class=\"archive-post-date\">{{ .Date.Format \"02\" }}</span>\n          <a href=\"{{ .Permalink }}\" class=\"archive-post-title\">{{ .Title }}</a>\n        </li>\n        {{ end }}\n      </ul>\n    </div>\n    {{ end }}\n  </div>\n  {{ end }}\n</div>\n{{ end }}\n```\n\n3. Add CSS for the archive page in static/css/custom.css:\n```css\n.archive-container {\n  max-width: 800px;\n  margin: 0 auto;\n  padding: 20px;\n}\n\n.archive-year {\n  margin-bottom: 40px;\n}\n\n.archive-year h2 {\n  border-bottom: 1px solid var(--border-color);\n  padding-bottom: 10px;\n  margin-bottom: 20px;\n}\n\n.archive-month {\n  margin-bottom: 30px;\n}\n\n.archive-month h3 {\n  margin-bottom: 15px;\n  font-size: 1.2rem;\n}\n\n.archive-posts {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n}\n\n.archive-post {\n  display: flex;\n  margin-bottom: 10px;\n  align-items: baseline;\n}\n\n.archive-post-date {\n  min-width: 30px;\n  margin-right: 15px;\n  color: var(--text-color);\n  opacity: 0.7;\n}\n\n.archive-post-title {\n  text-decoration: none;\n  color: var(--link-color);\n}\n\n.archive-post-title:hover {\n  text-decoration: underline;\n}\n```\n\n4. Add a link to the archive page in the navigation menu by modifying the theme's header template or adding it to a custom partial",
+        "testStrategy": "Navigate to the archive page and verify that posts are correctly grouped by year and month. Check that the dates and links to posts work correctly. Test the archive page layout on different screen sizes to ensure responsiveness.",
+        "priority": "low",
+        "dependencies": [
+          2,
+          5
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Create archive content file",
+            "description": "Create the content/archive/_index.md file with appropriate frontmatter and content",
+            "dependencies": [],
+            "details": "Create the directory structure content/archive/ if it doesn't exist. Add the _index.md file with the specified frontmatter including title, date, and draft status. Include the introductory text 'All blog posts organized by date.' as the content.",
+            "status": "pending",
+            "testStrategy": "Verify the file exists in the correct location with proper frontmatter. Check that the content appears correctly when the page is rendered."
+          },
+          {
+            "id": 2,
+            "title": "Implement archive template",
+            "description": "Create the layouts/archive/list.html template that organizes posts by year and month",
+            "dependencies": [
+              "14.1"
+            ],
+            "details": "Create the layouts/archive/ directory if it doesn't exist. Implement the list.html template with the provided code that uses Hugo's GroupByDate function to organize posts by year and month. Ensure the template includes proper HTML structure with appropriate classes for styling.",
+            "status": "pending",
+            "testStrategy": "Test with sample posts to ensure they are correctly grouped by year and month. Verify the hierarchy of year > month > posts is displayed correctly."
+          },
+          {
+            "id": 3,
+            "title": "Add CSS styling for archive page",
+            "description": "Add the CSS styles for the archive page to static/css/custom.css",
+            "dependencies": [
+              "14.2"
+            ],
+            "details": "Add the provided CSS code to static/css/custom.css. Ensure the styles properly format the archive page with appropriate spacing, borders, and text formatting. Make sure the styles use CSS variables for colors to maintain theme consistency.",
+            "status": "pending",
+            "testStrategy": "Verify the archive page displays correctly with proper spacing, alignment, and visual hierarchy. Test on different screen sizes to ensure responsive behavior."
+          },
+          {
+            "id": 4,
+            "title": "Add archive link to navigation menu",
+            "description": "Add a link to the archive page in the site's main navigation menu",
+            "dependencies": [
+              "14.1",
+              "14.2",
+              "14.3"
+            ],
+            "details": "Modify the theme's header template or create a custom partial to add an 'Archive' link that points to the archive page. Ensure the link is properly styled to match other navigation items. The link should point to '/archive/' URL path.",
+            "status": "pending",
+            "testStrategy": "Verify the Archive link appears in the navigation menu. Test that clicking the link navigates to the archive page. Check that the link is properly styled and consistent with other navigation items."
+          },
+          {
+            "id": 5,
+            "title": "Test and optimize archive page",
+            "description": "Test the archive page functionality and optimize for performance and accessibility",
+            "dependencies": [
+              "14.1",
+              "14.2",
+              "14.3",
+              "14.4"
+            ],
+            "details": "Test the archive page with various numbers of posts to ensure it scales well. Check for any performance issues with large numbers of posts. Ensure the page is accessible with proper heading structure, focus states, and semantic HTML. Optimize any images or CSS for performance.",
+            "status": "pending",
+            "testStrategy": "Test with different numbers of posts (few, many). Verify performance using browser developer tools. Run accessibility checks using tools like Lighthouse or axe. Test on different devices and screen sizes to ensure responsive behavior."
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "title": "Performance Optimization and Testing",
+        "description": "Optimize the website for performance and conduct comprehensive testing.",
+        "details": "1. Image Optimization:\n   - Convert images to WebP format using a tool like squoosh.app\n   - Implement responsive images with srcset:\n   ```html\n   <img srcset=\"/images/image-small.webp 400w,\n                /images/image-medium.webp 800w,\n                /images/image-large.webp 1200w\"\n        sizes=\"(max-width: 600px) 400px,\n               (max-width: 1200px) 800px,\n               1200px\"\n        src=\"/images/image-large.webp\"\n        alt=\"Description\"\n        loading=\"lazy\"\n        width=\"800\"\n        height=\"600\">\n   ```\n\n2. CSS Optimization:\n   - Minify CSS files\n   - Consider critical CSS extraction for above-the-fold content\n   - Add to config.yaml:\n   ```yaml\n   minify:\n     minifyOutput: true\n     disableCSS: false\n     disableHTML: false\n     disableJS: false\n     disableJSON: false\n     disableXML: false\n   ```\n\n3. JavaScript Optimization:\n   - Defer non-critical JavaScript\n   - Minify JavaScript files\n   - Add to custom script tags: `defer` attribute\n\n4. Font Optimization:\n   - Use system fonts where possible\n   - If using web fonts, implement font-display: swap\n   - Consider font subsetting for minimal character sets\n\n5. Comprehensive Testing:\n   - Cross-browser testing (Chrome, Firefox, Safari, Edge)\n   - Mobile testing on iOS and Android devices\n   - Accessibility testing using axe DevTools or similar\n   - Performance testing using Lighthouse\n   - Validate HTML using W3C Validator\n   - Test all links and navigation paths\n\n6. Add a performance monitoring script in layouts/partials/custom-head.html (optional):\n```html\n<!-- Web Vitals Monitoring -->\n<script async src=\"https://unpkg.com/web-vitals/dist/web-vitals.iife.js\"></script>\n<script>\n  function sendToAnalytics(metric) {\n    console.log(metric); // Replace with actual analytics sending code if needed\n  }\n  \n  // When the script loads, start monitoring and reporting the metrics\n  addEventListener('load', function() {\n    webVitals.getCLS(sendToAnalytics);\n    webVitals.getFID(sendToAnalytics);\n    webVitals.getLCP(sendToAnalytics);\n    webVitals.getFCP(sendToAnalytics);\n    webVitals.getTTFB(sendToAnalytics);\n  });\n</script>\n```\n\n7. Create a pre-launch checklist:\n   - All pages render correctly\n   - Dark/light mode toggle works\n   - Posts display with proper formatting\n   - Code syntax highlighting works\n   - LaTeX rendering works (if implemented)\n   - Responsive design works on all devices\n   - SEO meta tags are properly set\n   - RSS feed is generated correctly\n   - 404 page works\n   - CI/CD pipeline deploys successfully\n   - Lighthouse scores meet targets (>90)",
+        "testStrategy": "Run Lighthouse audits for Performance, Accessibility, Best Practices, and SEO. Aim for scores >90 in all categories. Test the website on multiple browsers and devices. Verify that all features work correctly in both light and dark modes. Check page load times using Chrome DevTools Network tab (target < 2s). Validate HTML and CSS using W3C validators.",
+        "priority": "high",
+        "dependencies": [
+          7,
+          8,
+          9
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Image and Font Optimization",
+            "description": "Optimize all website images and implement efficient font loading strategies",
+            "dependencies": [],
+            "details": "1. Convert all images to WebP format using squoosh.app\n2. Implement responsive images with srcset and sizes attributes\n3. Add width, height, and loading=\"lazy\" attributes to all images\n4. Use system fonts where possible or implement font-display: swap\n5. Consider font subsetting for minimal character sets\n6. Create a documentation file for image optimization standards",
+            "status": "pending",
+            "testStrategy": "Verify WebP conversion of all images. Test responsive image loading on different devices. Measure image load times before and after optimization using Chrome DevTools. Check font loading performance with Lighthouse."
+          },
+          {
+            "id": 2,
+            "title": "CSS and JavaScript Optimization",
+            "description": "Minify and optimize CSS and JavaScript files for improved performance",
+            "dependencies": [],
+            "details": "1. Configure Hugo to minify CSS, JS, HTML, JSON, and XML outputs\n2. Add minify configuration to config.yaml\n3. Implement critical CSS extraction for above-the-fold content\n4. Add defer attribute to non-critical JavaScript\n5. Audit and remove any unused CSS/JS\n6. Organize CSS for better caching strategies",
+            "status": "pending",
+            "testStrategy": "Compare file sizes before and after minification. Measure Time to First Contentful Paint improvements. Verify JavaScript execution timing with Performance tab in DevTools. Check for any broken functionality after optimization."
+          },
+          {
+            "id": 3,
+            "title": "Performance Monitoring Implementation",
+            "description": "Set up Web Vitals monitoring and implement performance tracking",
+            "dependencies": [
+              "15.1",
+              "15.2"
+            ],
+            "details": "1. Add Web Vitals monitoring script to layouts/partials/custom-head.html\n2. Configure the script to track CLS, FID, LCP, FCP, and TTFB metrics\n3. Set up a basic analytics endpoint or console logging for metrics\n4. Create a performance baseline document with current metrics\n5. Implement automated performance regression testing if possible",
+            "status": "pending",
+            "testStrategy": "Verify metrics are being properly collected in console. Test that the script loads without affecting page performance. Create a performance dashboard or reporting mechanism. Ensure monitoring works across different browsers."
+          },
+          {
+            "id": 4,
+            "title": "Cross-Browser and Device Testing",
+            "description": "Conduct comprehensive testing across browsers, devices, and accessibility standards",
+            "dependencies": [
+              "15.1",
+              "15.2",
+              "15.3"
+            ],
+            "details": "1. Test on Chrome, Firefox, Safari, and Edge browsers\n2. Test on iOS and Android mobile devices with different screen sizes\n3. Conduct accessibility testing using axe DevTools\n4. Validate HTML using W3C Validator\n5. Test all links and navigation paths\n6. Verify dark/light mode functionality across all platforms",
+            "status": "pending",
+            "testStrategy": "Create a testing matrix documenting results across browsers and devices. Generate accessibility reports with WCAG compliance levels. Document and fix any validation errors. Create a comprehensive test report with screenshots from different devices."
+          },
+          {
+            "id": 5,
+            "title": "Pre-Launch Performance Audit and Checklist",
+            "description": "Conduct final performance audits and complete pre-launch checklist",
+            "dependencies": [
+              "15.1",
+              "15.2",
+              "15.3",
+              "15.4"
+            ],
+            "details": "1. Run Lighthouse audits for Performance, Accessibility, Best Practices, and SEO\n2. Create and complete a pre-launch checklist covering all site functionality\n3. Verify all pages render correctly in both modes\n4. Check that posts display with proper formatting\n5. Verify code syntax highlighting and LaTeX rendering\n6. Ensure Lighthouse scores meet targets (>90)",
+            "status": "pending",
+            "testStrategy": "Document Lighthouse scores before and after optimization. Create a final performance report with recommendations for future improvements. Verify all items on pre-launch checklist are completed. Test site performance under various network conditions using throttling."
+          }
+        ]
+      }
+    ],
+    "metadata": {
+      "created": "2025-09-13T17:19:25.589Z",
+      "updated": "2025-09-13T18:06:34.511Z",
+      "description": "Tasks for master context"
+    }
+  }
+}

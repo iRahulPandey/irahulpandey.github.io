@@ -1,0 +1,9 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="400" fill="#f6f8fa"/>
+  <rect x="50" y="50" width="700" height="300" fill="#24292e" rx="10"/>
+  <text x="400" y="200" font-family="Arial, sans-serif" font-size="32" fill="white" text-anchor="middle" dominant-baseline="middle">Hugo Static Site Generator</text>
+  <text x="400" y="240" font-family="Arial, sans-serif" font-size="18" fill="#58a6ff" text-anchor="middle" dominant-baseline="middle">Fast • Flexible • Modern</text>
+  <circle cx="200" cy="120" r="20" fill="#58a6ff"/>
+  <circle cx="400" cy="120" r="20" fill="#58a6ff"/>
+  <circle cx="600" cy="120" r="20" fill="#58a6ff"/>
+</svg>

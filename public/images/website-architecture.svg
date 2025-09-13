@@ -1,0 +1,67 @@
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .box { fill: #f6f8fa; stroke: #d0d7de; stroke-width: 2; }
+      .arrow { stroke: #0366d6; stroke-width: 3; fill: none; marker-end: url(#arrowhead); }
+      .text { font-family: Arial, sans-serif; font-size: 14px; text-anchor: middle; }
+      .title { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; text-anchor: middle; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0366d6" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="30" class="title" fill="#24292e">Personal Website Architecture</text>
+  
+  <!-- Development -->
+  <rect x="50" y="80" width="150" height="80" class="box" rx="5"/>
+  <text x="125" y="105" class="text" fill="#24292e">Local Development</text>
+  <text x="125" y="125" class="text" fill="#24292e">Hugo Server</text>
+  <text x="125" y="145" class="text" fill="#24292e">localhost:1313</text>
+  
+  <!-- Git -->
+  <rect x="250" y="80" width="150" height="80" class="box" rx="5"/>
+  <text x="325" y="105" class="text" fill="#24292e">Git Repository</text>
+  <text x="325" y="125" class="text" fill="#24292e">GitHub</text>
+  <text x="325" y="145" class="text" fill="#24292e">Version Control</text>
+  
+  <!-- GitHub Actions -->
+  <rect x="450" y="80" width="150" height="80" class="box" rx="5"/>
+  <text x="525" y="105" class="text" fill="#24292e">GitHub Actions</text>
+  <text x="525" y="125" class="text" fill="#24292e">CI/CD Pipeline</text>
+  <text x="525" y="145" class="text" fill="#24292e">Automated Build</text>
+  
+  <!-- GitHub Pages -->
+  <rect x="650" y="80" width="150" height="80" class="box" rx="5"/>
+  <text x="725" y="105" class="text" fill="#24292e">GitHub Pages</text>
+  <text x="725" y="125" class="text" fill="#24292e">Static Hosting</text>
+  <text x="725" y="145" class="text" fill="#24292e">Live Website</text>
+  
+  <!-- Arrows -->
+  <line x1="200" y1="120" x2="250" y2="120" class="arrow"/>
+  <line x1="400" y1="120" x2="450" y2="120" class="arrow"/>
+  <line x1="600" y1="120" x2="650" y2="120" class="arrow"/>
+  
+  <!-- Content Layer -->
+  <rect x="50" y="220" width="700" height="120" class="box" rx="5"/>
+  <text x="400" y="250" class="title" fill="#24292e">Content & Configuration</text>
+  <text x="200" y="280" class="text" fill="#24292e">Markdown Posts</text>
+  <text x="200" y="300" class="text" fill="#24292e">config.yaml</text>
+  <text x="200" y="320" class="text" fill="#24292e">Static Assets</text>
+  
+  <text x="400" y="280" class="text" fill="#24292e">GitHub Style Theme</text>
+  <text x="400" y="300" class="text" fill="#24292e">Custom Templates</text>
+  <text x="400" y="320" class="text" fill="#24292e">Dark/Light Mode</text>
+  
+  <text x="600" y="280" class="text" fill="#24292e">LaTeX Support</text>
+  <text x="600" y="300" class="text" fill="#24292e">Syntax Highlighting</text>
+  <text x="600" y="320" class="text" fill="#24292e">SEO Optimization</text>
+  
+  <!-- Features -->
+  <rect x="50" y="380" width="700" height="80" class="box" rx="5"/>
+  <text x="400" y="410" class="title" fill="#24292e">Key Features</text>
+  <text x="200" y="440" class="text" fill="#24292e">Responsive Design</text>
+  <text x="400" y="440" class="text" fill="#24292e">Fast Loading</text>
+  <text x="600" y="440" class="text" fill="#24292e">Mobile Friendly</text>
+</svg>

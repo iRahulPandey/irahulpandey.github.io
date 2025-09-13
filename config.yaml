@@ -1,0 +1,45 @@
+baseURL: "https://irahulpandey.github.io"
+languageCode: "en-us"
+title: "Rahul Pandey's Blog"
+theme: "github-style"
+pygmentsCodeFences: true
+pygmentsUseClasses: true
+
+params:
+  author: "Rahul Pandey"
+  description: "Senior Solutions Architect at adidas | Cloud AI & MLOps Specialist"
+  github: "iRahulPandey"
+  linkedin: "https://www.linkedin.com/in/rahulpandey1901/"
+  email: "rpandey1901@gmail.com"
+  url: "https://medium.com/@irahulpandey"
+  keywords: "cloud AI, MLOps, machine learning, solutions architecture, data analytics, Python, adidas"
+  rss: false
+  lastmod: true
+  favicon: "/images/github-mark.png"
+  avatar: "/images/avatar.png"
+  headerIcon: "/images/github-mark-white.png"
+  location: "Germany"
+  userStatusEmoji: "🚀"
+  enableGitalk: false
+  enableSearch: true
+  custom_css: ["css/custom.css"]
+
+markup:
+  highlight:
+    codeFences: true
+    guessSyntax: true
+    lineNos: false
+    style: "github"
+  goldmark:
+    renderer:
+      unsafe: true
+  math:
+    enable: true
+    use: "katex"
+
+taxonomies:
+  tag: "tags"
+  category: "categories"
+
+frontmatter:
+  lastmod: ["lastmod", ":fileModTime", ":default"]
