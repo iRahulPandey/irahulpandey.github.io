@@ -43,3 +43,31 @@ taxonomies:
 
 frontmatter:
   lastmod: ["lastmod", ":fileModTime", ":default"]
+
+# Sitemap configuration
+sitemap:
+  changefreq: weekly
+  priority: 0.5
+  filename: sitemap.xml
+
+# Performance optimizations
+minify:
+  disableCSS: false
+  disableHTML: false
+  disableJS: false
+  disableJSON: false
+  disableSVG: false
+  disableXML: false
+  minifyOutput: true
+
+# Output formats
+outputs:
+  home:
+    - HTML
+    - RSS
+  section:
+    - HTML
+    - RSS
+  taxonomy:
+    - HTML
+    - RSS
