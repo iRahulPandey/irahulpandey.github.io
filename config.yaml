@@ -59,6 +59,7 @@ taxonomies:
 
 frontmatter:
   lastmod: ["lastmod", ":fileModTime", ":default"]
+  date: ["date", ":fileModTime", ":default"]
 
 # Sitemap configuration
 sitemap:
