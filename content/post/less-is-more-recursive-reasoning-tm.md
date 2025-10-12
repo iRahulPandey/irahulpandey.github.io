@@ -1,6 +1,6 @@
 ---
 title: "Less is More: Recursive Reasoning with Tiny Networks"
-date: 2024-10-12T16:00:00Z
+date: 2025-10-12T16:00:00Z
 draft: false
 summary: "A comprehensive summary of the paper."
 tags: ["trm", "Tiny Recursive Model", "small-sample learning", "recursive reasoning", "AI"]
