@@ -18,9 +18,10 @@ The AI landscape moves at machine speed, but human attention operates at biologi
 
 That's when I decided to build something smarter.
 
+<div style="background: linear-gradient(45deg,rgb(255, 251, 251),rgb(240, 240, 240)); border-left: 5px solid #28a745;color: black; padding: 20px; border-radius: 10px; margin: 20px 0;">
 
-<div style="background-color: #f8f9fa; border-left: 5px solid #28a745; padding: 15px; margin: 20px 0;">
-<strong>💡 Key Insight:</strong> We don't need more information—we need better curation and synthesis. We need intelligence applied to intelligence news.
+<strong>Key Insight:</strong> We don't need more information—we need better curation and synthesis. We need intelligence applied to intelligence news.
+</ul>
 </div>
 
 ## My Solution: AI-Driven Weekly Workflow with Human in the Loop
