@@ -1,5 +1,5 @@
 ---
-title: "# How I Built an AI That Reads AI News So You Don't Have To"
+title: "How I Built an AI That Reads AI News So You Don't Have To"
 date: 2025-10-24T16:00:00Z
 draft: false
 summary: "Staying Ahead of the AI Revolution"
