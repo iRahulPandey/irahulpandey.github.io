@@ -29,7 +29,7 @@ Get the latest insights on **AI** delivered straight to your inbox!
 </a>
 </div>
 
-<small style="color: #f0f0f0; opacity: 0.9;">Weekly insights • No spam • Unsubscribe anytime</small>
+<small style="color: #f0f0f0; opacity: 0.9;">Weekly insights • No spam • <a href="https://automation.serverpit.com/form/50551d61-175e-40bd-af86-78c8fd53bdcb" target="_blank" rel="noopener noreferrer" style="color: #f0f0f0; text-decoration: underline;">Unsubscribe anytime</a></small>
 
 </div>
 
