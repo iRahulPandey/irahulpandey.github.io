@@ -1,5 +1,7 @@
 {{ $section := where .Site.RegularPages "Section" "in" (slice "post") }}
 {{ $section_count := len $section }}
+{{ $newsletter_section := where .Site.RegularPages "Section" "in" (slice "newsletter") }}
+{{ $newsletter_count := len $newsletter_section }}
 <div class="UnderlineNav user-profile-nav d-block d-md-none position-sticky top-0 pl-3 ml-n3 mr-n3 pr-3 bg-white"
   style="z-index:3;">
   <nav class="UnderlineNav-body">
@@ -22,6 +24,16 @@
       </svg>
       Posts
       <span class="Counter ">{{ $section_count}}</span>
+    </a>
+    <a class="UnderlineNav-item {{ if eq .Section "newsletter" }} selected {{ end }}" href="{{urls.JoinPath .Site.BaseURL "newsletter"}}">
+      <svg class="octicon octicon-mail UnderlineNav-octicon hide-sm" height="16" viewBox="0 0 16 16"
+        version="1.1" width="16">
+        <path fill-rule="evenodd"
+          d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.5 4.75a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5zM8 10a1 1 0 100-2 1 1 0 000 2z">
+        </path>
+      </svg>
+      Newsletter
+      <span class="Counter">{{ $newsletter_count}}</span>
     </a>
   </nav>
 </div>
