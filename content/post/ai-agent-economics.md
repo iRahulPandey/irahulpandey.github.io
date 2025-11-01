@@ -11,17 +11,21 @@ tags: ["Newsletter", "AI"]
 
 Forget the tech for a second. Let's talk about money.
 
-You're the VP of a big data and analytics team. Someone pitches you an AI agent. Should you deploy it? That's not just a tech question—it's an economics question. In this article, I'm diving deep with examples that can help identify the equation that will help us make this decision.
+You're the VP of a big data and analytics team. Someone pitches you an AI agent. Should you deploy it? That's not just a tech question—it's an economics question. 
+
+In this article, I'm diving deep with examples that can help identify the equation that will help us make this decision.
 
 ## The Demo vs. Production Reality
 
-**Imagine this:** You did a fast proof-of-concept. In just a couple of days, your agent is writing code, answering questions, analyzing your data, and even sending emails. You're thrilled—this thing feels unstoppable. You rush to show your boss, demonstrate your cool demo, and everyone is impressed.
+**Imagine this:** You did a fast proof-of-concept. In just a couple of days, your agent is writing code, answering questions, analyzing your data, and even sending emails. You're amazed—this thing feels like magic. You rush to show your boss, demonstrate your cool demo, and everyone is impressed.
 
 **"Fantastic. Let's deploy it."**
 
-So you push it to production. Seconds later, chaos. Your agent starts blasting emails—not to a few people, but to 10,000 employees. Message after message after message. The entire company is being spammed by your brilliant creation.
+So you push it to production. Seconds later, chaos. Your agent starts blasting emails—not to a few people, but to 10,000 employees. 
 
-Your boss storms in, furious.
+Message after message after message. 
+
+The entire company is being spammed by your brilliant creation. Your boss storms in, furious.
 
 ![image](../../static//images/image.png)
 
@@ -29,7 +33,7 @@ Your boss storms in, furious.
 
 ## The Core Problem
 
-**What breaks:** Cool demos ≠ safe production systems. We need actual math.
+**What breaks:** Cool demos ≠ safe production systems. We need actual math to understand this.
 
 Let's represent this scenario as a function that calculates the expected value your agent will bring if deployed versus the cost of operation:
 
@@ -73,7 +77,7 @@ expected_value = (0.8 * 50) - (0.2 * 10000) = 40 - 2000 = -$1960
 # Result: DO NOT DEPLOY (negative expected value!)
 ```
 
-Aha! Now we see the problem. Even though the agent works 80% of the time, the 20% failure rate × high cost of failure = deal breaker.
+**Aha!** Now we see the problem. Even though the agent works 80% of the time, the 20% failure rate × high cost of failure = deal breaker.
 
 #### Example 2: Code Review Agent
 
@@ -240,7 +244,7 @@ def black_box_agent():
     # Stakeholder: "What did it do? Can we trust it?"
     # Probability × 0.5 due to uncertainty penalty
 
-# With observability (LangSmith)
+# With observability 
 def transparent_agent():
     with trace_all_llm_calls():
         result = agent.do_something()
