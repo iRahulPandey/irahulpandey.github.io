@@ -27,7 +27,7 @@ Message after message after message.
 
 The entire company is being spammed by your brilliant creation. Your boss storms in, furious.
 
-![Chaos illustration](/images/image.png)
+![Chaos illustration](image.png)
 
 **That's when it hits you:** The proof-of-concept worked—production did not but there is something more to it.
 
