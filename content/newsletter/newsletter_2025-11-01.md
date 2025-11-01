@@ -1,3 +1,12 @@
+---
+title: "Weekly Update - October 31, 2025"
+date: 2025-10-31T16:00:00Z
+draft: false
+description: "This week's insights on AI developments, MLOps best practices, and cloud technologies"
+summary: "Welcome to the edition of my weekly newsletter! I'm excited to share insights, updates, and thoughts on the rapidly evolving world of AI, MLOps, and cloud technologies."
+tags: ["newsletter", "ai", "mlops", "weekly-update"]
+---
+
 <p style="text-align: center; font-size: 2em; font-weight: bold;">AI Industry Weekly Update - 2025-11-01</p>
 
 ---
