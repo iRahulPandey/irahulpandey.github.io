@@ -1,6 +1,6 @@
 ---
 title: "Weekly Update - November 15, 2025"
-date: 2025-11-15T16:00:00Z
+date: 2025-11-14T16:00:00Z
 draft: false
 description: "This week's insights on AI developments, MLOps best practices, and cloud technologies"
 summary: "Welcome to the edition of my weekly newsletter! I'm excited to share insights, updates, and thoughts on the rapidly evolving world of AI, MLOps, and cloud technologies."
