@@ -1,3 +1,9 @@
-<!-- Custom footer - empty to remove theme attribution -->
-
-
+<footer class="site-footer">
+  <ul class="contact">
+    <li><a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a></li>
+    <li><a href="{{ .Site.Params.github }}" rel="me">GitHub</a></li>
+    <li><a href="{{ .Site.Params.linkedin }}" rel="me">LinkedIn</a></li>
+    <li><a href="{{ .Site.Params.medium }}" rel="me">Medium</a></li>
+    <li>{{ .Site.Params.location }}</li>
+  </ul>
+</footer>

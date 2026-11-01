@@ -3,7 +3,7 @@ title: "Don't Build the Agent. Fix the Economics First, Then Write Code"
 date: 2025-10-31T16:00:00Z
 draft: false
 summary: "Making your AI agent smarter is the wrong goal. Fix the economics first, then write code."
-tags: ["Newsletter", "AI"]
+tags: ["AI"]
 
 ---
 

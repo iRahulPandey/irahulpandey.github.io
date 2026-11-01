@@ -1,30 +1,21 @@
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{{ "css/ai-trends.css" | absURL }}">
+<section class="ai-trends" id="ai-trends">
+  <header class="board-head">
+    <p class="marginalia" id="ai-trends-date"></p>
+    <div class="masthead">
+      <h1>AI repos gaining stars on GitHub</h1>
+      <div class="status"><span class="pulse" id="ai-trends-pulse"></span><span id="ai-trends-status">Loading</span></div>
+    </div>
+    <nav class="views" role="tablist" id="ai-trends-tabs">
+      <button type="button" role="tab" data-view="week" aria-selected="true">New this week</button>
+      <button type="button" role="tab" data-view="month" aria-selected="false">Hot this month</button>
+      <button type="button" role="tab" data-view="active" aria-selected="false">Established, still moving</button>
+    </nav>
+  </header>
 
-<section class="ai-trends mt-4" id="ai-trends">
-  <div class="sheet">
-    <header>
-      <p class="date" id="ai-trends-date"></p>
-      <div class="masthead">
-        <h2>AI repos gaining stars on GitHub</h2>
-        <div class="status"><span class="pulse" id="ai-trends-pulse"></span><span id="ai-trends-status">Loading</span></div>
-      </div>
-      <nav class="views" role="tablist" id="ai-trends-tabs">
-        <button type="button" role="tab" data-view="week" aria-selected="true">New this week</button>
-        <button type="button" role="tab" data-view="month" aria-selected="false">Hot this month</button>
-        <button type="button" role="tab" data-view="active" aria-selected="false">Established, still moving</button>
-      </nav>
-    </header>
+  <div id="ai-trends-main" aria-live="polite"></div>
 
-    <div id="ai-trends-main" aria-live="polite"></div>
-
-    <footer>
-      This page reads the public GitHub search API from your browser and refreshes every five minutes.
-      Pace is stars divided by days since the repository was created. GitHub allows ten searches a minute per network, so a busy shared connection may briefly pause updates.
-    </footer>
-  </div>
+  <p class="board-note">
+    This page reads the public GitHub search API from your browser and refreshes every five minutes.
+    Pace is stars divided by days since the repository was created. GitHub allows ten searches a minute per network, so a busy shared connection may briefly pause updates.
+  </p>
 </section>
-
-<script src="{{ "js/ai-trends.js" | absURL }}" defer></script>
