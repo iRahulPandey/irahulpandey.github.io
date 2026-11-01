@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns:yt="http://www.youtube.com/xml/schemas/2015" xmlns:media="http://search.yahoo.com/mrss/" xmlns="http://www.w3.org/2005/Atom">
+ <link rel="self" href="http://www.youtube.com/feeds/videos.xml?channel_id=UCOVsasVS8QuBBNmWcW_7Yfg"/>
+ <id>yt:channel:OVsasVS8QuBBNmWcW_7Yfg</id>
+ <yt:channelId>OVsasVS8QuBBNmWcW_7Yfg</yt:channelId>
+ <title>Rahul Pandey</title>
+ <link rel="alternate" href="https://www.youtube.com/channel/UCOVsasVS8QuBBNmWcW_7Yfg"/>
+ <author>
+  <name>Rahul Pandey</name>
+  <uri>https://www.youtube.com/channel/UCOVsasVS8QuBBNmWcW_7Yfg</uri>
+ </author>
+ <published>2026-01-08T08:05:38+00:00</published>
+ <entry>
+  <id>yt:video:n3W9sySY7rs</id>
+  <yt:videoId>n3W9sySY7rs</yt:videoId>
+  <yt:channelId>UCOVsasVS8QuBBNmWcW_7Yfg</yt:channelId>
+  <title>How to Build a Reliable Agents Powered by LangChain: Memory, Permissions &amp; Human Approval</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=n3W9sySY7rs"/>
+  <author>
+   <name>Rahul Pandey</name>
+   <uri>https://www.youtube.com/channel/UCOVsasVS8QuBBNmWcW_7Yfg</uri>
+  </author>
+  <published>2026-10-31T17:35:55+00:00</published>
+  <updated>2026-10-31T21:56:22+00:00</updated>
+  <media:group>
+   <media:title>How to Build a Reliable Agents Powered by LangChain: Memory, Permissions &amp; Human Approval</media:title>
+   <media:content url="https://www.youtube.com/v/n3W9sySY7rs?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i3.ytimg.com/vi/n3W9sySY7rs/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Building deep agents requires a robust framework for managing complex interactions. Learn to implement model in a loop architectures for production systems.
+
+This guide explores the technical implementation of multi-layered agent systems, focusing on how to structure sub-agent logic effectively. We examine the code patterns necessary to maintain state and manage communication across different agent components, ensuring your autonomous workflows remain predictable and efficient.
+
+By mastering the interaction between primary controllers and specialized sub-agents, you gain better control over complex task execution. We demonstrate how to organize these agent interactions to prevent common bottlenecks, providing a clear blueprint for engineers scaling their AI infrastructure.
+
+In this video, I use LangChain's Deep Agents to build Crema, a coffee-shop barista you can order from, one feature at a time. It takes orders with tools, plans a team order with a checklist, reads old receipts through file permissions, hands bulky work to a subagent, remembers its customers, looks up allergens with skills, and asks for your approval before it charges. Then we run it as a chat app in the browser.
+
+Chapters:
+00:00 Introduction
+01:05 DeepAgent Overview
+04:00 Coffee Shop Agent Architecture
+14:15 Agent Planning Capabilities
+19:10 Memory and Permissions
+23:10 Using Sub-Agents
+29:25 Adding Skills
+30:38 Human Approval System
+31:56 App Demo
+
+#LangChain #DeepAgents #AIAgents</media:description>
+   <media:community>
+    <media:starRating count="3" average="5.00" min="1" max="5"/>
+    <media:statistics views="361"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:sW5Z7TbYZgM</id>
+  <yt:videoId>sW5Z7TbYZgM</yt:videoId>
+  <yt:channelId>UCOVsasVS8QuBBNmWcW_7Yfg</yt:channelId>
+  <title>Why LLMs Turn to Sycophancy #ai #shorts</title>
+  <link rel="alternate" href="https://www.youtube.com/shorts/sW5Z7TbYZgM"/>
+  <author>
+   <name>Rahul Pandey</name>
+   <uri>https://www.youtube.com/channel/UCOVsasVS8QuBBNmWcW_7Yfg</uri>
+  </author>
+  <published>2026-10-11T11:01:03+00:00</published>
+  <updated>2026-10-11T16:31:20+00:00</updated>
+  <media:group>
+   <media:title>Why LLMs Turn to Sycophancy #ai #shorts</media:title>
+   <media:content url="https://www.youtube.com/v/sW5Z7TbYZgM?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i4.ytimg.com/vi/sW5Z7TbYZgM/hqdefault.jpg" width="480" height="360"/>
+   <media:description>AI sycophancy causes models to abandon logic when pushed. See how confidence tricks LLMs into ignoring factual evidence.
+
+Large language models often prioritize user confidence over statistical truth. This demonstration highlights a flaw in LLM reasoning where a model correctly identifies probability but changes its answer when pressured. Understanding these failure modes is critical for engineers building production systems where accuracy matters.
+
+By testing a simple coin flip scenario, we show how easily a model can be swayed to incorrect conclusions. This highlights the ongoing challenge of AI reliability, where models mimic human bias rather than maintaining objective logic.
+
+#AI #Sycophancy #LLM #reliability</media:description>
+   <media:community>
+    <media:starRating count="1" average="5.00" min="1" max="5"/>
+    <media:statistics views="25"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:xM4-EmLi4Fc</id>
+  <yt:videoId>xM4-EmLi4Fc</yt:videoId>
+  <yt:channelId>UCOVsasVS8QuBBNmWcW_7Yfg</yt:channelId>
+  <title>How to evaluate and improve agent skills using MLflow</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=xM4-EmLi4Fc"/>
+  <author>
+   <name>Rahul Pandey</name>
+   <uri>https://www.youtube.com/channel/UCOVsasVS8QuBBNmWcW_7Yfg</uri>
+  </author>
+  <published>2026-10-10T16:11:52+00:00</published>
+  <updated>2026-10-14T03:51:05+00:00</updated>
+  <media:group>
+   <media:title>How to evaluate and improve agent skills using MLflow</media:title>
+   <media:content url="https://www.youtube.com/v/xM4-EmLi4Fc?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i1.ytimg.com/vi/xM4-EmLi4Fc/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Learn to evaluate and improve agent skills using MLflow. Gain control over how instructions and resources reach your models.
+
+Building reliable AI agents requires more than just prompt engineering. You need a systematic way to track how instructions, resources, and catalog tiers influence performance. This tutorial walks through the technical implementation of tracking these components so you can iterate on your model interactions with precision.
+
+We focus on setting up evaluation runs to measure how specific changes impact your agent skills. By integrating MLflow, you can automate the testing process and move beyond manual checks, ensuring that every fine-tuning effort is backed by concrete data. Effective model evaluation is critical for production stability.
+
+Chapters:
+00:00 Introduction
+00:52 Setup: MLflow server, AI Gateway, a clean slate every run
+03:00 Defining Skills: SKILL.md and loading a skill as a tool
+07:30 Register Skills: versioning skills in the Prompt Registry
+08:06 Evaluating Skill Impact: one skill, four models, one small edit
+15:00 Automated Evaluation: code checks + an LLM judge with mlflow.genai.evaluate
+24:22 Fine-Tuning Skills: optimize_prompts and a promotion rule
+31:35 Conclusion
+
+#AgentSkills #MLflow #AIagents #GenAI #AI #Skills</media:description>
+   <media:community>
+    <media:starRating count="26" average="5.00" min="1" max="5"/>
+    <media:statistics views="6885"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:naihnHUni8k</id>
+  <yt:videoId>naihnHUni8k</yt:videoId>
+  <yt:channelId>UCOVsasVS8QuBBNmWcW_7Yfg</yt:channelId>
+  <title>Why do AI models hallucinate? #ai #shorts</title>
+  <link rel="alternate" href="https://www.youtube.com/shorts/naihnHUni8k"/>
+  <author>
+   <name>Rahul Pandey</name>
+   <uri>https://www.youtube.com/channel/UCOVsasVS8QuBBNmWcW_7Yfg</uri>
+  </author>
+  <published>2026-10-09T15:09:15+00:00</published>
+  <updated>2026-10-13T02:49:14+00:00</updated>
+  <media:group>
+   <media:title>Why do AI models hallucinate? #ai #shorts</media:title>
+   <media:content url="https://www.youtube.com/v/naihnHUni8k?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i3.ytimg.com/vi/naihnHUni8k/hqdefault.jpg" width="480" height="360"/>
+   <media:description>AI hallucination occurs when models prioritize patterns over facts. Learn how to identify danger zones and improve reliability.
+
+AI hallucination is the tendency for large language models to present false information with high confidence. This happens because models predict text patterns rather than verifying factual accuracy. Understanding this failure mode is critical for engineers integrating LLMs into production environments.
+
+#Shorts #AIHallucination #LLM #Claude #Anthropic #AISafety #MachineLearning</media:description>
+   <media:community>
+    <media:starRating count="2" average="5.00" min="1" max="5"/>
+    <media:statistics views="75"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:sCaf05NUEQg</id>
+  <yt:videoId>sCaf05NUEQg</yt:videoId>
+  <yt:channelId>UCOVsasVS8QuBBNmWcW_7Yfg</yt:channelId>
+  <title>One accuracy score isn't enough #datascience #ai #tutorial</title>
+  <link rel="alternate" href="https://www.youtube.com/shorts/sCaf05NUEQg"/>
+  <author>
+   <name>Rahul Pandey</name>
+   <uri>https://www.youtube.com/channel/UCOVsasVS8QuBBNmWcW_7Yfg</uri>
+  </author>
+  <published>2026-10-08T11:20:16+00:00</published>
+  <updated>2026-10-12T03:32:45+00:00</updated>
+  <media:group>
+   <media:title>One accuracy score isn't enough #datascience #ai #tutorial</media:title>
+   <media:content url="https://www.youtube.com/v/sCaf05NUEQg?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i4.ytimg.com/vi/sCaf05NUEQg/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Comparing two accuracy scores is misleading. Use the central limit theorem to measure model uncertainty before you deploy.
+
+If your machine learning pipeline relies on single accuracy scores, you are missing the full picture. A score of 85% versus 84% tells you almost nothing about how the model will perform in production because it ignores variance.
+
+Proper model evaluation requires plotting performance across multiple test sets to visualize the distribution of results. By applying the central limit theorem, you can quantify the uncertainty around your average gain. This process ensures you are shipping models based on statistical significance rather than noise.
+
+#Shorts #CentralLimitTheorem #MachineLearning #Statistics #DataScience #MLEngineering #modelevaluation</media:description>
+   <media:community>
+    <media:starRating count="2" average="5.00" min="1" max="5"/>
+    <media:statistics views="204"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:pa-GwbqAoqE</id>
+  <yt:videoId>pa-GwbqAoqE</yt:videoId>
+  <yt:channelId>UCOVsasVS8QuBBNmWcW_7Yfg</yt:channelId>
+  <title>LLM Optimization Interview Question: 5 Techniques + Their Catch #llm #interview</title>
+  <link rel="alternate" href="https://www.youtube.com/shorts/pa-GwbqAoqE"/>
+  <author>
+   <name>Rahul Pandey</name>
+   <uri>https://www.youtube.com/channel/UCOVsasVS8QuBBNmWcW_7Yfg</uri>
+  </author>
+  <published>2026-10-07T07:34:56+00:00</published>
+  <updated>2026-10-12T03:37:30+00:00</updated>
+  <media:group>
+   <media:title>LLM Optimization Interview Question: 5 Techniques + Their Catch #llm #interview</media:title>
+   <media:content url="https://www.youtube.com/v/pa-GwbqAoqE?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i1.ytimg.com/vi/pa-GwbqAoqE/hqdefault.jpg" width="480" height="360"/>
+   <media:description>LLM optimization is essential for faster, cheaper inference. Learn to identify bottlenecks and trade-offs in your stack.
+
+#interview #aiengineering #ai #llm #optimization</media:description>
+   <media:community>
+    <media:starRating count="5" average="5.00" min="1" max="5"/>
+    <media:statistics views="247"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:9-QN70TXo_U</id>
+  <yt:videoId>9-QN70TXo_U</yt:videoId>
+  <yt:channelId>UCOVsasVS8QuBBNmWcW_7Yfg</yt:channelId>
+  <title>MLOps Explained in 90 Seconds #mlops #ai #machinelearning</title>
+  <link rel="alternate" href="https://www.youtube.com/shorts/9-QN70TXo_U"/>
+  <author>
+   <name>Rahul Pandey</name>
+   <uri>https://www.youtube.com/channel/UCOVsasVS8QuBBNmWcW_7Yfg</uri>
+  </author>
+  <published>2026-10-06T09:38:04+00:00</published>
+  <updated>2026-10-10T06:56:09+00:00</updated>
+  <media:group>
+   <media:title>MLOps Explained in 90 Seconds #mlops #ai #machinelearning</media:title>
+   <media:content url="https://www.youtube.com/v/9-QN70TXo_U?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i2.ytimg.com/vi/9-QN70TXo_U/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Your model passed every test. Three months later, it was quietly wrong. No crash. No error. No alert.
+
+That's the problem MLOps solves, and why DevOps alone can't.
+
+Normal software mostly breaks when someone changes the code. A model can break when nobody touches anything, because the data changes underneath it. That's why MLOps manages three moving parts: code, data, and models.
+
+What MLOps adds to the DevOps playbook:
+🔹 CI: tests data and models, not just code
+🔹 CD: ships a training pipeline, not just a model
+🔹 CT: continuous training, something DevOps never had
+🔹 Monitoring catches drift, the pipeline retrains, and a new challenger model replaces the champion only if it performs better
+
+DevOps asks: does the code still work?
+MLOps asks: is the model still right?
+
+#Shorts #MLOps #DevOps #MachineLearning #DataScience #MLEngineering #ModelDrift</media:description>
+   <media:community>
+    <media:starRating count="6" average="5.00" min="1" max="5"/>
+    <media:statistics views="447"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:9pePA48jUsA</id>
+  <yt:videoId>9pePA48jUsA</yt:videoId>
+  <yt:channelId>UCOVsasVS8QuBBNmWcW_7Yfg</yt:channelId>
+  <title>Claude Code: The Complete AI-Native SDLC #ai #claude #sdlc</title>
+  <link rel="alternate" href="https://www.youtube.com/shorts/9pePA48jUsA"/>
+  <author>
+   <name>Rahul Pandey</name>
+   <uri>https://www.youtube.com/channel/UCOVsasVS8QuBBNmWcW_7Yfg</uri>
+  </author>
+  <published>2026-10-05T10:05:46+00:00</published>
+  <updated>2026-10-09T09:30:51+00:00</updated>
+  <media:group>
+   <media:title>Claude Code: The Complete AI-Native SDLC #ai #claude #sdlc</media:title>
+   <media:content url="https://www.youtube.com/v/9pePA48jUsA?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i2.ytimg.com/vi/9pePA48jUsA/hqdefault.jpg" width="480" height="360"/>
+   <media:description>The AI native SDLC accelerates development cycles from weeks to hours while maintaining human oversight at every stage.
+
+We explore the Anthropix Playbook, a systematic approach to building software that integrates AI directly into the development workflow. By structuring the process into six distinct phases—Plan, Build, Test, Deploy, and Maintain—teams can automate routine tasks while ensuring each commit to Git provides clear context for the next step.
+
+This architecture prioritizes human judgment, keeping developers in control of the final output. It is designed for engineering teams looking to implement a rigorous software testing life cycle that scales with AI agents. Understanding how to manage these automated transitions is essential for reducing technical debt and increasing deployment velocity.
+
+#Shorts #ClaudeCode #AIEngineering #SDLC #softwareengineering</media:description>
+   <media:community>
+    <media:starRating count="2" average="5.00" min="1" max="5"/>
+    <media:statistics views="320"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:5vhywejMiew</id>
+  <yt:videoId>5vhywejMiew</yt:videoId>
+  <yt:channelId>UCOVsasVS8QuBBNmWcW_7Yfg</yt:channelId>
+  <title>Why MCP is the future of AI connectivity #ai #mcp #tech</title>
+  <link rel="alternate" href="https://www.youtube.com/shorts/5vhywejMiew"/>
+  <author>
+   <name>Rahul Pandey</name>
+   <uri>https://www.youtube.com/channel/UCOVsasVS8QuBBNmWcW_7Yfg</uri>
+  </author>
+  <published>2026-10-04T10:41:25+00:00</published>
+  <updated>2026-10-09T09:29:14+00:00</updated>
+  <media:group>
+   <media:title>Why MCP is the future of AI connectivity #ai #mcp #tech</media:title>
+   <media:content url="https://www.youtube.com/v/5vhywejMiew?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i2.ytimg.com/vi/5vhywejMiew/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Stop building custom integrations for every AI agent. The Model Context Protocol provides a unified port for AI, similar to USB-C.
+
+Managing connections between AI agents becomes exponentially harder as you scale from three to twenty integrations. Each new tool currently requires custom code and fragile API maintenance. This architecture simplifies the stack by standardizing how models talk to your data and services.
+
+#MCP #ModelContextProtocol #AIagents #shorts</media:description>
+   <media:community>
+    <media:starRating count="12" average="5.00" min="1" max="5"/>
+    <media:statistics views="586"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:UAaV-W1_vN8</id>
+  <yt:videoId>UAaV-W1_vN8</yt:videoId>
+  <yt:channelId>UCOVsasVS8QuBBNmWcW_7Yfg</yt:channelId>
+  <title>Why You Need To Use Claude Mods Right Now #software #ai</title>
+  <link rel="alternate" href="https://www.youtube.com/shorts/UAaV-W1_vN8"/>
+  <author>
+   <name>Rahul Pandey</name>
+   <uri>https://www.youtube.com/channel/UCOVsasVS8QuBBNmWcW_7Yfg</uri>
+  </author>
+  <published>2026-10-03T09:49:20+00:00</published>
+  <updated>2026-10-07T07:52:06+00:00</updated>
+  <media:group>
+   <media:title>Why You Need To Use Claude Mods Right Now #software #ai</media:title>
+   <media:content url="https://www.youtube.com/v/UAaV-W1_vN8?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i2.ytimg.com/vi/UAaV-W1_vN8/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Claude Code now supports custom mods, allowing you to intercept and rewrite agent actions in real time.
+
+Think of the architecture like a restaurant ticket system. Each step the model intends to take is generated as a ticket, which a mod can then observe, count, or completely rewrite before it executes. This event system provides a powerful mechanism to control agent behavior without modifying the core model itself.
+
+#ClaudeCode #AI #AIagents #DevTools #Anthropic #coding #shorts</media:description>
+   <media:community>
+    <media:starRating count="8" average="5.00" min="1" max="5"/>
+    <media:statistics views="748"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:CMGLcSu1zKQ</id>
+  <yt:videoId>CMGLcSu1zKQ</yt:videoId>
+  <yt:channelId>UCOVsasVS8QuBBNmWcW_7Yfg</yt:channelId>
+  <title>Why AI fails at your private documents ⚠️ #ai #rag</title>
+  <link rel="alternate" href="https://www.youtube.com/shorts/CMGLcSu1zKQ"/>
+  <author>
+   <name>Rahul Pandey</name>
+   <uri>https://www.youtube.com/channel/UCOVsasVS8QuBBNmWcW_7Yfg</uri>
+  </author>
+  <published>2026-10-02T13:43:28+00:00</published>
+  <updated>2026-10-07T07:54:49+00:00</updated>
+  <media:group>
+   <media:title>Why AI fails at your private documents ⚠️ #ai #rag</media:title>
+   <media:content url="https://www.youtube.com/v/CMGLcSu1zKQ?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i4.ytimg.com/vi/CMGLcSu1zKQ/hqdefault.jpg" width="480" height="360"/>
+   <media:description>RAG is the primary fix for AI hallucinations that force models to invent outdated policies. Here is how to ground your AI.
+
+Large language models often struggle when relying solely on static training data, leading to incorrect or outdated answers. We solve this by splitting documents into manageable chunks and converting them into vector embeddings, which allows the model to base its reasoning on your specific data instead of general training sets.
+
+This architecture ensures your LLM accuracy remains high even when policies change or new information arrives. By retrieving relevant document snippets before generating a response, the system provides factual answers rather than guessing based on stale information.
+
+#rag #ai  #llm  #agent</media:description>
+   <media:community>
+    <media:starRating count="5" average="5.00" min="1" max="5"/>
+    <media:statistics views="204"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:CKaqAJ6ZWTY</id>
+  <yt:videoId>CKaqAJ6ZWTY</yt:videoId>
+  <yt:channelId>UCOVsasVS8QuBBNmWcW_7Yfg</yt:channelId>
+  <title>The building blocks of AI 🏗️ #ai #ml</title>
+  <link rel="alternate" href="https://www.youtube.com/shorts/CKaqAJ6ZWTY"/>
+  <author>
+   <name>Rahul Pandey</name>
+   <uri>https://www.youtube.com/channel/UCOVsasVS8QuBBNmWcW_7Yfg</uri>
+  </author>
+  <published>2026-10-01T13:00:40+00:00</published>
+  <updated>2026-10-30T19:25:57+00:00</updated>
+  <media:group>
+   <media:title>The building blocks of AI 🏗️ #ai #ml</media:title>
+   <media:content url="https://www.youtube.com/v/CKaqAJ6ZWTY?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i4.ytimg.com/vi/CKaqAJ6ZWTY/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Master the difference between a scalar, vector, matrix, and tensor in under 60 seconds.
+
+These four shapes are the building blocks of all machine learning math. I break down what each dimension represents and how they structure data in frameworks like TensorFlow.
+
+Subscribe for weekly AI engineering breakdowns, and comment which technical concept you want covered next.
+
+#machinelearning #linearalgebra #tensors #deeplearning #ai #math #shorts</media:description>
+   <media:community>
+    <media:starRating count="3" average="5.00" min="1" max="5"/>
+    <media:statistics views="140"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:zekMWqQG2xA</id>
+  <yt:videoId>zekMWqQG2xA</yt:videoId>
+  <yt:channelId>UCOVsasVS8QuBBNmWcW_7Yfg</yt:channelId>
+  <title>The 4 Formulas That Will Change the Way You Think About ChatGPT #chatgpt #innovation</title>
+  <link rel="alternate" href="https://www.youtube.com/shorts/zekMWqQG2xA"/>
+  <author>
+   <name>Rahul Pandey</name>
+   <uri>https://www.youtube.com/channel/UCOVsasVS8QuBBNmWcW_7Yfg</uri>
+  </author>
+  <published>2026-09-30T14:00:10+00:00</published>
+  <updated>2026-10-30T19:24:14+00:00</updated>
+  <media:group>
+   <media:title>The 4 Formulas That Will Change the Way You Think About ChatGPT #chatgpt #innovation</media:title>
+   <media:content url="https://www.youtube.com/v/zekMWqQG2xA?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i3.ytimg.com/vi/zekMWqQG2xA/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Four essential formulas drive every GPT architecture decision.
+
+We break down the LLM math—dot product, softmax, attention, and cross-entropy—to see how they calculate probability and accuracy. Mastering these transformer formulas is the fastest way to understand how models actually learn.
+
+Subscribe for weekly AI engineering breakdowns, and comment which technical concept you want covered next.
+
+#llm #transformers #machinelearning #ai #chatgpt #deeplearning #shorts</media:description>
+   <media:community>
+    <media:starRating count="5" average="5.00" min="1" max="5"/>
+    <media:statistics views="73"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:U4sm5tR4Yjc</id>
+  <yt:videoId>U4sm5tR4Yjc</yt:videoId>
+  <yt:channelId>UCOVsasVS8QuBBNmWcW_7Yfg</yt:channelId>
+  <title>Understand Cosine Similarity under 60 Seconds</title>
+  <link rel="alternate" href="https://www.youtube.com/shorts/U4sm5tR4Yjc"/>
+  <author>
+   <name>Rahul Pandey</name>
+   <uri>https://www.youtube.com/channel/UCOVsasVS8QuBBNmWcW_7Yfg</uri>
+  </author>
+  <published>2026-09-29T18:13:35+00:00</published>
+  <updated>2026-10-30T19:26:38+00:00</updated>
+  <media:group>
+   <media:title>Understand Cosine Similarity under 60 Seconds</media:title>
+   <media:content url="https://www.youtube.com/v/U4sm5tR4Yjc?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i2.ytimg.com/vi/U4sm5tR4Yjc/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Cosine similarity is the engine behind how AI measuressimilarity.
+
+We treat sentences as vectors and use the angle between them to calculate meaning. Learn why stretching a vector doesn't change its direction and why that matters for your search results. This is the foundational AI math you need to understand vector embeddings.
+
+Subscribe for weekly AI engineering breakdowns, and comment which technical concept you want covered next.
+
+#cosinesimilarity #embeddings #vectorsearch #machinelearning #AI #RAG #shorts</media:description>
+   <media:community>
+    <media:starRating count="3" average="5.00" min="1" max="5"/>
+    <media:statistics views="258"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:sMMNXTmimJg</id>
+  <yt:videoId>sMMNXTmimJg</yt:videoId>
+  <yt:channelId>UCOVsasVS8QuBBNmWcW_7Yfg</yt:channelId>
+  <title>Why Your AI Agent Fails: The Math You Need to Know</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=sMMNXTmimJg"/>
+  <author>
+   <name>Rahul Pandey</name>
+   <uri>https://www.youtube.com/channel/UCOVsasVS8QuBBNmWcW_7Yfg</uri>
+  </author>
+  <published>2026-09-19T17:00:12+00:00</published>
+  <updated>2026-10-22T05:26:32+00:00</updated>
+  <media:group>
+   <media:title>Why Your AI Agent Fails: The Math You Need to Know</media:title>
+   <media:content url="https://www.youtube.com/v/sMMNXTmimJg?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i4.ytimg.com/vi/sMMNXTmimJg/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Every step in this AI agent works at least 90% of the time. It still fails more than one in three invoices.
+
+In this video I simulated a 12-tool invoice agent from scratch in plain Python (no LLM, no framework) and simulate 10,000 runs to find out why agents fail even when every tool works 90% of the time. We cover the multiplication law, the two independence lies that break it (bad days and silent state poisoning), what actually fixes it, and what the fix costs.
+
+What you'll see:
+- Tools averaging 96% reliable still lose 371 of every 1,000 invoices
+- One tool (PDF extraction) causes about a quarter of all failures
+- On a &quot;bad day&quot;, success drops to under 9%
+- Retries take success from 63% to 94%, but make silent wrong answers MORE likely
+- Adding a verifier: 97% correct, 25x fewer wrong ledger entries, for +0.7 tool calls per good invoice
+
+Chapters:
+00:00 Introduction
+00:24 Agentic workflows vs agents
+04:15 The perfect-world agent simulation
+06:12 Tools become coin flips
+10:27 Ten thousand invoices simulation
+11:32 The multiplication law
+21:18 Where invoices fail
+27:00 Lie #1: bad days simulation (correlated failures)
+31:25 Lie #2: silent state poisoning
+37:58 Fighting back: retries and verifiers
+40:58 Conclusion
+
+#AIAgents #AgenticAI #BuildFromScratch #Agents #AI</media:description>
+   <media:community>
+    <media:starRating count="12" average="5.00" min="1" max="5"/>
+    <media:statistics views="3332"/>
+   </media:community>
+  </media:group>
+ </entry>
+</feed>

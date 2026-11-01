@@ -244,6 +244,19 @@ img { max-width: 100%; height: auto; }
   .card a, .card:nth-child(even) a { transform: none; transition: none; }
 }
 
+/* YouTube */
+.video-section { margin-top: calc(var(--line) * 2); }
+.video-card .thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  margin-bottom: 12px;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  background: var(--code-bg);
+}
+
 /* Post */
 .post-head { margin-bottom: var(--line); padding-bottom: calc(var(--line) - 1px); border-bottom: 1px solid var(--rule); }
 /* Older posts repeat their title as a first-line heading; the template already shows it. */

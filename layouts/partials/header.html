@@ -1,4 +1,5 @@
 {{- $isTrends := eq .Layout "ai-trends" -}}
+{{- $isYoutube := eq .Layout "youtube" -}}
 <header class="site-header">
   <a class="identity" href="{{ .Site.BaseURL }}">
     <img class="avatar" src="{{ .Site.Params.avatar | absURL }}" alt="" width="64" height="64">
@@ -10,5 +11,6 @@
   <nav class="site-nav" aria-label="Site">
     <a href="{{ .Site.BaseURL }}" {{ if and .IsHome (not $isTrends) }}aria-current="page"{{ end }}>Overview</a>
     <a href="{{ "ai-trends/" | absURL }}" {{ if $isTrends }}aria-current="page"{{ end }}>AI Trends</a>
+    <a href="{{ "youtube/" | absURL }}" {{ if $isYoutube }}aria-current="page"{{ end }}>YouTube</a>
   </nav>
 </header>
