@@ -1,7 +1,5 @@
 {{ $section := where .Site.RegularPages "Section" "in" (slice "post") }}
 {{ $section_count := len $section }}
-{{ $newsletter_section := where .Site.RegularPages "Section" "in" (slice "newsletter") }}
-{{ $newsletter_count := len $newsletter_section }}
 
 <div class="mt-4 position-sticky top-0 d-none d-md-block bg-white width-full border-bottom color-border-secondary"
   style="z-index:3;">
@@ -31,17 +29,7 @@
               Posts
               <span class="Counter">{{ $section_count}}</span>
             </a>
-            <a class="UnderlineNav-item {{ if eq .Section "newsletter" }} selected {{ end }}" href="{{urls.JoinPath .Site.BaseURL "newsletter"}}">
-              <svg class="octicon octicon-mail UnderlineNav-octicon hide-sm" height="16" viewBox="0 0 16 16"
-                version="1.1" width="16">
-                <path fill-rule="evenodd"
-                  d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.5 4.75a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5zM8 10a1 1 0 100-2 1 1 0 000 2z">
-                </path>
-              </svg>
-              Newsletter
-              <span class="Counter">{{ $newsletter_count}}</span>
-            </a>
-          <a class="UnderlineNav-item {{ if eq .Section "ai-trends" }} selected {{ end }}" href="{{urls.JoinPath .Site.BaseURL "ai-trends"}}">
+            <a class="UnderlineNav-item {{ if eq .Section "ai-trends" }} selected {{ end }}" href="{{urls.JoinPath .Site.BaseURL "ai-trends"}}">
       <svg class="octicon octicon-graph UnderlineNav-octicon hide-sm" height="16" viewBox="0 0 16 16" version="1.1" width="16">
         <path fill-rule="evenodd"
           d="M1.5 1.75a.75.75 0 00-1.5 0v12.5c0 .414.336.75.75.75h14.5a.75.75 0 000-1.5H1.5V1.75zm14.28 2.53a.75.75 0 00-1.06-1.06L10 7.94 7.53 5.47a.75.75 0 00-1.06 0L3.22 8.72a.75.75 0 001.06 1.06L7 7.06l2.47 2.47a.75.75 0 001.06 0l5.25-5.25z">
