@@ -5,8 +5,8 @@
   --crema: #f6a41c;
 }
 
-/* About */
-.about .intro { max-width: none; }
+/* About: full sheet width, both edges flush with the sections below. */
+.about .intro { max-width: none; text-align: justify; hyphens: auto; }
 .about .intro p:last-child { margin-bottom: 0; }
 
 /* Topic map */
@@ -93,14 +93,11 @@
 .principle-list h3 { margin: 0 0 4px; font-size: 18px; line-height: 26px; font-weight: 600; }
 .principle-list p { margin: 0; color: var(--pencil); font-size: 15px; line-height: 24px; }
 
-/* Writing: one row, scrolling sideways if more notes are added than fit. */
+/* Writing: three cards to a row. */
 #writing .cards {
-  grid-template-columns: none;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(190px, 1fr);
-  gap: 18px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 36px 18px;
   padding: 16px 4px 8px;
-  overflow-x: auto;
 }
 #writing .card a { padding: 24px 16px 16px; }
 #writing .card h3 { font-size: 17px; line-height: 23px; }
@@ -121,7 +118,8 @@
   .stage-lines, .stage-core { display: none; }
   .node, .node:hover { position: static; transform: none; }
   .principle-list { grid-template-columns: 1fr; }
-  #writing .cards { grid-auto-flow: row; grid-template-columns: 1fr; gap: 32px 0; overflow-x: visible; }
+  .about .intro { text-align: left; hyphens: manual; }
+  #writing .cards { grid-template-columns: 1fr; gap: 32px 0; }
 }
 @media (prefers-reduced-motion: reduce) {
   .js-reveal .reveal, .panels.is-live .panel, .node { transition: none; transform: none; }
