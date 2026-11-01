@@ -1,0 +1,36 @@
+# Most viewed uploads, highest first. Update by hand; YouTube's public feed has no all-time ranking.
+viewsAsOf: 2026-11-01
+videos:
+  - id: giFqW3Dcbog
+    title: "How to Build Graph Database from Scratch"
+    published: 2026-04-12
+    views: 10350
+  - id: 4Tj6kv5-6W0
+    title: "Build Vector Database From Scratch"
+    published: 2026-03-14
+    views: 7557
+  - id: xM4-EmLi4Fc
+    title: "How to evaluate and improve agent skills using MLflow"
+    published: 2026-10-10
+    views: 6885
+  - id: emZxqRScfc0
+    title: "Build KV Cache Layer From Scratch That Makes LLMs 20x Faster"
+    published: 2026-08-29
+    views: 4795
+shorts:
+  - id: "-_pNfq0TsJo"
+    title: "Read These 4 Papers Before Your Next AI Interview"
+    published: 2026-02-02
+    views: 1508
+  - id: UAaV-W1_vN8
+    title: "Why You Need To Use Claude Mods Right Now"
+    published: 2026-10-03
+    views: 748
+  - id: 5vhywejMiew
+    title: "Why MCP is the future of AI connectivity"
+    published: 2026-10-04
+    views: 586
+  - id: 9-QN70TXo_U
+    title: "MLOps Explained in 90 Seconds"
+    published: 2026-10-06
+    views: 447

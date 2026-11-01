@@ -1,46 +1,30 @@
 {{ define "main" }}
-{{ $channel := .Site.Params.youtube }}
-{{/* Read the feed at build time; fall back to the saved copy if YouTube refuses the request. */}}
-{{ $xml := (resources.Get "youtube-feed.xml").Content }}
-{{ with try (resources.GetRemote (printf "https://www.youtube.com/feeds/videos.xml?channel_id=%s" .Site.Params.youtubeChannelId)) }}
-  {{ if and (not .Err) .Value }}
-    {{ if strings.Contains .Value.Content "<entry>" }}{{ $xml = .Value.Content }}{{ end }}
-  {{ end }}
-{{ end }}
-{{ $entries := ($xml | transform.Unmarshal).entry }}
-{{ $videos := slice }}
-{{ $shorts := slice }}
-{{ range $entries }}
-  {{ if strings.Contains (index .link "-href") "/shorts/" }}
-    {{ $shorts = $shorts | append . }}
-  {{ else }}
-    {{ $videos = $videos | append . }}
-  {{ end }}
-{{ end }}
+{{ $data := .Site.Data.youtube }}
+{{ $asOf := (time.AsTime $data.viewsAsOf).Format "2 January 2006" }}
 
 <header class="post-head">
   <p class="marginalia">YouTube</p>
   <h1>No noise. <span class="mark">Just build.</span></h1>
-  <p class="standfirst">Walkthroughs and short explainers on AI agents, LLMs and MLOps. <a class="back" href="{{ $channel }}" rel="me">Visit the channel</a></p>
+  <p class="standfirst">Walkthroughs and short explainers on AI agents, LLMs and MLOps. <a class="back" href="{{ .Site.Params.youtube }}" rel="me">Visit the channel</a></p>
 </header>
 
 <section class="writing">
   <div class="section-head">
-    <h2>Videos</h2>
-    <p class="marginalia">{{ len $videos }} recent, latest first</p>
+    <h2>Top videos</h2>
+    <p class="marginalia">most viewed, as of {{ $asOf }}</p>
   </div>
   <ul class="cards">
-    {{ range $videos }}{{ partial "video-card.html" . }}{{ end }}
+    {{ range $data.videos }}{{ partial "video-card.html" (dict "video" . "url" (printf "https://www.youtube.com/watch?v=%s" .id)) }}{{ end }}
   </ul>
 </section>
 
 <section class="writing video-section">
   <div class="section-head">
-    <h2>Shorts</h2>
-    <p class="marginalia">{{ len $shorts }} recent, latest first</p>
+    <h2>Top Shorts</h2>
+    <p class="marginalia">most viewed, as of {{ $asOf }}</p>
   </div>
   <ul class="cards">
-    {{ range $shorts }}{{ partial "video-card.html" . }}{{ end }}
+    {{ range $data.shorts }}{{ partial "video-card.html" (dict "video" . "url" (printf "https://www.youtube.com/shorts/%s" .id)) }}{{ end }}
   </ul>
 </section>
 {{ end }}
