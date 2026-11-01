@@ -3,22 +3,10 @@
 {{ end }}
 
 {{ define "main" }}
-{{ $builds := .Params.builds }}
-<section class="hero">
-  <canvas class="hero-graph" id="hero-graph" aria-hidden="true"></canvas>
-  <div class="hero-body">
-    <p class="hero-role">{{ .Params.role }}</p>
-    <h1 aria-label="I build AI systems from scratch to learn why they break.">
-      <span aria-hidden="true">I build</span>
-      <span class="rotator" id="hero-rotator" data-words="{{ $builds | jsonify }}" aria-hidden="true">{{ index $builds 0 }}</span>
-      <span aria-hidden="true">from scratch, to learn <em>why they break.</em></span>
-    </h1>
-    <p class="hero-lede">{{ .Params.standfirst }}</p>
-    <div class="hero-actions">
-      <a class="btn btn-primary" href="{{ "youtube/" | absURL }}">Watch the builds</a>
-      <a class="btn" href="#writing">Read the notes</a>
-    </div>
-    <p class="hero-motto">No noise. Just build.</p>
+<section class="about">
+  <p class="marginalia">About</p>
+  <div class="prose intro">
+    {{ .Content }}
   </div>
 </section>
 
