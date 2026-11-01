@@ -1,14 +1,6 @@
 ---
 title: "Overview"
-description: "Rahul Pandey. Senior Solutions Architect at adidas. Builds AI systems from scratch and teaches what he learns on YouTube."
-role: "Senior Solutions Architect at adidas, Germany"
-builds:
-  - "vector databases"
-  - "graph databases"
-  - "tokenizers"
-  - "KV caches"
-  - "agent harnesses"
-standfirst: "By day I design machine learning platforms on the cloud. After hours I rebuild the systems underneath modern AI, one component at a time, and film what breaks."
+description: "Rahul Pandey. Senior Solutions Architect at adidas, working on cloud AI and MLOps."
 principles:
   - name: "Build it first"
     text: "If I can't write the loop myself, I don't understand it yet. The production library comes after that."
@@ -71,3 +63,7 @@ topics:
     text: "ML pipeline design, model deployment and monitoring, and lifecycle management, on infrastructure tuned for AI workloads. Solution architecture that connects business requirements to technical implementation."
     tools: ["AWS", "Databricks", "Google Cloud", "Docker", "Kubernetes", "SQL"]
 ---
+
+I am a Senior Solutions Architect at adidas, specialising in AI. I design scalable machine learning solutions that bridge business requirements with technical implementation, drawing on years of work in data analytics and simulation.
+
+My focus is end-to-end ML pipelines, cloud infrastructure tuned for AI workloads, and making sure what we ship delivers measurable business value. Outside work I mentor people starting out in data science, and I build AI systems from scratch on [YouTube](/youtube/).
