@@ -1,31 +1,82 @@
+{{ define "head" }}
+<link rel="stylesheet" href="{{ "css/overview.css" | absURL }}">
+{{ end }}
+
 {{ define "main" }}
-<section class="about">
-  <p class="marginalia">About</p>
-  <div class="prose intro">
-    {{ .Content }}
-  </div>
-  <div class="about-grid">
-    <div class="about-col">
-      <h2>What I work with</h2>
-      <ul class="worklist">
-        {{ range .Params.work }}
-        <li><strong>{{ .name }}.</strong> {{ .text }}</li>
-        {{ end }}
-      </ul>
+{{ $builds := .Params.builds }}
+<section class="hero">
+  <canvas class="hero-graph" id="hero-graph" aria-hidden="true"></canvas>
+  <div class="hero-body">
+    <p class="hero-role">{{ .Params.role }}</p>
+    <h1 aria-label="I build AI systems from scratch to learn why they break.">
+      <span aria-hidden="true">I build</span>
+      <span class="rotator" id="hero-rotator" data-words="{{ $builds | jsonify }}" aria-hidden="true">{{ index $builds 0 }}</span>
+      <span aria-hidden="true">from scratch, to learn <em>why they break.</em></span>
+    </h1>
+    <p class="hero-lede">{{ .Params.standfirst }}</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="{{ "youtube/" | absURL }}">Watch the builds</a>
+      <a class="btn" href="#writing">Read the notes</a>
     </div>
-    <div class="about-col">
-      <h2>Beyond work</h2>
-      <ul class="worklist">
-        {{ range .Params.beyond }}
-        <li>{{ . }}</li>
+    <p class="hero-motto">No noise. Just build.</p>
+  </div>
+</section>
+
+<section class="map reveal" id="expertise">
+  <div class="section-head">
+    <h2>What I work on</h2>
+    <p class="marginalia">pick a topic, follow the videos</p>
+  </div>
+  <div class="map-grid" id="topic-map">
+    <div class="stage" role="tablist" aria-label="Topics">
+      <svg class="stage-lines" viewBox="0 0 100 100" aria-hidden="true">
+        {{ $count := len .Params.topics }}
+        {{ range $i, $t := .Params.topics }}
+        {{ $a := sub (mul (div 6.28318 $count) $i) 1.5708 }}
+        <line data-line="{{ $t.id }}" pathLength="1" x1="50" y1="50" x2="{{ add 50 (mul 37 (math.Cos $a)) }}" y2="{{ add 50 (mul 37 (math.Sin $a)) }}"></line>
         {{ end }}
-      </ul>
+      </svg>
+      <img class="stage-core" src="{{ .Site.Params.avatar | absURL }}" alt="" width="96" height="96">
+      {{ range $i, $t := .Params.topics }}
+      {{ $a := sub (mul (div 6.28318 $count) $i) 1.5708 }}
+      <button type="button" class="node" role="tab" id="tab-{{ $t.id }}" aria-controls="panel-{{ $t.id }}" aria-selected="{{ if eq $i 0 }}true{{ else }}false{{ end }}" data-topic="{{ $t.id }}" style="left:{{ add 50 (mul 37 (math.Cos $a)) }}%;top:{{ add 50 (mul 37 (math.Sin $a)) }}%">{{ $t.label }}</button>
+      {{ end }}
+    </div>
+    <div class="panels">
+      {{ range $i, $t := .Params.topics }}
+      <article class="panel{{ if eq $i 0 }} is-active{{ end }}" role="tabpanel" id="panel-{{ $t.id }}" aria-labelledby="tab-{{ $t.id }}">
+        <h3>{{ $t.title }}</h3>
+        <p>{{ $t.text }}</p>
+        <ul class="tools">{{ range $t.tools }}<li>{{ . }}</li>{{ end }}</ul>
+        {{ with $t.videos }}
+        <ul class="panel-videos">
+          {{ range . }}
+          <li><a href="https://www.youtube.com/watch?v={{ .id }}" rel="noopener">
+            <img src="https://i.ytimg.com/vi/{{ .id }}/mqdefault.jpg" alt="" width="120" height="68" loading="lazy">
+            <span>{{ .title }}</span>
+          </a></li>
+          {{ end }}
+        </ul>
+        {{ end }}
+      </article>
+      {{ end }}
     </div>
   </div>
 </section>
 
+<section class="principles reveal">
+  <div class="section-head">
+    <h2>How I work</h2>
+  </div>
+  <ol class="principle-list">
+    {{ range .Params.principles }}
+    <li><h3>{{ .name }}</h3><p>{{ .text }}</p></li>
+    {{ end }}
+  </ol>
+</section>
+
 {{ $posts := where .Site.RegularPages "Section" "post" }}
-<section class="writing" id="writing">
+<section class="writing reveal" id="writing">
   <div class="section-head">
     <h2>Writing</h2>
     <p class="marginalia">{{ len $posts }} notes, latest first</p>
@@ -45,4 +96,8 @@
     {{ end }}
   </ul>
 </section>
+{{ end }}
+
+{{ define "scripts" }}
+<script src="{{ "js/overview.js" | absURL }}" defer></script>
 {{ end }}
