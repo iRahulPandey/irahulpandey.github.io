@@ -169,33 +169,6 @@ img { max-width: 100%; height: auto; }
 
 /* Overview */
 .about { margin-bottom: calc(var(--line) * 2); }
-.about .intro { max-width: none; }
-.about .intro p:last-child { margin-bottom: 0; }
-.about-grid {
-  display: grid;
-  grid-template-columns: 3fr 2fr;
-  gap: 0 48px;
-  margin-top: var(--line);
-  padding-top: calc(var(--line) - 1px);
-  border-top: 1px solid var(--rule);
-}
-.about-col h2 { margin: 0 0 0; font-size: 24px; line-height: var(--line); font-weight: 600; letter-spacing: -0.01em; }
-.worklist { list-style: none; margin: 0; padding: 0; }
-.worklist li { position: relative; padding-left: 22px; }
-.worklist li::before {
-  content: "";
-  position: absolute;
-  left: 2px;
-  top: 13px;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  border: 1.5px solid var(--ink);
-}
-.worklist strong { font-weight: 600; }
-@media (max-width: 720px) {
-  .about-grid { grid-template-columns: 1fr; gap: var(--line) 0; }
-}
 .section-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 24px; margin-bottom: var(--line); }
 .section-head h2 { margin: 0; font-size: 26px; font-weight: 600; letter-spacing: -0.01em; line-height: var(--line); }
 
