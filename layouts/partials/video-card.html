@@ -1,0 +1,10 @@
+{{- $title := replaceRE `\s*#\S+` "" .title -}}
+{{- $summary := index (split .group.description "\n") 0 -}}
+<li class="card video-card">
+  <a href="{{ index .link "-href" }}" rel="noopener">
+    <img class="thumb" src="https://i.ytimg.com/vi/{{ .videoId }}/mqdefault.jpg" alt="" width="320" height="180" loading="lazy">
+    <span class="when">{{ (time.AsTime .published).Format "2 January 2006" }}</span>
+    <h3>{{ $title }}</h3>
+    <p>{{ truncate 120 $summary }}</p>
+  </a>
+</li>
