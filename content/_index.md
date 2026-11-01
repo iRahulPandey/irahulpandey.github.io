@@ -58,7 +58,7 @@ topics:
       - { id: "Zm9yvVyCP68", title: "Claude Code Isn't Magic. Here's What's Inside" }
       - { id: "Ou-EngHyjKc", title: "Omnigent: The New Meta-Harness for Every Coding Agent" }
   - id: "cloud"
-    label: "Cloud ML"
+    label: "MLOps"
     title: "The day job: ML platforms at scale"
     text: "ML pipeline design, model deployment and monitoring, and lifecycle management, on infrastructure tuned for AI workloads. Solution architecture that connects business requirements to technical implementation."
     tools: ["AWS", "Databricks", "Google Cloud", "Docker", "Kubernetes", "SQL"]
