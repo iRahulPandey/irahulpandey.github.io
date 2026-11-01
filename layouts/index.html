@@ -1,8 +1,26 @@
 {{ define "main" }}
 <section class="about">
   <p class="marginalia">About</p>
-  <div class="prose">
+  <div class="prose intro">
     {{ .Content }}
+  </div>
+  <div class="about-grid">
+    <div class="about-col">
+      <h2>What I work with</h2>
+      <ul class="worklist">
+        {{ range .Params.work }}
+        <li><strong>{{ .name }}.</strong> {{ .text }}</li>
+        {{ end }}
+      </ul>
+    </div>
+    <div class="about-col">
+      <h2>Beyond work</h2>
+      <ul class="worklist">
+        {{ range .Params.beyond }}
+        <li>{{ . }}</li>
+        {{ end }}
+      </ul>
+    </div>
   </div>
 </section>
 
