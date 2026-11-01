@@ -1,11 +1,11 @@
 /* AI Trends board. Shares the notebook variables from notebook.css. */
 
 .ai-trends .board-head { margin-bottom: var(--line); }
-.ai-trends .masthead { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0 32px; }
+.ai-trends .masthead { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0 32px; min-height: var(--line); }
 .ai-trends .masthead h1 {
   margin: 0;
-  font-size: 30px;
-  line-height: calc(var(--line) * 1.5);
+  font-size: 28px;
+  line-height: var(--line);
   font-weight: 600;
   letter-spacing: -0.01em;
 }
@@ -13,7 +13,7 @@
 .ai-trends .pulse { width: 7px; height: 7px; border-radius: 50%; background: var(--pen); }
 .ai-trends .pulse.stale { background: var(--margin); }
 
-.ai-trends .views { display: flex; flex-wrap: wrap; gap: 0 28px; border-bottom: 1px solid var(--rule); margin-top: 8px; }
+.ai-trends .views { display: flex; flex-wrap: wrap; gap: 0 28px; border-bottom: 1px solid var(--rule); margin-top: 0; }
 .ai-trends .views button {
   appearance: none;
   background: none;
@@ -21,6 +21,7 @@
   color: var(--pencil);
   font: inherit;
   font-size: 16px;
+  line-height: 24px;
   padding: 0 0 6px;
   margin-bottom: -1px;
   cursor: pointer;
@@ -31,7 +32,7 @@
 
 .ai-trends .lede {
   margin: 0;
-  padding-bottom: var(--line);
+  padding-bottom: calc(var(--line) - 1px);
   border-bottom: 1px solid var(--rule);
   display: grid;
   grid-template-columns: 1fr auto;
@@ -74,7 +75,7 @@
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 0 28px;
-  padding: calc(var(--line) / 2) 0;
+  padding: calc(var(--line) / 2) 0 calc(var(--line) / 2 - 1px);
   border-bottom: 1px solid var(--rule);
   align-items: baseline;
   margin: 0;
@@ -132,7 +133,7 @@
 .ai-trends .board-note { margin: var(--line) 0 0; color: var(--pencil-light); font-size: 14.5px; max-width: 70ch; }
 
 @media (max-width: 720px) {
-  .ai-trends .masthead h1 { font-size: 24px; }
+  .ai-trends .masthead h1 { font-size: 24px; line-height: var(--line); }
   .ai-trends .lede { grid-template-columns: 1fr; }
   .ai-trends .lede h2 { font-size: 30px; line-height: calc(var(--line) * 1.5); }
   .ai-trends .lede .big { text-align: left; }
