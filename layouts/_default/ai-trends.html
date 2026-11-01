@@ -1,0 +1,11 @@
+{{ define "head" }}
+<link rel="stylesheet" href="{{ "css/ai-trends.css" | absURL }}">
+{{ end }}
+
+{{ define "main" }}
+{{ partial "ai-trends-board.html" . }}
+{{ end }}
+
+{{ define "scripts" }}
+<script src="{{ "js/ai-trends.js" | absURL }}" defer></script>
+{{ end }}

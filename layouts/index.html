@@ -1,0 +1,30 @@
+{{ define "main" }}
+<section class="about">
+  <p class="marginalia">About</p>
+  <div class="prose">
+    {{ .Content }}
+  </div>
+</section>
+
+{{ $posts := where .Site.RegularPages "Section" "post" }}
+<section class="writing" id="writing">
+  <div class="section-head">
+    <h2>Writing</h2>
+    <p class="marginalia">{{ len $posts }} notes, latest first</p>
+  </div>
+  <ul class="cards">
+    {{ range $posts }}
+    <li class="card">
+      <a href="{{ .RelPermalink }}">
+        <span class="when">{{ .Date.Format "2 January 2006" }}</span>
+        <h3>{{ .Title }}</h3>
+        <p>{{ .Params.summary | default .Summary | plainify }}</p>
+        {{ with .Params.tags }}
+        <span class="tags">{{ range $i, $t := . }}{{ if $i }}, {{ end }}{{ $t }}{{ end }}</span>
+        {{ end }}
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}

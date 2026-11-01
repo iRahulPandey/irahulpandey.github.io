@@ -96,7 +96,7 @@
       <section class="lede">
         <div>
           <p class="kicker">${esc(v.kicker)}</p>
-          <h3><a href="${esc(top.url)}" target="_blank" rel="noopener">${esc(top.name)}</a></h3>
+          <h2><a href="${esc(top.url)}" target="_blank" rel="noopener">${esc(top.name)}</a></h2>
           <p class="desc">${esc(top.desc) || "No description yet."}</p>
           <p class="meta">
             <span>by ${esc(top.owner)}</span>

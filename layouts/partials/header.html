@@ -1,1 +1,14 @@
-<!-- Header removed -->
+{{- $isTrends := eq .Layout "ai-trends" -}}
+<header class="site-header">
+  <a class="identity" href="{{ .Site.BaseURL }}">
+    <img class="avatar" src="{{ .Site.Params.avatar | absURL }}" alt="" width="64" height="64">
+    <span class="who">
+      <span class="name">{{ .Site.Params.author }}</span>
+      <span class="bio">{{ .Site.Params.description }}</span>
+    </span>
+  </a>
+  <nav class="site-nav" aria-label="Site">
+    <a href="{{ .Site.BaseURL }}" {{ if and .IsHome (not $isTrends) }}aria-current="page"{{ end }}>Overview</a>
+    <a href="{{ "ai-trends/" | absURL }}" {{ if $isTrends }}aria-current="page"{{ end }}>AI Trends</a>
+  </nav>
+</header>

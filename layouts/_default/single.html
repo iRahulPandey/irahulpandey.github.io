@@ -1,0 +1,16 @@
+{{ define "main" }}
+<article class="post">
+  <header class="post-head">
+    <p class="marginalia">{{ .Date.Format "2 January 2006" }}, about {{ .ReadingTime }} min</p>
+    <h1><span class="mark">{{ .Title }}</span></h1>
+    {{ with .Params.summary }}<p class="standfirst">{{ . }}</p>{{ end }}
+  </header>
+  <div class="prose">
+    {{ .Content }}
+  </div>
+  <footer class="post-foot">
+    {{ with .Params.tags }}<p class="tags">Filed under {{ range $i, $t := . }}{{ if $i }}, {{ end }}{{ $t }}{{ end }}</p>{{ end }}
+    <a class="back" href="{{ .Site.BaseURL }}#writing">Back to all writing</a>
+  </footer>
+</article>
+{{ end }}
