@@ -1,0 +1,210 @@
+/* AI Trends board: a notebook sheet that follows the site's light and dark palettes. */
+
+.ai-trends {
+  --sheet: #fbfaf7;
+  --ruled: #eeece5;
+  --margin: #d8a7a7;
+  --ink: var(--color-fg-default, #24292f);
+  --pencil: var(--color-fg-muted, #57606a);
+  --pencil-light: var(--color-fg-subtle, #6e7781);
+  --rule: #dedbd2;
+  --edge: var(--color-border-default, #d0d7de);
+  --pen: var(--color-accent-fg, #0969da);
+  --highlight: #fff1a6;
+  --line: 32px;
+  --gutter: 80px;
+
+  font-family: "Literata", Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  line-height: var(--line);
+  color: var(--ink);
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+[data-color-mode="dark"] .ai-trends {
+  --sheet: #161b22;
+  --ruled: #1c222b;
+  --margin: rgba(248, 81, 73, 0.45);
+  --rule: #30363d;
+  --highlight: rgba(187, 128, 9, 0.35);
+}
+
+.ai-trends a { color: inherit; text-decoration: none; }
+.ai-trends a:hover { color: var(--pen); text-decoration: none; }
+.ai-trends a:focus-visible,
+.ai-trends button:focus-visible { outline: 2px solid var(--pen); outline-offset: 3px; }
+
+.ai-trends .sheet {
+  position: relative;
+  background:
+    repeating-linear-gradient(to bottom, transparent 0, transparent calc(var(--line) - 1px), var(--ruled) calc(var(--line) - 1px), var(--ruled) var(--line)),
+    var(--sheet);
+  background-position: 0 48px;
+  border: 1px solid var(--edge);
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(35, 37, 42, 0.04), 0 8px 28px rgba(35, 37, 42, 0.05);
+  padding: 48px 48px 56px var(--gutter);
+}
+.ai-trends .sheet::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(var(--gutter) - 22px);
+  width: 1px;
+  background: var(--margin);
+}
+
+.ai-trends header { margin-bottom: var(--line); }
+.ai-trends .date { margin: 0; color: var(--pencil); font-style: italic; font-size: 16px; }
+.ai-trends .masthead { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0 32px; }
+.ai-trends .masthead h2 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: inherit;
+  font-size: 30px;
+  line-height: calc(var(--line) * 1.5);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.ai-trends .status { color: var(--pencil); font-size: 15px; display: flex; align-items: center; gap: 8px; }
+.ai-trends .pulse { width: 7px; height: 7px; border-radius: 50%; background: var(--pen); }
+.ai-trends .pulse.stale { background: var(--margin); }
+
+.ai-trends .views { display: flex; flex-wrap: wrap; gap: 0 28px; border-bottom: 1px solid var(--rule); margin-top: 8px; }
+.ai-trends .views button {
+  appearance: none;
+  background: none;
+  border: 0;
+  color: var(--pencil);
+  font: inherit;
+  font-size: 16px;
+  padding: 0 0 6px;
+  margin-bottom: -1px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+.ai-trends .views button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--pen); }
+.ai-trends .views button:hover { color: var(--ink); }
+
+.ai-trends .lede {
+  margin: var(--line) 0 0;
+  padding-bottom: var(--line);
+  border-bottom: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0 40px;
+  align-items: end;
+}
+.ai-trends .lede .kicker { margin: 0; color: var(--pencil); font-style: italic; }
+.ai-trends .lede h3 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: inherit;
+  font-size: 40px;
+  line-height: calc(var(--line) * 2);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  overflow-wrap: anywhere;
+}
+.ai-trends .lede h3 a {
+  background: linear-gradient(to top, var(--highlight) 0 42%, transparent 42%);
+  padding: 0 4px;
+  margin-left: -4px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.ai-trends .lede p.desc { margin: 0; max-width: 60ch; }
+.ai-trends .lede .meta { margin: 0; }
+.ai-trends .lede .big { text-align: right; padding-bottom: 2px; }
+.ai-trends .lede .big .n {
+  display: block;
+  font-size: 56px;
+  line-height: calc(var(--line) * 2);
+  font-weight: 300;
+  color: var(--pen);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+.ai-trends .lede .big .l { display: block; color: var(--pencil); font-size: 15px; }
+
+.ai-trends ol.board { list-style: none; margin: 0; padding: 0; }
+.ai-trends ol.board li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0 28px;
+  padding: calc(var(--line) / 2) 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: baseline;
+  margin: 0;
+}
+.ai-trends .rank {
+  position: absolute;
+  left: calc(var(--gutter) * -1 + 8px);
+  width: 44px;
+  text-align: right;
+  color: var(--pencil-light);
+  font-variant-numeric: tabular-nums;
+  font-size: 16px;
+  top: calc(var(--line) / 2);
+}
+.ai-trends .name { grid-column: 1; font-size: 19px; font-weight: 600; letter-spacing: -0.005em; }
+.ai-trends .name .owner { font-weight: 400; color: var(--pencil); }
+.ai-trends .desc { grid-column: 1; margin: 0; color: var(--pencil); max-width: 66ch; font-size: 16px; }
+.ai-trends .meta { grid-column: 1; margin: 0; font-size: 14.5px; color: var(--pencil-light); display: flex; flex-wrap: wrap; gap: 0 18px; }
+.ai-trends .lang::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--lc, var(--pencil-light));
+  margin-right: 6px;
+}
+.ai-trends .nums {
+  grid-column: 2;
+  grid-row: 1 / span 3;
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  align-self: start;
+}
+.ai-trends .nums .stars { font-size: 19px; font-weight: 600; }
+.ai-trends .nums .stars small { font-size: 14px; font-weight: 400; color: var(--pencil-light); margin-left: 4px; }
+.ai-trends .nums .pace { display: block; color: var(--pen); font-size: 15px; }
+
+.ai-trends .notice { padding: var(--line) 0; color: var(--pencil); max-width: 60ch; }
+.ai-trends .notice strong { color: var(--ink); font-weight: 600; }
+.ai-trends .notice button {
+  font: inherit;
+  font-size: 15px;
+  background: var(--pen);
+  color: #fff;
+  border: 0;
+  padding: 6px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 8px;
+  line-height: 24px;
+}
+
+.ai-trends footer { margin-top: var(--line); color: var(--pencil-light); font-size: 14.5px; max-width: 70ch; }
+
+@media (max-width: 767px) {
+  .ai-trends { --gutter: 48px; font-size: 16px; }
+  .ai-trends .sheet { padding: 36px 20px 40px var(--gutter); background-position: 0 36px; border-radius: 0; margin: 0 -16px; }
+  .ai-trends .sheet::before { left: calc(var(--gutter) - 14px); }
+  .ai-trends .masthead h2 { font-size: 24px; }
+  .ai-trends .lede { grid-template-columns: 1fr; }
+  .ai-trends .lede h3 { font-size: 30px; line-height: calc(var(--line) * 1.5); }
+  .ai-trends .lede .big { text-align: left; }
+  .ai-trends .lede .big .n { font-size: 44px; line-height: calc(var(--line) * 1.5); }
+  .ai-trends ol.board li { grid-template-columns: 1fr; }
+  .ai-trends .rank { width: 26px; }
+  .ai-trends .nums { grid-column: 1; grid-row: auto; text-align: left; }
+  .ai-trends .nums .pace { display: inline; margin-left: 10px; }
+}
